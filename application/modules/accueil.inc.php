@@ -1,9 +1,6 @@
 <?php
 
-$alea = array (rand(),rand());
+$alea = array(rand(),rand());
 
 
 $data['alea']=$alea;
-
-
-?>
