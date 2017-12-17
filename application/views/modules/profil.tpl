@@ -1,16 +1,10 @@
 
 <div class="containment">
-	
-	<div class= "profil">
-	
-	
+
+	<div class="profil">
+
 	</div>
-	ici le profil 
-		
-		
-		
-	
+
+	ici le profil
+
 </div>
-
-
-
