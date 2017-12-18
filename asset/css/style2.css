@@ -1,7 +1,7 @@
 /*****CSS pour la page de condition, a propos, recherche ***************/
 /*****PAGE********************************************/
 body {
-    background-image: url("../img/bg_pt.png");
+  background-image: url("asset/img/bg_PT.png");
 	background-position: bottom left;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -13,7 +13,7 @@ body {
 
 }
 
-header .header co 
+header .header co
 {
 	text-align:center;
 	position:fixed;
@@ -39,12 +39,12 @@ text-align:center;
 div {
 	text-align:center;
 	font-size:25px;
-	
+
 }
 
 
 
-img 
+img
 {
 margin-top:0px;
 width: 60px;
@@ -55,9 +55,9 @@ width: 60px;
 
 
 /****header *********************************************/
-header{ 
-	background-color: rgb(41, 137, 245); 
-	 
+header{
+	background-color: rgb(41, 137, 245);
+
 
 }
 ul {
@@ -65,8 +65,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  
-	
+
+
 }
 
 li {
@@ -81,12 +81,12 @@ li a {
     text-decoration: none;
 }
 /*****FOOTER*********************************************/
-.foot 
+.foot
 {
 	bottom:0;
 	position: absolute;
 	width:100%;
-	background-color: rgb(41, 137, 245); 
+	background-color: rgb(41, 137, 245);
 }
 
 
