@@ -19,7 +19,7 @@
 			<a href="?page=inscription">Pas inscrit ?</a>
 		</div>
 		<div class="button">
-			<button type="submit"><b>Envoyer</b></button>
+			<button type="submit" name="form_connexion"><b>Envoyer</b></button>
 		</div>
 
 	</form>
