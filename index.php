@@ -18,6 +18,7 @@
     require_once("application/modules/".$current_page.".inc.php");
 
     $smarty = new Smarty();
+    $smarty->caching = 0;
     $smarty->setTemplateDir('application/views/');
     foreach ($data as $key => $value) {
         $smarty->assign($key, $value);

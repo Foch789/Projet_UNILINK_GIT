@@ -1,16 +1,23 @@
 <?php
-include_once 'config.inc.php';
+//include_once 'config.inc.php';
 
+$etat = true;
 
-<<<<<<< HEAD
 if (isset($_POST['form_connexion'])) { // Vérifie que l'on vient bien du formulaire
-    header('Location: ../views/modules/profil.tpl');
-    exit();
+print_r( $_POST);
+    if ($_POST['user_email'] != "root@free.fr")
+    {
+      $etat = false;
+      echo "mail faux !";
+    }
+    if ($_POST['user_mdp']!= "root")
+    {
+      $etat= false ;
+      echo "mdp faux !";
+    }
+    if ($etat==true)
+    {
+      header('Location:?page=profil');
+    }
+    // exit();
 }
-=======
-if(isset($_POST['form_connexion']){ // Vérifie que l'on vient bien du formulaire
-	header()
-}
-
-?>
->>>>>>> 2a18a58eef3d019779c8201b6a8522c2f9bc9578
