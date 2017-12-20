@@ -1,4 +1,21 @@
 {extends file="../layout.tpl"}
+<<<<<<< HEAD
+{block name= "css"}
+{/block}
+
+{block name= "nav"}
+{/block}
+
+{block name="body"}
+
+<div class="page">
+
+	<div class="containment">
+
+		<h2>Profil</h2>
+
+
+=======
 
 {block name="body"}
 
@@ -15,6 +32,7 @@
 			truncata deformitatem velut exsaturati mox abiecerunt in flumen.
 
 		</p>
+>>>>>>> 76a78bdff131bd9bde9ab30ce3d3790869d44721
 
 	</div>
 

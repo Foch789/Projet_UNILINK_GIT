@@ -1,8 +1,10 @@
 /*****CSS pour la page de connexion***************/
 
 /*****PAGE********************************************/
+
 body {
-    background-image: url("asset/img/bg_PT.png");
+    background-image: url("../img/bg_PT.png");
+
 	background-position: bottom left;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -14,10 +16,6 @@ body {
 
 }
 
-
-
-
-
 /* .containment  */
  /* {  */
 
@@ -28,9 +26,9 @@ body {
 
 /* } */
 
-.containment h1
+.containment h2
 {
-
+text-align: center;
 
 
 }
@@ -38,7 +36,8 @@ body {
 
 
 div {
-
+font-size: 15px;
+text-align: left;
 
 
 }
@@ -54,7 +53,7 @@ form {
 
   /* Pour voir les limites du formulaire */
   padding: 1em;
-
+  background-color: rgb(255,255,255);
   border: 1px solid #CCC;
   border-radius: 1em;
   box-shadow: 5px 10px 5px rgba(0, 0, 0,0.3);
@@ -143,6 +142,11 @@ ul {
 li {
     float: right;
 }
+
+li img{
+  width: 25px;
+}
+
 
 li a {
     display: block;

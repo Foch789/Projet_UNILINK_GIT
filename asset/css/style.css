@@ -11,16 +11,16 @@ body {
 	text-align:center;
 	width: 100% ;
 	font-family:"trocchi",serif;
-	
+
 
 }
 
 .containment
 {
-	
+
 	font-size:25px;
 	font-family:"Trocchi",serif;
-	background-color:rgba(255, 255, 255,0.3);
+	/*background-color:rgba(255, 255, 255,0.3);*/
 }
 
 .containment h1
@@ -33,27 +33,20 @@ font-size:100px;
 
 /*****HEADER*****/
 
-header .header co 
+header .header co
 {
 	text-align:center;
 	position:fixed;
 	top:0;
 	width:100%;
 	background-color: rgb(41, 137, 245);
-	
-}
-
-img 
-{
-margin-top:100px;
-width: 60px;
 
 }
 
 .header
 {
 	background-color: rgb(41, 137, 245);
-	
+
 }
 
 ul {
@@ -61,25 +54,32 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  
-	
-	
+
+
+
 }
 
 li {
     float: right;
 }
 
+li img{
+  width: 25px;
+}
+
+
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
 }
 
+
+
 /*****FOOTER*****/
-.foot 
+.foot
 {
 	bottom:0;
 	position: absolute;

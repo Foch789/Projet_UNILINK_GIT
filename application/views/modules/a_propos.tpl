@@ -1,5 +1,6 @@
 {extends file="../layout.tpl"}
-
+{block name= "css"}
+{/block}
 {block name="body"}
 
 <div class="page">
