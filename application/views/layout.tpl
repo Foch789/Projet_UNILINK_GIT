@@ -12,7 +12,7 @@
 		{include file='layout/layout_entete.inc.tpl'}
 	</header>
 
-	{if $page eq 'profil' }
+	{if $page == 'profil' }
 		<nav>
 			{include file='nav/nav.inc.tpl'}
 
