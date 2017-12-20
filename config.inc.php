@@ -1,6 +1,9 @@
 <?php
 
-$PAGES = array( 'accueil' => 'accueil', 'connexion'=> 'connexion', 'profil'=>'profil' , 'a_propos'=> 'a_propos','conditions'=>'conditions','inscription'=>'inscription','recherche'=>'recherche');
+
+
+
+$PAGES = array( 'accueil' , 'connexion', 'profil' , 'a_propos','conditions','inscription','recherche','logout');
 
 $HOME_PAGE = 'accueil';
 $ERROR_404 = '';

@@ -21,6 +21,9 @@
 
 		</p>
 
+		<p>Salut {$monlogin}</p>
+
+	  <a href='?page=logout'>FIN</a>
 
 	</div>
 

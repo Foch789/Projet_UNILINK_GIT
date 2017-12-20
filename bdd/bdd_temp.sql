@@ -39,7 +39,7 @@ values (1, 'INFO1'),
 
 
 insert into etudiant
-values (1, 'Doiteau', 'Laurent', 'laurent.doiteau@etu.univ-amu.fr', 'X#3gH@f', 'Projeeeeet.', 2, 3),
+values (1, 'Doiteau', 'Laurent', 'laurent.doiteau@etu.univ-amu.fr', 'root', 'Projeeeeet.', 2, 3),
 (2, 'Vienne', 'Geoffrey', 'geoffrey.vienne@etu.univ-amu.fr', 'H@gU1', 'On ecrit colour et pas color.', 2, 1),
 (3, 'Barbe', 'Baptiste', 'baptiste.barbe@etu.univ-amu.fr', '4#Gc.L', 'Sponsored by IKEA.', 2, 3),
 (4, 'Dos-Santos Barroso', 'Alexandra', 'alexandre.dossantosbarroso@etu.univ-amu.fr', '!UpQLjb', 'Coucou.', 2, 2),

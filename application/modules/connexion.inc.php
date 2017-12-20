@@ -1,22 +1,30 @@
 <?php
-//include_once 'config.inc.php';
-
-$etat = true;
 
 if (isset($_POST['form_connexion'])) { // Vérifie que l'on vient bien du formulaire
-	
-    if ($_POST['user_email'] != "root@free.fr")
-    {
-      $etat = false;
-      echo "mail faux !";
+    include 'configBDD.inc.php';
+
+    try {
+        $R_log=$PDO_BDD->query('Select * from etudiant');
+    } catch (Exception $e) {
+        die('Erreur : '.$e->getMessage().'.<br/>');
     }
-    if ($_POST['user_mdp']!= "root")
-    {
-      $etat= false ;
-      echo "mdp faux !";
+    $tab = $R_log->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($tab as $element) {
+        if ($_REQUEST['user_email']==$element['email']) {
+            if ($_REQUEST['user_mdp']==$element['mdp']) {
+                session_start();
+                $_SESSION['monlogin']=$element['nom_etu'];
+                $_SESSION['monmdp']=$_REQUEST['user_mdp'];
+                header('Location:?page=profil');
+            } else {
+                echo "Erreur de mot de passe.";
+                break;
+            }
+        }
     }
-    if ($etat==true)
-    {
-      header('Location:?page=profil');
-    }
+
+    /*if ($etat==true) {
+        header('Location:?page=profil');
+    }*/
 }
