@@ -1,7 +1,8 @@
 /*****CSS pour la page de condition, a propos, recherche ***************/
 /*****PAGE********************************************/
+
 body {
-  background-image: url("asset/img/bg_PT.png");
+    background-image: url("../img/bg_PT.png");
 	background-position: bottom left;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -11,8 +12,8 @@ body {
 	width: 100% ;
 	font-family:"trocchi",serif;
 
-}
 
+}
 header .header co
 {
 	text-align:center;
