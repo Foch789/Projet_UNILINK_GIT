@@ -20,7 +20,7 @@ body {
 
 	font-size:25px;
 	font-family:"Trocchi",serif;
-	background-color:rgba(255, 255, 255,0.3);
+	/*background-color:rgba(255, 255, 255,0.3);*/
 }
 
 .containment h1
@@ -40,15 +40,6 @@ header .header co
 	top:0;
 	width:100%;
 	background-color: rgb(41, 137, 245);
-
-}
-
-
-
-img
-{
-margin-top:100px;
-width: 60px;
 
 }
 
@@ -72,13 +63,20 @@ li {
     float: right;
 }
 
+li img{
+  width: 25px;
+}
+
+
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
 }
+
+
 
 /*****FOOTER*****/
 .foot

@@ -26,9 +26,9 @@ body {
 
 /* } */
 
-.containment h1
+.containment h2
 {
-
+text-align: center;
 
 
 }
@@ -36,7 +36,8 @@ body {
 
 
 div {
-
+font-size: 15px;
+text-align: left;
 
 
 }
@@ -141,6 +142,11 @@ ul {
 li {
     float: right;
 }
+
+li img{
+  width: 25px;
+}
+
 
 li a {
     display: block;

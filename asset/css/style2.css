@@ -45,6 +45,7 @@ div {
 
 
 
+
 img
 {
 margin-top:0px;
@@ -73,6 +74,12 @@ ul {
 li {
     float: right;
 }
+
+li img{
+  width: 25px;
+}
+
+
 
 li a {
     display: block;

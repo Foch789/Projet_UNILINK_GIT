@@ -12,13 +12,12 @@
 		{include file='layout/layout_entete.inc.tpl'}
 	</header>
 
-	{* {if tu es connecté alors nav}
+	{if $page eq 'profil' }
+		<nav>
+			{include file='nav/nav.inc.tpl'}
 
-	<nav>
-
-	</nav>
-
-	{/if} *}
+		</nav>
+	{/if}
 
 	<body>
 

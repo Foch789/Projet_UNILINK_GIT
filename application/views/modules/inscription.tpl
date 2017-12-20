@@ -1,5 +1,6 @@
 {extends file="../layout.tpl"}
 {block name= "css"}
+	<link rel="stylesheet" href="asset/css/styleco.css"/>
 {/block}
 
 {block name="body"}
