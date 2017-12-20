@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Unilink" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="0" gantt-divider-location="286" resource-divider-location="379" version="2.8.5" locale="fr">
+    <description><![CDATA[Réseau social pour aider les étudiants a progresser par le biais de tutorat]]></description>
+    <view zooming-state="default:4" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="159" order="0"/>
+        <field id="tpd4" name="Date de début" width="62" order="1"/>
+        <field id="tpd5" name="Date de fin" width="61" order="2"/>
+        <option id="taskLabelLeft" value="resources"/>
+        <timeline><![CDATA[1,0,5,52,53,33]]></timeline>
+        <option id="color.recent"><![CDATA[#0000ff #ff0000 #ffff00 #ff99cc #ff3333 #33ff33 #00ccff #cc00cc #ff33ff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="tpc0" name="Prénom" width="101" order="0"/>
+        <field id="0" name="Nom" width="166" order="1"/>
+        <field id="1" name="Rôle par défaut" width="108" order="2"/>
+    </view>
+    <!-- -->
+    <calendars base-id="Aucun">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="1" tue="1" wed="1" thu="1" fri="1" sat="1"/>
+            <only-show-weekends value="true"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="33" name="Conception" color="#33ff33" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2017-09-10" duration="68" complete="100" expand="true">
+            <notes><![CDATA[Conception du sites]]></notes>
+            <depend id="0" type="2" difference="0" hardness="Rubber"/>
+            <depend id="1" type="2" difference="0" hardness="Rubber"/>
+            <depend id="46" type="2" difference="0" hardness="Rubber"/>
+            <depend id="53" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-18" duration="1" complete="80" expand="true"/>
+        <task id="0" name="css" color="#ffff00" meeting="false" start="2017-11-24" duration="1" complete="100" expand="true">
+            <notes><![CDATA[création des pages du sites]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Rubber"/>
+            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="53" name="template" color="#ffff00" meeting="false" start="2017-12-13" duration="3" complete="100" expand="true">
+            <notes><![CDATA[création de patron de page html]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="BDD" color="#cc00cc" meeting="false" start="2017-12-07" duration="9" complete="96" expand="true">
+            <notes><![CDATA[création de la base de données et des fonctions associées]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Rubber"/>
+            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="5" name="PHP" color="#ff3333" meeting="false" start="2017-12-16" duration="3" complete="84" priority="2" expand="true">
+            <notes><![CDATA[les fonctionnalitées du site]]></notes>
+            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+            <depend id="52" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="52" name="Code Igniter" color="#ff0000" meeting="false" start="2017-12-20" duration="1" complete="91" expand="true">
+            <notes><![CDATA[integration des requêtes sql]]></notes>
+        </task>
+        <task id="12" name="Fiche présentation" color="#00ccff" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2017-12-19" duration="2" complete="77" expand="true">
+            <notes><![CDATA[création du ficher de présentation du prototype 1]]></notes>
+        </task>
+    </tasks>
+    <resources>
+        <custom-property-definition id="tpc0" name="Prénom" type="text"/>
+        <resource id="0" name="Dos Santos" function="3" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Alexendra"/>
+        </resource>
+        <resource id="1" name="Roux" function="2" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Alexandre "/>
+        </resource>
+        <resource id="2" name="Doiteau" function="Default:1" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Laurent"/>
+        </resource>
+        <resource id="3" name="Richard" function="3" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Thomas"/>
+        </resource>
+        <resource id="4" name="Vienne" function="2" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Geoffrey"/>
+        </resource>
+        <resource id="5" name="Barbe" function="5" contacts="" phone="">
+            <custom-property definition-id="tpc0" value="Baptiste"/>
+        </resource>
+    </resources>
+    <allocations>
+        <allocation task-id="0" resource-id="0" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="3" responsible="false" load="30.0"/>
+        <allocation task-id="12" resource-id="0" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="0" function="5" responsible="false" load="20.0"/>
+        <allocation task-id="53" resource-id="0" function="3" responsible="true" load="60.0"/>
+        <allocation task-id="1" resource-id="1" function="2" responsible="true" load="50.0"/>
+        <allocation task-id="12" resource-id="1" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="1" function="5" responsible="false" load="20.0"/>
+        <allocation task-id="5" resource-id="2" function="3" responsible="true" load="30.0"/>
+        <allocation task-id="33" resource-id="2" function="5" responsible="true" load="20.0"/>
+        <allocation task-id="12" resource-id="2" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="53" resource-id="2" function="3" responsible="false" load="40.0"/>
+        <allocation task-id="5" resource-id="3" function="3" responsible="false" load="30.0"/>
+        <allocation task-id="12" resource-id="3" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="3" function="5" responsible="false" load="20.0"/>
+        <allocation task-id="52" resource-id="3" function="3" responsible="true" load="0.0"/>
+        <allocation task-id="1" resource-id="4" function="2" responsible="false" load="50.0"/>
+        <allocation task-id="12" resource-id="4" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="33" resource-id="4" function="5" responsible="false" load="20.0"/>
+        <allocation task-id="46" resource-id="4" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="5" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="5" resource-id="5" function="1" responsible="false" load="10.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="meuble"/>
+        <role id="2" name="codeur bdd"/>
+        <role id="3" name="codeur php"/>
+        <role id="4" name="codeur html/css"/>
+        <role id="5" name="redacteur"/>
+    </roles>
+</project>
