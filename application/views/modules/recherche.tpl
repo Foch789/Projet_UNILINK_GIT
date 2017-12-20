@@ -1,6 +1,7 @@
 {extends file="../layout.tpl"}
 
 {block name= "css"}
+	{* <link rel="stylesheet" href="asset/css/style2.css"/> *}
 {/block}
 
 {block name="body"}
@@ -12,7 +13,7 @@
 
 	<form action="" class="formulaire">
 		<input class="champ" type="text"  name = "form" value="Recherche..." />
-		<input class="image" type="image" src="asset/img/magnifier.png " />
+		<input class="image" type="image" name ="valide" src="asset/img/magnifier.png " />
 	</form>
 
 </div>
