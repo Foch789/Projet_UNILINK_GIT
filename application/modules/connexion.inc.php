@@ -4,7 +4,7 @@
 $etat = true;
 
 if (isset($_POST['form_connexion'])) { // Vérifie que l'on vient bien du formulaire
-print_r( $_POST);
+	
     if ($_POST['user_email'] != "root@free.fr")
     {
       $etat = false;
@@ -19,5 +19,4 @@ print_r( $_POST);
     {
       header('Location:?page=profil');
     }
-    // exit();
 }

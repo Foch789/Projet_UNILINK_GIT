@@ -27,21 +27,21 @@
 
 		<div>
 			<label for="email">E-mail :</label>
-			<input type="text" id="email" name="user_name" required>
+			<input type="email" name="user_mail" required>
 		</div>
 
 		<div>
 			<label for="mdp">Mot de passe :</label>
-			<input type="password" id="mdp" name="mdp" required>
+			<input type="password" name="mdp" required>
 		</div>
 
 		<div>
 			<label for="mdpc">Confirmation:</label>
-			<input type="password" id="mdpc" name="mdpc" required>
+			<input type="password" name="cmdp" required>
 		</div>
 
 		<div class="button">
-			<button type="submit"><b>Envoyer</b></button>
+			<button type="submit" name="inscrit"><b>Envoyer</b></button>
 		</div>
 
 	</form>
