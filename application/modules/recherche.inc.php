@@ -11,7 +11,7 @@ try
 
 catch(Exception $e)
 {
-  die(echo 'Erreur'.$e->getMessage().'</br>');
+  die('Erreur'.$e->getMessage().'</br>');
 }
 
 
