@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Unilink" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="0" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Unilink" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="1" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
     <description><![CDATA[Réseau social pour aider les étudiants a progresser par le biais de tutorat]]></description>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="159" order="0"/>
@@ -46,7 +46,9 @@
             <depend id="46" type="2" difference="0" hardness="Rubber"/>
             <depend id="53" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-18" duration="1" complete="80" expand="true"/>
+        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-18" duration="1" complete="80" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+        </task>
         <task id="0" name="css" color="#ffff00" meeting="false" start="2017-11-24" duration="1" complete="100" expand="true">
             <notes><![CDATA[création des pages du sites]]></notes>
             <depend id="5" type="2" difference="0" hardness="Rubber"/>
@@ -78,17 +80,17 @@
         <custom-property-definition id="tpc1" name="heures prototype" type="double"/>
         <custom-property-definition id="tpc2" name="heure conception" type="double"/>
         <resource id="0" name="Dos Santos" function="3" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="35.0"/>
+            <custom-property definition-id="tpc1" value="40.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Alexendra"/>
         </resource>
         <resource id="1" name="Roux" function="2" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="27.0"/>
+            <custom-property definition-id="tpc1" value="35.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Alexandre "/>
         </resource>
         <resource id="2" name="Doiteau" function="Default:1" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="30.0"/>
+            <custom-property definition-id="tpc1" value="38.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Laurent"/>
         </resource>
@@ -98,13 +100,13 @@
             <custom-property definition-id="tpc0" value="Thomas"/>
         </resource>
         <resource id="4" name="Vienne" function="2" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="26.0"/>
+            <custom-property definition-id="tpc1" value="30.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Geoffrey"/>
         </resource>
         <resource id="5" name="Barbe" function="5" contacts="" phone="">
             <custom-property definition-id="tpc1" value="5.0"/>
-            <custom-property definition-id="tpc2" value="0.0"/>
+            <custom-property definition-id="tpc2" value="5.0"/>
             <custom-property definition-id="tpc0" value="Baptiste"/>
         </resource>
     </resources>
