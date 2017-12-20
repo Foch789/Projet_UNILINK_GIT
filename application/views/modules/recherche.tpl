@@ -11,7 +11,7 @@
 	<h2>Trouvez le parmi nos étudiants</h2>
 
 	<form action="" class="formulaire">
-		<input class="champ" type="text" value="Recherche..." />
+		<input class="champ" type="text"  name = "form" value="Recherche..." />
 		<input class="image" type="image" src="asset/img/magnifier.png " />
 	</form>
 
