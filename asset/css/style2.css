@@ -88,6 +88,34 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+
+/**********MENU DANS PROFIL***************/
+.coter {
+    background-color: rgb(41, 137, 245);
+    display: block;
+    float: left;
+    color: white;
+    text-align: left;
+  
+}
+
+.coter h1 ,.coter h2
+{
+  font-size: 80%;
+  text-align: left;
+}
+.coter li{
+
+    overflow: none ;
+    font-size: 80%;
+    text-align: left;
+
+}
+
+
+
+
+
 /*****FOOTER*********************************************/
 .foot
 {
