@@ -6,13 +6,13 @@
 
 {block name="body"}
 
-
-
-
-
-
 <div class="page">
 <div class="coter">
+
+<p>Salut {$monlogin}</p>
+
+<a href='?page=logout'>FIN</a>
+
 <h1> Nom </h1>
 <h2>Prénom</h2>
 
@@ -26,17 +26,5 @@
 
 <div class="centre">
 
-
-</div>
-
-
-
-
-		<p>Salut {$monlogin}</p>
-
-	  <a href='?page=logout'>FIN</a>
-
-
-</div>
 
 {/block}
