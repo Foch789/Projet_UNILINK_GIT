@@ -13,7 +13,7 @@ Create table competence
 
 Create table etudiant
 (
-  id_etudiant int primary key,
+  id_etudiant int AUTO_INCREMENT primary key,
   nom_etu varchar(20),
   prenom_etu varchar(20),
   email varchar(50),

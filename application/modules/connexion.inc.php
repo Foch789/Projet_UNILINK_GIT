@@ -23,8 +23,4 @@ if (isset($_POST['form_connexion'])) { // Vérifie que l'on vient bien du formul
             }
         }
     }
-
-    /*if ($etat==true) {
-        header('Location:?page=profil');
-    }*/
 }

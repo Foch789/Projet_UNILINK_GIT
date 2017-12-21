@@ -9,11 +9,7 @@
 <div class="page">
 <div class="coter">
 
-<p>Salut {$monlogin}</p>
-
-<a href='?page=logout'>FIN</a>
-
-<h1> Nom </h1>
+<h1> {$monlogin} </h1>
 <h2>Prénom</h2>
 
 	<ul>
@@ -27,5 +23,6 @@
 <div class="centre">
 </div>
 
+<a href='?page=logout'>FIN</a>
 
 {/block}
