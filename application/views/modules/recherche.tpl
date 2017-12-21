@@ -11,7 +11,7 @@
 	<h1>Vous êtes un professionnel à la recherche d'un stagiaire ?</h1>
 	<h2>Trouvez le parmi nos étudiants</h2>
 
-	<form action="/application/views/modules/recherche.inc.php" class="formulaire">
+	<form action="index.php?page=recherche" class="formulaire">
 		<input class="champ" type="text"  name = "form" value="Recherche..." />
 		<input class="image" type="image" name ="valide" src="asset/img/magnifier.png " />
 	</form>
