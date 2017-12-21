@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Unilink" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="1" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Unilink (prototype 1)" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="0" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
     <description><![CDATA[Réseau social pour aider les étudiants a progresser par le biais de tutorat]]></description>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="159" order="0"/>
         <field id="tpd4" name="Date de début" width="62" order="1"/>
         <field id="tpd5" name="Date de fin" width="61" order="2"/>
         <option id="taskLabelLeft" value="resources"/>
-        <timeline><![CDATA[53,0,52,33,5,1]]></timeline>
+        <timeline><![CDATA[1,0,5,52,53,33]]></timeline>
         <option id="color.recent"><![CDATA[#0000ff #ff0000 #ffff00 #ff99cc #ff3333 #33ff33 #00ccff #cc00cc #ff33ff]]></option>
     </view>
     <view id="resource-table">
-        <field id="tpc0" name="Prénom" width="74" order="0"/>
-        <field id="0" name="Nom" width="117" order="1"/>
-        <field id="1" name="Rôle par défaut" width="79" order="2"/>
-        <field id="tpc1" name="heures prototype" width="71" order="3"/>
-        <field id="tpc2" name="heure conception" width="75" order="4"/>
+        <field id="tpc0" name="Prénom" width="60" order="0"/>
+        <field id="0" name="Nom" width="93" order="1"/>
+        <field id="1" name="Rôle par défaut" width="64" order="2"/>
+        <field id="tpc1" name="heures prototype" width="58" order="3"/>
+        <field id="tpc2" name="heure conception" width="61" order="4"/>
+        <field id="tpc3" name="heures cumuler" width="80" order="5"/>
     </view>
     <!-- -->
     <calendars base-id="Aucun">
@@ -46,7 +47,7 @@
             <depend id="46" type="2" difference="0" hardness="Rubber"/>
             <depend id="53" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-18" duration="1" complete="80" expand="true">
+        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-18" duration="1" complete="87" expand="true">
             <depend id="12" type="2" difference="0" hardness="Rubber"/>
         </task>
         <task id="0" name="css" color="#ffff00" meeting="false" start="2017-11-24" duration="1" complete="100" expand="true">
@@ -63,15 +64,15 @@
             <depend id="5" type="2" difference="0" hardness="Rubber"/>
             <depend id="12" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="5" name="PHP" color="#ff3333" meeting="false" start="2017-12-16" duration="3" complete="84" priority="2" expand="true">
+        <task id="5" name="PHP" color="#ff3333" meeting="false" start="2017-12-16" duration="3" complete="87" priority="2" expand="true">
             <notes><![CDATA[les fonctionnalitées du site]]></notes>
             <depend id="12" type="2" difference="0" hardness="Rubber"/>
             <depend id="52" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="52" name="Code Igniter" color="#ff0000" meeting="false" start="2017-12-20" duration="1" complete="91" expand="true">
+        <task id="52" name="Code Igniter" color="#ff0000" meeting="false" start="2017-12-20" duration="1" complete="100" expand="true">
             <notes><![CDATA[integration des requêtes sql]]></notes>
         </task>
-        <task id="12" name="Fiche présentation" color="#00ccff" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2017-12-19" duration="2" complete="77" expand="true">
+        <task id="12" name="Fiche présentation" color="#00ccff" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2017-12-19" duration="2" complete="100" expand="true">
             <notes><![CDATA[création du ficher de présentation du prototype 1]]></notes>
         </task>
     </tasks>
@@ -79,32 +80,39 @@
         <custom-property-definition id="tpc0" name="Prénom" type="text"/>
         <custom-property-definition id="tpc1" name="heures prototype" type="double"/>
         <custom-property-definition id="tpc2" name="heure conception" type="double"/>
+        <custom-property-definition id="tpc3" name="heures cumuler" type="double"/>
         <resource id="0" name="Dos Santos" function="3" contacts="" phone="">
+            <custom-property definition-id="tpc3" value="70"/>
             <custom-property definition-id="tpc1" value="40.0"/>
-            <custom-property definition-id="tpc2" value="25.0"/>
+            <custom-property definition-id="tpc2" value="30.0"/>
             <custom-property definition-id="tpc0" value="Alexendra"/>
         </resource>
         <resource id="1" name="Roux" function="2" contacts="" phone="">
+            <custom-property definition-id="tpc3" value="65"/>
             <custom-property definition-id="tpc1" value="35.0"/>
-            <custom-property definition-id="tpc2" value="25.0"/>
+            <custom-property definition-id="tpc2" value="30.0"/>
             <custom-property definition-id="tpc0" value="Alexandre "/>
         </resource>
         <resource id="2" name="Doiteau" function="Default:1" contacts="" phone="">
+            <custom-property definition-id="tpc3" value="68.0"/>
             <custom-property definition-id="tpc1" value="38.0"/>
-            <custom-property definition-id="tpc2" value="25.0"/>
+            <custom-property definition-id="tpc2" value="30.0"/>
             <custom-property definition-id="tpc0" value="Laurent"/>
         </resource>
         <resource id="3" name="Richard" function="3" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="27.0"/>
-            <custom-property definition-id="tpc2" value="25.0"/>
+            <custom-property definition-id="tpc3" value="65.0"/>
+            <custom-property definition-id="tpc1" value="35.0"/>
+            <custom-property definition-id="tpc2" value="30.0"/>
             <custom-property definition-id="tpc0" value="Thomas"/>
         </resource>
         <resource id="4" name="Vienne" function="2" contacts="" phone="">
-            <custom-property definition-id="tpc1" value="30.0"/>
-            <custom-property definition-id="tpc2" value="25.0"/>
+            <custom-property definition-id="tpc3" value="63.0"/>
+            <custom-property definition-id="tpc1" value="33.0"/>
+            <custom-property definition-id="tpc2" value="30.0"/>
             <custom-property definition-id="tpc0" value="Geoffrey"/>
         </resource>
         <resource id="5" name="Barbe" function="5" contacts="" phone="">
+            <custom-property definition-id="tpc3" value="10.0"/>
             <custom-property definition-id="tpc1" value="5.0"/>
             <custom-property definition-id="tpc2" value="5.0"/>
             <custom-property definition-id="tpc0" value="Baptiste"/>
