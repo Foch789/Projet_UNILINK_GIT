@@ -6,7 +6,7 @@ if(isset($_POST['valide']))
 
   try {
       $requete = $PDO_BDD -> prepare("Select nom_etu, prenom_etu, intitule_comp from etudiant natural join competence where intitule_comp=:comp");
-      $requete->execute(array('comp'=>$valide));
+      $requete->execute(array('comp'=>$form));
   } catch (Exception $e) {
       die('Erreur'.$e->getMessage().'</br>');
   }
