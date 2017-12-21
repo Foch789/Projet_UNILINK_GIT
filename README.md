@@ -1,8 +1,6 @@
 # Projet_UNILINK_GIT
 Réseau social UNILINK
 
-Lien du site : http://laurent.alwaysdata.net/PTUT/
-
 ftp-laurent.alwaysdata.net
 
 laurent_alexandra

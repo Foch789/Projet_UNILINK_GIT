@@ -17,17 +17,10 @@
 
     require_once("application/modules/".$current_page.".inc.php");
 
-    $tpl_dir = "application/views/";
-    $tpl = 'modules/'.$current_page.".tpl";
-    if (file_exists("$tpl_dir"."$tpl")) {
-        $smarty = new Smarty();
-        $smarty->caching = 0;
-        $smarty->setTemplateDir($tpl_dir);
-        
-        $data["is_connected"] = isset($_SESSION['prenom']);
-        
-        foreach ($data as $key => $value) {
-            $smarty->assign($key, $value);
-        }
-        $smarty->display($tpl);
+    $smarty = new Smarty();
+    $smarty->caching = 0;
+    $smarty->setTemplateDir('application/views/');
+    foreach ($data as $key => $value) {
+        $smarty->assign($key, $value);
     }
+    $smarty->display("modules/".$current_page.".tpl");

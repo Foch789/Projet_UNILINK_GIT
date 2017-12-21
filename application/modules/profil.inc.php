@@ -11,12 +11,3 @@
 //
 // $Etu = $Req_prepare->fetch(PDO::FETCH_NUM);
 // echo '<h3>'.$Etu[0].' '.$Etu[1].'</h3>';
-
-session_start();
-
-if (!isset($_SESSION['prenom'])) {
-    header('Location:?page=accueil');
-} else {
-    $data['prenom'] = $_SESSION['prenom'];
-    $data['nom'] = $_SESSION['nom'];
-}

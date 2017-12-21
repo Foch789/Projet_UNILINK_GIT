@@ -1,4 +1,5 @@
 {extends file="../layout.tpl"}
+
 {block name= "css"}
 	<link rel="stylesheet" href="asset/css/styleco.css"/>
 {/block}
@@ -30,21 +31,21 @@
 
 		<div>
 			<label for="email">E-mail :</label>
-			<input type="email" name="user_mail" required>
+			<input type="text" id="email" name="user_name" required>
 		</div>
 
 		<div>
 			<label for="mdp">Mot de passe :</label>
-			<input type="password" name="mdp" required>
+			<input type="password" id="mdp" name="mdp" required>
 		</div>
 
 		<div>
 			<label for="mdpc">Confirmation:</label>
-			<input type="password" name="cmdp" required>
+			<input type="password" id="mdpc" name="mdpc" required>
 		</div>
 
 		<div class="button">
-			<button type="submit" name="inscrit"><b>Envoyer</b></button>
+			<button type="submit"><b>Envoyer</b></button>
 		</div>
 
 	</form>

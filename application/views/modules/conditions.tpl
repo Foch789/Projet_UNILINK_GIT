@@ -1,4 +1,5 @@
 {extends file="../layout.tpl"}
+
 {block name= "css"}
 <link rel="stylesheet" href="asset/css/style2.css"/>
 {/block}
