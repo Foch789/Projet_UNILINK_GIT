@@ -1,4 +1,5 @@
 /*****CSS pour la page de condition, a propos, recherche ***************/
+
 /*****PAGE********************************************/
 
 body {
@@ -71,8 +72,10 @@ ul {
 
 }
 
-li {
-    float: right;
+.co li {
+  float: right;
+
+
 }
 
 li img{
@@ -88,6 +91,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+
 
 /**********MENU DANS PROFIL***************/
 .coter {
@@ -114,8 +118,6 @@ li a {
 
 
 
-
-
 /*****FOOTER*********************************************/
 .foot
 {
@@ -123,6 +125,10 @@ li a {
 	position: absolute;
 	width:100%;
 	background-color: rgb(41, 137, 245);
+
+}
+.foot li{
+  float: right;
 }
 
 

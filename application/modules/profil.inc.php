@@ -14,8 +14,9 @@
 
 session_start();
 
-if (!isset($_SESSION['monlogin'])) {
+if (!isset($_SESSION['prenom'])) {
     header('Location:?page=accueil');
 } else {
-    $data['monlogin'] = $_SESSION['monlogin'];
+    $data['prenom'] = $_SESSION['prenom'];
+    $data['nom'] = $_SESSION['nom'];
 }

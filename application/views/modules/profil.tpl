@@ -8,12 +8,11 @@
 <div class="page">
 <div class="coter">
 
-<p>Salut {$monlogin}</p>
-
 <a href='?page=logout'>FIN</a>
 
-<h1> Nom </h1>
-<h2>Prénom</h2>
+
+<h1> {$nom} </h1>
+<h2> {$prenom} </h2>
 
 	<ul>
 		<li ><a href="#"><b>Personne qui ont besoin de toi </b></a></li>

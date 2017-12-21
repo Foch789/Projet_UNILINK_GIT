@@ -23,6 +23,9 @@
         $smarty = new Smarty();
         $smarty->caching = 0;
         $smarty->setTemplateDir($tpl_dir);
+        
+        $data["is_connected"] = isset($_SESSION['prenom']);
+        
         foreach ($data as $key => $value) {
             $smarty->assign($key, $value);
         }
