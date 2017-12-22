@@ -3,7 +3,7 @@
 /*****PAGE********************************************/
 
 body {
-    background-image: url("../img/bg_PT.png");
+  background-image: url("../img/bg_PT.png");
 	background-position: bottom left;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -100,7 +100,7 @@ li a {
     float: left;
     color: white;
     text-align: left;
-  
+
 }
 
 .coter h1 ,.coter h2

@@ -27,14 +27,11 @@ body {
 .containment h1
 {
 font-size:100px;
-
-
-
 }
 
 /*****HEADER*****/
 
-header .header co
+header .header .co
 {
 	text-align:center;
 	position:fixed;
@@ -55,8 +52,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-
-
 
 }
 
