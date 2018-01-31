@@ -1,7 +1,7 @@
-{extends file="../layout.tpl"}
+{extends file="../master.tpl"}
 
 {block name= "css"}
-	<link rel="stylesheet" href="asset/css/styleco.css"/>
+	<link rel="stylesheet" href="{base_url('asset/css/styleco.css')}"/>
 {/block}
 
 {block name="body"}

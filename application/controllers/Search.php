@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Profile extends CI_Controller
+class Search extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct('profil');
+        parent::__construct('search');
     }
 
     public function index()
     {
-        $this->parser->parse('body/profil.tpl');
+        $this->parser->parse('body/recherche.tpl');
     }
 }

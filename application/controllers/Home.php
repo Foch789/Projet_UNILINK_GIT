@@ -12,4 +12,14 @@ class Home extends CI_Controller
     {
         $this->parser->parse('body/accueil.tpl');
     }
+
+    public function about()
+    {
+        $this->parser->parse('body/a_propos.tpl');
+    }
+
+    public function condition()
+    {
+        $this->parser->parse('body/conditions.tpl');
+    }
 }

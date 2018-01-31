@@ -1,8 +1,8 @@
 {extends file="../master.tpl"}
 
-{*{block name= "css"}
-	<link rel="stylesheet" href="asset/css/styleco.css"/>
-{/block}*}
+{block name= "css"}
+	<link rel="stylesheet" href="{base_url('asset/css/styleco.css')}"/>
+{/block}
 
 {block name="body"}
 
@@ -21,7 +21,7 @@
 			<label for="mdp">Mot de passe :</label>    
 			<input type="password"  name="user_mdp">   </div>
 		<div>
-			<a href="?page=inscription">Pas inscrit ?</a>
+			<a href="{site_url('Inscription')}">Pas inscrit ?</a>
 		</div>
 		<div class="button">
 			<button type="submit" name="form_connexion"><b>Envoyer</b></button>
