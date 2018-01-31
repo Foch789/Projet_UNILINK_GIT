@@ -6,12 +6,10 @@ class Connection extends CI_Controller
     public function __construct()
     {
         parent::__construct('connection');
-        $this->load->library('parser');
     }
 
     public function index()
     {
-        //$this->load->view('body/connexion.tpl');
         $this->parser->parse('body/connexion.tpl');
     }
 }
