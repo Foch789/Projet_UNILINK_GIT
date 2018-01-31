@@ -1,26 +1,18 @@
 # Projet_UNILINK_GIT
-Réseau social UNILINK
+Réseau social UNILINK : http://laurent.alwaysdata.net/Unilink/
 
-ftp-laurent.alwaysdata.net
+#Branche master
 
-laurent_alexandra
-mdp : lol
+Pour revenir sur la branche Proto (la branche secondaire) faites : git checkout Proto
 
-laurent_alexandre
-mdp : lol
+#Job
 
-laurent_thomas
-mdp : lol
+PHP CodeIgniter: Laurent / Thomas
 
-laurent_geoffrey
-mdp : lol
+PHP Smarty: Laurent / Thomas / Alexandra
 
-laurent_baptiste
-mdp : lol
+CSS: Alexandra
 
-pour la BDD
+BDD : Alexandre
 
-mysql-laurent.alwaysdata.net
-
-laurent_alex
-lol
+Gantt et réalisation du diapo: Geoffrey
