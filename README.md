@@ -17,16 +17,3 @@ CSS: Alexandra
 BDD : Alexandre
 
 Gantt et réalisation du diapo: Geoffrey
-
-#Connexion
-
-Pour le site:
-ftp-laurent.alwaysdata.net
-
-laurent_PUnilink
-mdp: lol
-
-Pour la BDD:
-mysql-laurent.alwaysdata.net
-laurent_punilink
-mdp: lol
