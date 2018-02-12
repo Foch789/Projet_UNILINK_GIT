@@ -13,7 +13,7 @@
 
 	<form action="" class="formulaire">
 		<input class="champ" type="text" value="Recherche..." />
-		<input class="image" type="image" src="asset/img/magnifier.png " />
+		<input class="image" type="image" src="{base_url('asset/img/magnifier.png')} " />
 	</form>
 
 </div>
