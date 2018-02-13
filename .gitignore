@@ -1,2 +1,4 @@
 templates_c
 .vs
+
+application/config/config.php
