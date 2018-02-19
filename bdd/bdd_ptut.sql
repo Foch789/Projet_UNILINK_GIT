@@ -17,7 +17,7 @@ Create table etudiant
 	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo)
 );
 
-Create table competence #rajouter promo pour chaque competence: INFO2, MMI1, etc...
+Create table competence
 (
 	id_comp serial primary key,
 	intitule_comp varchar(100)
@@ -89,4 +89,3 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (2,1,9),(3,6,2),(4,2,5),(5,8,2),(4,3,4),(4,9,1),(1,2,3),(1,3,10),
 (4,7,2),(1,2,7),(2,10,2),(1,1,7),(1,4,3),(4,1,2),(2,7,10),(3,2,1),
 (4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5);
-

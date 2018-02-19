@@ -7,7 +7,7 @@ class Etudiant_model extends BDD_models
 {
     public function __construct()
     {
-        parent::__construct("etudiant", array("id" => "id_etudiant", "nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant", "email" => "email","mdp" => "mdp", "description" => "description", "id_promo" => "id_promo"));
+        parent::__construct("etudiant", array("id" => "id_etu", "nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant_etu", "email" => "email_etu","mdp" => "mdp_etu", "description" => "desc_etu", "id_promo" => "id_promo"));
     }
 
     public function get_connexion($login, $mdp)
