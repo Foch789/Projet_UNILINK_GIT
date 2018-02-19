@@ -26,10 +26,10 @@
 			<label for="Promos">Promos:</label>
 			<SELECT name="id_promo" placeholder=" Promos" required>
 							<OPTION> None
-							<option value="0"> MMI 1</option>
-							<option value="1"> MMI 2</option>
-							<option value="2"> INFO 1</option>
-							<option value="3"> INFO 2</option>
+							<option value="1"> INFO 1</option>
+							<option value="2"> INFO 2</option>
+							<option value="3"> MMI 1</option>
+							<option value="4"> MMI 2</option>
 					</SELECT>
 		</div>
 

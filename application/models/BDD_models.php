@@ -50,7 +50,7 @@ abstract class BDD_models extends CI_Model
         $d = array();
 
         foreach ($data as $key => $value) {
-            $d[$this->table.'.'.$key] = $value;
+            $d[$key] = $value;
         }
 
         foreach ($d as $key => $element) {
