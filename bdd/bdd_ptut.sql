@@ -14,8 +14,7 @@ Create table etudiant
 	mdp_etu varchar(20),
 	desc_etu text,
 	id_promo int,
-	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo),
-	constraint FK_AIDE foreign key (aidant_etu) references etudiant(id_etu)
+	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo)
 );
 
 Create table competence
