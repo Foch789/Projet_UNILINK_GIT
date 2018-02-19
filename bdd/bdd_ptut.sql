@@ -9,16 +9,16 @@ Create table etudiant
 	id_etudiant int primary key,
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
-	aidant int,
+	aidant int default NULL,
 	email varchar(50),
 	mdp varchar(20),
-	description text,
+	description text default NULL,
 	id_promo int,
 	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo),
 	constraint FK_AIDE foreign key (aidant) references etudiant(id_etudiant)
 );
 
-Create table competence
+Create table competence #rajouter promo pour chaque competence: INFO2, MMI1, etc...
 (
 	id_comp int primary key,
 	intitule_comp varchar(100)
@@ -29,6 +29,7 @@ Create table niveau
 	niveau int,
 	id_etudiant int,
 	id_comp int,
+	constraint PK_NIV primary key (id_etudiant, id_comp),
 	constraint FK_ETU_NIV foreign key (id_etudiant) references etudiant(id_etudiant),
 	constraint FK_COMP_NIV foreign key (id_comp) references competence(id_comp)
 );
@@ -41,6 +42,7 @@ Create table aide
 	accepter boolean,
 	id_etudiant int,
 	id_comp int,
+	constraint PK_AIDE primary key (aidant, id_etudiant, id_comp),
 	constraint FK_ETU_AIDE foreign  key (id_etudiant) references etudiant(id_etudiant),
 	constraint FK_COMP_AIDE foreign key (id_comp) references competence(id_comp)
 );

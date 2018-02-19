@@ -6,6 +6,7 @@ class Inscription extends CI_Controller
     public function __construct()
     {
         parent::__construct('inscription');
+        $this->load->model('Etudiant_model');
     }
 
     public function index()
@@ -18,27 +19,22 @@ class Inscription extends CI_Controller
 
             $rules = array(
                 array(
-                        'field' => 'nom',
+                        'field' => 'nom_etu',
                         'label' => 'Nom',
                         'rules' => 'required'
                 ),
                 array(
-                        'field' => 'prenom',
+                        'field' => 'prenom_etu',
                         'label' => 'Prenom',
                         'rules' => 'required'
                 ),
                 array(
-                        'field' => 'promos',
+                        'field' => 'id_promo',
                         'label' => 'Promos',
                         'rules' => 'required'
                 ),
                 array(
-                        'field' => 'user_email',
-                        'label' => 'Email',
-                        'rules' => 'required'
-                ),
-                array(
-                        'field' => 'user_email',
+                        'field' => 'email',
                         'label' => 'Email',
                         'rules' => 'required'
                 ),
@@ -57,11 +53,16 @@ class Inscription extends CI_Controller
             $this->form_validation->set_rules($rules);
 
             if ($this->form_validation->run()) {
-                if ($_POST['user_email'] == "laurentdoiteau@free.fr") {
-                    redirect('Connection');
+                if ($this->Etudiant_model->email_exist($this->input->post('email'))) {
+                    if ($this->input->post('mdp') === $this->input->post('mdpc')) {
+                        $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email' => $this->input->post('email'),'mdp' => $this->input->post('mdp'),'id_promo' => $this->input->post('id_promo'));
+                        $this->Etudiant_model->ajout_etudiant($etudiant);
+                        redirect('Connection');
+                    } else {
+                        echo "Erreur de mot de passe !";
+                    }
                 } else {
-                    //$data['errors'] = array('Identifiant ou mot de passe incorrect.');
-                    echo "Identifiant ou mot de passe incorrect.";
+                    echo "Il y a quelqu'un !";
                 }
             } else {
                 //$data['errors'] = $this->form_validation->error_array();
