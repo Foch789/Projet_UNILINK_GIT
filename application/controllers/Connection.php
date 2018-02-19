@@ -34,7 +34,6 @@ class Connection extends CI_Controller
 
             if ($this->form_validation->run()) {
                 if ($_POST['user_email'] == "laurentdoiteau@free.fr") {
-                    redirect('Profile');
                 } else {
                     //$data['errors'] = array('Identifiant ou mot de passe incorrect.');
                     echo "Identifiant ou mot de passe incorrect.";

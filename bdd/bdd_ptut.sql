@@ -3,7 +3,7 @@ Create table promo
 	id_promo serial primary key,
 	intitule_promo varchar(10)
 );
-	
+
 Create table etudiant
 (
 	id_etu serial primary key,
@@ -18,7 +18,7 @@ Create table etudiant
 	constraint FK_AIDE foreign key (aidant_etu) references etudiant(id_etu)
 );
 
-Create table competence
+Create table competence #rajouter promo pour chaque competence: INFO2, MMI1, etc...
 (
 	id_comp serial primary key,
 	intitule_comp varchar(100)
