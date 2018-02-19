@@ -9,13 +9,12 @@ Create table etudiant
 	id_etu serial primary key,
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
-	aidant_etu boolean,
+	aidant_etu boolean default false,
 	email_etu varchar(50),
 	mdp_etu varchar(20),
 	desc_etu text,
 	id_promo int,
-	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo),
-	constraint FK_AIDE foreign key (aidant_etu) references etudiant(id_etu)
+	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo)
 );
 
 Create table competence #rajouter promo pour chaque competence: INFO2, MMI1, etc...
