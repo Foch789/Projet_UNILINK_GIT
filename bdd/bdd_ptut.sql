@@ -9,7 +9,7 @@ Create table etudiant
 	id_etu serial primary key,
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
-	aidant_etu int,
+	aidant_etu boolean,
 	email_etu varchar(50),
 	mdp_etu varchar(20),
 	desc_etu text,
@@ -71,15 +71,15 @@ values ('INFO1'),
 
 INSERT INTO etudiant(nom_etu,prenom_etu,aidant_etu,email_etu,mdp_etu,desc_etu,id_promo)
 VALUES ('Mccormick','Hiram',DEFAULT,'pretium.aliquet@feugiat.com','X5J5D79hkZ8sL726w','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur',3),
-('Cash','Bethany',1,'libero.Donec.consectetuer@elitCurabitursed.co.uk','D1V0f46wTH9FI016K','Lorem ipsum dolor sit amet, consectetuer',4),
-('Chang','Alika',1,'accumsan.interdum@sit.org','H9t2o24WGN5KQ375k','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu',2),
-('Shaffer','Elvis',1,'tempor.diam.dictum@dapibus.co.uk','g6y4R07ukW8kG511O','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.',4),
-('Barnett','Ulric',1,'quis.lectus.Nullam@nonenimcommodo.ca','b2z7I96HjT0NL721e','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam',3),
-('Collier','Connor',1,'eget.mollis.lectus@Mauris.co.uk','a6s0w30olt7qs069a','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec',2),
-('Morrow','Montana',1,'ullamcorper.eu@sollicitudin.co.uk','P0n2V15IyQ9hT240G','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',2),
-('Moon','Lavinia',1,'per.inceptos.hymenaeos@sollicitudin.org','h5T7s50XNG7mq867n','Lorem ipsum dolor sit amet, consectetuer adipiscing',2),
-('Reese','Matthew',1,'malesuada.fringilla.est@lacusvarius.net','E2J6l60UnV5ph891E','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',1),
-('Carter','Kimberly',1,'erat.eget.tincidunt@in.edu','I2m0I45Gla4xy598x','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer',2);
+('Cash','Bethany',true,'libero.Donec.consectetuer@elitCurabitursed.co.uk','D1V0f46wTH9FI016K','Lorem ipsum dolor sit amet, consectetuer',4),
+('Chang','Alika',true,'accumsan.interdum@sit.org','H9t2o24WGN5KQ375k','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu',2),
+('Shaffer','Elvis',true,'tempor.diam.dictum@dapibus.co.uk','g6y4R07ukW8kG511O','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor.',4),
+('Barnett','Ulric',true,'quis.lectus.Nullam@nonenimcommodo.ca','b2z7I96HjT0NL721e','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam',3),
+('Collier','Connor',true,'eget.mollis.lectus@Mauris.co.uk','a6s0w30olt7qs069a','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec',2),
+('Morrow','Montana',true,'ullamcorper.eu@sollicitudin.co.uk','P0n2V15IyQ9hT240G','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',2),
+('Moon','Lavinia',true,'per.inceptos.hymenaeos@sollicitudin.org','h5T7s50XNG7mq867n','Lorem ipsum dolor sit amet, consectetuer adipiscing',2),
+('Reese','Matthew',true,'malesuada.fringilla.est@lacusvarius.net','E2J6l60UnV5ph891E','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',1),
+('Carter','Kimberly',true,'erat.eget.tincidunt@in.edu','I2m0I45Gla4xy598x','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer',2);
 
 
 INSERT INTO niveau(niveau,id_etu,id_comp)
