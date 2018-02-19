@@ -9,7 +9,7 @@ Create table etudiant
 	id_etu serial primary key,
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
-	aidant_etu boolean,
+	aidant_etu boolean default false,
 	email_etu varchar(50),
 	mdp_etu varchar(20),
 	desc_etu text,
