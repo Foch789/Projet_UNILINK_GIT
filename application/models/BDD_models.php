@@ -60,19 +60,6 @@ abstract class BDD_models extends CI_Model
         return $d;
     }
 
-    /*public function is_exist($id)
-    {
-        $this->db->select($this->colonne['id']);
-        $this->db->from($this->table);
-        $this->db->where($this->colonne['id'], $id);
-        $resultat = $this->db->get();
-
-        if ($resultat->num_rows() > 1) {
-            show_error('id is not unique.');
-        }
-        return $resultat->num_rows() === 1;
-    }*/
-
     /*public function update($id, $ligne)
     {
     }*/

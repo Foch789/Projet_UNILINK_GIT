@@ -11,7 +11,7 @@ Create table etudiant
 	prenom_etu varchar(20),
 	aidant_etu boolean default false,
 	email_etu varchar(50),
-	mdp_etu varchar(20),
+	mdp_etu varchar(150),
 	desc_etu text,
 	id_promo int,
 	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo)

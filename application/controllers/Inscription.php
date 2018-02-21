@@ -15,6 +15,7 @@ class Inscription extends CI_Controller
 
         if (isset($_POST['form_inscription'])) {
             $this->load->library('form_validation');
+            $this->load->library('encrypt');
             $this->load->helper('url');
 
             $rules = array(
@@ -53,9 +54,9 @@ class Inscription extends CI_Controller
             $this->form_validation->set_rules($rules);
 
             if ($this->form_validation->run()) {
-                if ($this->Etudiant_model->email_exist($this->input->post('email'))) {
+                if (!$this->Etudiant_model->email_exist($this->input->post('email'))) {
                     if ($this->input->post('mdp') === $this->input->post('mdpc')) {
-                        $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email_etu' => $this->input->post('email'),'mdp_etu' => $this->input->post('mdp'),'id_promo' => $this->input->post('id_promo'));
+                        $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email_etu' => $this->input->post('email'),'mdp_etu' => $this->encrypt->encode($this->input->post('mdp')),'id_promo' => $this->input->post('id_promo'));
                         $this->Etudiant_model->ajout_etudiant($etudiant);
                         redirect('Connection');
                     } else {
@@ -65,7 +66,6 @@ class Inscription extends CI_Controller
                     echo "Il y a quelqu'un !";
                 }
             } else {
-                //$data['errors'] = $this->form_validation->error_array();
                 echo "PAS REMPLIE";
             }
         }

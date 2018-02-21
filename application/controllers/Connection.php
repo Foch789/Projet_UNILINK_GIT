@@ -6,15 +6,16 @@ class Connection extends CI_Controller
     public function __construct()
     {
         parent::__construct('connection');
+        $this->load->model('Etudiant_model');
     }
 
     public function index()
     {
         $data = &$this->data;
-        //$this->load->helper('form');
 
         if (isset($_POST['form_connexion'])) {
             $this->load->library('form_validation');
+            $this->load->library('encrypt');
             $this->load->helper('url');
 
             $rules = array(
@@ -33,10 +34,15 @@ class Connection extends CI_Controller
             $this->form_validation->set_rules($rules);
 
             if ($this->form_validation->run()) {
-                if ($_POST['user_email'] == "laurentdoiteau@free.fr") {
-                } else {
-                    //$data['errors'] = array('Identifiant ou mot de passe incorrect.');
-                    echo "Identifiant ou mot de passe incorrect.";
+                $id_user = $this->Etudiant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
+                if ($id_user !== false) {
+                    $this->load->library('session');
+                    $etudiant = $this->Etudiant_model->get_etudiant($id_user);
+
+                    $_SESSION['id'] = $etudiant['id_etu'];
+                    $_SESSION['logged_in'] = true;
+
+                    redirect("Profile/view/".$id_user."");
                 }
             } else {
                 //$data['errors'] = $this->form_validation->error_array();
