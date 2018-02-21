@@ -7,16 +7,11 @@ class Home extends CI_Controller
     {
         parent::__construct('home');
         $this->load->library('smarty');
-        //$this->load->library('session');
-        session_start();
         $smarty = new Smarty();
     }
 
     public function index()
     {
-        $data = &$this->data;
-
-        $this->smarty->assign('data', $data);
         $this->smarty->display('body/accueil.tpl');
     }
 
@@ -27,7 +22,6 @@ class Home extends CI_Controller
 
     public function condition()
     {
-        //  $this->smarty->assign('data', $data);
         $this->smarty->display('body/conditions.tpl');
     }
 }

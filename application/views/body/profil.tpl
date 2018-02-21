@@ -9,9 +9,9 @@
 
 <div class="page">
 <div class="coter">
-	{if $data['user_id_co'] === $data['id']}
+	{* {if $data['user_id_co'] === $data['id']}
 		<h1>Oui c'est toi !!!!!</h1>
-	{/if}
+	{/if} *}
 <h1>{$data['nom']} </h1>
 <h2>{$data['prenom']} </h2>
 

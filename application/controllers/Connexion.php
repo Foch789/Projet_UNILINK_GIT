@@ -39,8 +39,8 @@ class Connexion extends CI_Controller
                     $this->load->library('session');
                     $etudiant = $this->Etudiant_model->get_etudiant($id_user);
 
-                    $data['id'] = $etudiant['id_etu'];
-                    $data['logged_in'] = true;
+                    $_SESSION['id'] = $etudiant['id_etu'];
+                    $_SESSION['logged_in'] = true;
 
                     redirect("Profil/view/".$id_user."");
                 }
@@ -51,12 +51,5 @@ class Connexion extends CI_Controller
         }
         $this->smarty->assign('data', $data);
         $this->smarty->display('body/connexion.tpl');
-    }
-
-    public function deconnexion()
-    {
-        $this->load->library('session');
-        $this->session->sess_destroy();
-        redirect("Home");
     }
 }
