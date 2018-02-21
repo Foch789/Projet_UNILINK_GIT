@@ -13,7 +13,7 @@
 		<h1>Unilink </h1>
 		<h2>RÉSEAU SOCIAL DE L’UNIVERSITÉ D'AIX-MARSEILLE</h2>
 
-		<a href= "{site_url('Search')}" id="icon"><img src="{base_url('asset/img/chevron-arrow-down.png')}"/></a>
+		<a href= "{site_url('Recherche')}" id="icon"><img src="{base_url('asset/img/chevron-arrow-down.png')}"/></a>
 
 	</div>
 

@@ -12,8 +12,8 @@
 	<h2>Trouvez le parmi nos étudiants</h2>
 
 	<form action="" class="formulaire">
-		<input class="champ" type="text" value="Recherche..." />
-		<input class="image" type="image" src="{base_url('asset/img/magnifier.png')} " />
+		<input class="champ" type="text" id="search" value="Recherche..." />
+		<input class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/>
 	</form>
 
 </div>

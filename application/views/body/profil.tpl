@@ -9,8 +9,13 @@
 
 <div class="page">
 <div class="coter">
-<h1>{$nom} </h1>
-<h2>{$prenom} </h2>
+	{if $data['user_id_co'] === $data['id']}
+		<h1>Oui c'est toi !!!!!</h1>
+	{/if}
+<h1>{$data['nom']} </h1>
+<h2>{$data['prenom']} </h2>
+
+
 
 	<ul>
 		<li ><a href="#"><b>Personne qui ont besoin de toi </b></a></li>

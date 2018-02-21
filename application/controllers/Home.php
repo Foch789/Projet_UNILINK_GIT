@@ -5,21 +5,29 @@ class Home extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('home');
+        $this->load->library('smarty');
+        //$this->load->library('session');
+        session_start();
+        $smarty = new Smarty();
     }
 
     public function index()
     {
-        $this->parser->parse('body/accueil.tpl');
+        $data = &$this->data;
+
+        $this->smarty->assign('data', $data);
+        $this->smarty->display('body/accueil.tpl');
     }
 
     public function about()
     {
-        $this->parser->parse('body/a_propos.tpl');
+        $this->smarty->display('body/a_propos.tpl');
     }
 
     public function condition()
     {
-        $this->parser->parse('body/conditions.tpl');
+        //  $this->smarty->assign('data', $data);
+        $this->smarty->display('body/conditions.tpl');
     }
 }

@@ -13,7 +13,7 @@ class Inscription extends CI_Controller
     {
         $data = &$this->data;
 
-        if (isset($_POST['form_inscription'])) {
+        if ($this->input->post('form_inscription') !== null) {
             $this->load->library('form_validation');
             $this->load->library('encrypt');
             $this->load->helper('url');
@@ -70,6 +70,6 @@ class Inscription extends CI_Controller
             }
         }
 
-        $this->parser->parse('body/inscription.tpl');
+        $this->parser->display('body/inscription.tpl');
     }
 }

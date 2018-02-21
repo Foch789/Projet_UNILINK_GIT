@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Profile extends CI_Controller
+class Profil extends CI_Controller
 {
     public function __construct()
     {
@@ -27,14 +27,15 @@ class Profile extends CI_Controller
         $user = $this->session->get_userdata();
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
+                $data['user_id_co'] = $user['id'];
                 $data['logged_in'] = true;
             }
         }
-
-        $this->parser->parse('body/profil.tpl', $data);
+        $this->smarty->assign('data', $data);
+        $this->smarty->display('body/profil.tpl');
     }
 
-    public function deconnexion($id)
+    public function deconnexion()
     {
         $this->load->library('session');
         $this->session->sess_destroy();

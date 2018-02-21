@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Connection extends CI_Controller
+class Connexion extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct('connection');
+        parent::__construct('connexion');
         $this->load->model('Etudiant_model');
     }
 
@@ -13,7 +13,7 @@ class Connection extends CI_Controller
     {
         $data = &$this->data;
 
-        if (isset($_POST['form_connexion'])) {
+        if ($this->input->post('form_connexion') !== null) {
             $this->load->library('form_validation');
             $this->load->library('encrypt');
             $this->load->helper('url');
@@ -39,16 +39,24 @@ class Connection extends CI_Controller
                     $this->load->library('session');
                     $etudiant = $this->Etudiant_model->get_etudiant($id_user);
 
-                    $_SESSION['id'] = $etudiant['id_etu'];
-                    $_SESSION['logged_in'] = true;
+                    $data['id'] = $etudiant['id_etu'];
+                    $data['logged_in'] = true;
 
-                    redirect("Profile/view/".$id_user."");
+                    redirect("Profil/view/".$id_user."");
                 }
             } else {
                 //$data['errors'] = $this->form_validation->error_array();
                 echo "PAS REMPLIE";
             }
         }
-        $this->parser->parse('body/connexion.tpl', $data);
+        $this->smarty->assign('data', $data);
+        $this->smarty->display('body/connexion.tpl');
+    }
+
+    public function deconnexion()
+    {
+        $this->load->library('session');
+        $this->session->sess_destroy();
+        redirect("Home");
     }
 }
