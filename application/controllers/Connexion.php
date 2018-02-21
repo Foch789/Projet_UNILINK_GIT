@@ -52,4 +52,11 @@ class Connexion extends CI_Controller
         $this->smarty->assign('data', $data);
         $this->smarty->display('body/connexion.tpl');
     }
+
+    public function deconnexion()
+    {
+        $this->load->library('session');
+        $this->session->sess_destroy();
+        redirect("Home");
+    }
 }

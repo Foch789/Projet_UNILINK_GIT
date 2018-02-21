@@ -9,12 +9,11 @@
 
 <div class="page">
 <div class="coter">
-	{* {if $data['user_id_co'] === $data['id']}
+{if $user_id_co === $id}
 		<h1>Oui c'est toi !!!!!</h1>
-	{/if} *}
-<h1>{$data['nom']} </h1>
-<h2>{$data['prenom']} </h2>
-
+{/if}
+<h1>{$nom} </h1>
+<h2>{$prenom} </h2>
 
 
 	<ul>
@@ -24,6 +23,8 @@
 		<li ><a href="#"><b>Personne dont tu a besoin</b></a></li>
 	</ul>
 </div>
+
+
 
 <div class="centre">
 

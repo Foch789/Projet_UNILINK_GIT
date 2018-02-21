@@ -1,7 +1,9 @@
 <ul  class= "co">
-		{if $data['logged_in'] == true}
-			{* <li><a href="{site_url('Profil/view/')}"><b>Mon profil</b></a></li> *}
-			<li><a href="{site_url('Profil/deconnexion')}"><b>Deconnexion</b></a></li>
+		{if $logged_in === true}
+			<li><a href="{site_url('Connexion/deconnexion')}"><b>Deconnexion</b></a></li>
+			{if $user_id_co != $id}
+				<li><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Mon profil</b></a></li>
+			{/if}
 		{else}
 			<li><a href="{site_url('Connexion')}"><b>Connexion</b></a></li>
 			<li><a href="{site_url('Inscription')}"><b>Inscription</b></a></li>

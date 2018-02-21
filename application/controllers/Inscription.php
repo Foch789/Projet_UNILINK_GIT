@@ -58,7 +58,7 @@ class Inscription extends CI_Controller
                     if ($this->input->post('mdp') === $this->input->post('mdpc')) {
                         $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email_etu' => $this->input->post('email'),'mdp_etu' => $this->encrypt->encode($this->input->post('mdp')),'id_promo' => $this->input->post('id_promo'));
                         $this->Etudiant_model->ajout_etudiant($etudiant);
-                        redirect('Connection');
+                        redirect('Connexion');
                     } else {
                         echo "Erreur de mot de passe !";
                     }
