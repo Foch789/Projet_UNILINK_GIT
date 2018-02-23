@@ -20,7 +20,7 @@ class Inscription extends CI_Controller
 
             $rules = array(
                 array(
-                        'field' => 'nom_etu',
+                        'field' => '',
                         'label' => 'Nom',
                         'rules' => 'required'
                 ),
