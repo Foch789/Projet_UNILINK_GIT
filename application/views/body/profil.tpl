@@ -9,7 +9,7 @@
 
 <div class="page">
 <div class="coter">
-	
+
 {if $user_id_co === $id}
 		<h1>Oui c'est toi !!!!!</h1>
 {/if}

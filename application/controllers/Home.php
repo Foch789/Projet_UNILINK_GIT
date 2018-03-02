@@ -26,8 +26,6 @@ class Home extends CI_Controller
         $data = &$this->data;
 
         $this->parser->parse('body/accueil.tpl', $data);
-        /*$this->smarty->assign('data', $data);
-        $this->smarty->display('body/accueil.tpl');*/
     }
 
     public function about()

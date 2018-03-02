@@ -41,4 +41,16 @@ class Niveau_model extends BDD_models
 
         return $fin;//row_array();
     }
+
+    public function ajout_competence($id_etu, $id_comp, $niveau)
+    {
+    }
+
+    public function modifier_competence($id_etu, $id_comp, $niveau)
+    {
+    }
+
+    public function supprimer_competence($id_etu, $id_comp)
+    {
+    }
 }

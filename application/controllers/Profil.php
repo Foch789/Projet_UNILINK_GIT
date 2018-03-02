@@ -7,7 +7,6 @@ class Profil extends CI_Controller
     {
         parent::__construct('profil');
         $this->load->model('Etudiant_model');
-        //$this->output->enable_profiler();
     }
 
     public function view($id)
@@ -34,5 +33,24 @@ class Profil extends CI_Controller
         }
 
         $this->parser->parse('body/profil.tpl', $data);
+    }
+
+    public function view_aidant()
+    {
+        $data = &$this->data;
+    }
+
+    public function view_aide()
+    {
+        $data = &$this->data;
+    }
+
+    public function view_besoin_de_toi()
+    {
+    }
+
+    public function view_personne_besoin()
+    {
+        $data = &$this->data;
     }
 }

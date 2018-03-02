@@ -9,7 +9,6 @@ class Recherche extends CI_Controller
         $this->load->library('session');
         $this->load->model('Etudiant_model');
         $this->load->model('Niveau_model');
-        //$this->output->enable_profiler();
 
         $data = &$this->data;
         $user = $this->session->get_userdata();
@@ -25,7 +24,6 @@ class Recherche extends CI_Controller
     public function index()
     {
         $data = &$this->data;
-        //  echo "lol";
 
         if ($this->input->post('form_recherche') !== null) {
             $this->load->library('form_validation');
