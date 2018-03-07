@@ -12,7 +12,7 @@ class Niveau_model extends BDD_models
 
     public function get_etudiant_niveau($id)
     {
-        $this->db->select('*');
+        $this->db->select('id_comp');
         $this->db->from($this->get_table());
         $this->db->where($this->get_colonne()['id_etu'], $id);
         $resultat = $this->db->get();
