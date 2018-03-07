@@ -37,20 +37,21 @@ class Profil extends CI_Controller
 
     public function view_aidant()
     {
-        $data = &$this->data;
+        $this->parser->parse('body/personne_q_t_aident.tpl', $data);
     }
 
     public function view_aide()
     {
-        $data = &$this->data;
+        $this->parser->parse('body/personne_q_tu_aide.tpl', $data);
     }
 
     public function view_besoin_de_toi()
     {
+        $this->parser->parse('body/personne_q_o_b_d_t.tpl', $data);
     }
 
     public function view_personne_besoin()
     {
-        $data = &$this->data;
+       $this->parser->parse('body/personne_dont_tu_as_besoin.tpl', $data);
     }
 }

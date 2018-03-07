@@ -36,7 +36,23 @@ text-align:center;
 
 }
 
+div .NomPersonne{
+    margin: 1px;
+    color:white;
+    font-size: 30px;
+    padding: 10px ;
+    
+}
 
+div .menuProfil li a 
+{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px ;
+    
+    
+}
 
 div {
 	text-align:center;
@@ -96,10 +112,11 @@ li a {
 /**********MENU DANS PROFIL***************/
 .coter {
     background-color: rgb(41, 137, 245);
-    display: block;
-    float: left;
-    color: white;
-    text-align: left;
+    position: absolute;
+   bottom: 10px;
+   top:55px;
+   left: 0;
+   width: 300px; /* A changer pour la largeur de ta barre */
 
 }
 

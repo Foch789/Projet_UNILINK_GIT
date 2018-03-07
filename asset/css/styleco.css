@@ -55,8 +55,8 @@ form {
   padding: 1em;
   background-color: rgb(255,255,255);
   border: 1px solid #CCC;
-  border-radius: 1em;
-  box-shadow: 5px 10px 5px rgba(0, 0, 0,0.3);
+  
+ 
 }
 
 form div + div {
@@ -83,10 +83,8 @@ input,select {
   width: 200px;
   -moz-box-sizing: border-box;
        box-sizing: border-box;
-/*coin arrondie  */
-	  border-radius:1em;
-  /*ombre sur la zone d'incersion */
-	  box-shadow: 5px 10px 5px rgba(0, 0, 0,0.3);
+
+ 
 
   /* Pour harmoniser l'apparence des bordures des champs textuels */
   border: 1px solid #999;
@@ -111,8 +109,7 @@ button {
   background-color:rgb(41, 137, 245);
   border-color:rgb(41, 137, 245);
   color:white;
-  border-radius:10px 10px 10px 10px;
-  box-shadow: 5px 10px 5px rgba(0, 0, 0,0.3);
+
 
 }
 
