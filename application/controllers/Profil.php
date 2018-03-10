@@ -123,4 +123,28 @@ class Profil extends CI_Controller
         $this->parser->parse('body/profil/besoin_aidant.tpl', $data);
 
     }
+     public function view_modif_comp()
+    {
+
+        //if() test si c'est lui
+        $data = &$this->data;
+
+        $user = $this->session->get_userdata();
+
+        if (isset($user['id'])) {
+            if ($user['logged_in'] === true) {
+                $data['user_id_co'] = $user['id'];
+                $data['logged_in'] = true;
+            }
+        }
+
+        //$this->load->model('Niveau_model');
+
+        //$resultat = $this->Niveau_model->get_etudiant_niveau($data['user_id_co']);
+
+        //$data["etudiants"] = $resultat;
+
+        $this->parser->parse('body/profil/modif_competence.tpl', $data);
+
+    }
 }

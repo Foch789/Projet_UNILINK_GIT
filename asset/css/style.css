@@ -2,32 +2,69 @@
 
 /*****PAGE*****/
 
+*{
+	margin:0;
+	padding:0;
+}
+
+body, html{
+	height:100%;
+}
+
+
 body {
     background-image: url("../img/bg_PG.png");
 	background-position:  center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	margin:0px;
-	height:100%;
-	text-align:center;
-	width: 100% ;
 	font-family:"trocchi",serif;
-
-
+	
+	
 }
 
-.containment
+
+ .containment 
 {
+	/* max-width:1280px;
 
-	font-size:25px;
-	font-family:"Trocchi",serif;
-	/*background-color:rgba(255, 255, 255,0.3);*/
+	min-height:100%;
+
+
+	position:relative;
+
+ */
+	padding-top:300px;
+
 }
+ 
+
 
 .containment h1
 {
+
 font-size:100px;
+text-align:center; 
+
 }
+
+.containment h2
+{
+font-size:30px;
+text-align:center; 
+
+}
+
+.containment img
+{
+	display:block; 
+	margin-left:auto;
+	margin-right:auto;
+	width:50px;
+
+}
+
+
+
 
 /*****HEADER*****/
 
@@ -81,6 +118,8 @@ li a {
 	position: absolute;
 	width:100%;
 	background-color: rgb(41, 137, 245);
+	
+	
 }
 /*****IS ACRIVE FOOTER ET HEADER*****/
 

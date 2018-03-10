@@ -1,20 +1,6 @@
 /*****CSS pour la page de condition, a propos, recherche ***************/
 
-/*****PAGE********************************************/
-
-body {
-  background-image: url("../img/bg_PT.png");
-	background-position: bottom left;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	margin:0px;
-	height:100%;
-	text-align:center;
-	width: 100% ;
-	font-family:"trocchi",serif;
-
-
-}
+/****Header *********************************************/
 header .header .co
 {
 	text-align:center;
@@ -25,55 +11,6 @@ header .header .co
 }
 
 
-
-
-div h1
-{
-
-font-size:50px;
-text-align:center;
-
-
-}
-
-div .NomPersonne{
-    margin: 1px;
-    color:white;
-    font-size: 30px;
-    padding: 10px ;
-    
-}
-
-div .menuProfil li a 
-{
-    margin-top: 20px;
-    text-align: left;
-    font-size: 20px;
-    padding: 10px ;
-    
-    
-}
-
-div {
-	text-align:center;
-	font-size:25px;
-
-}
-
-
-
-
-img
-{
-margin-top:0px;
-width: 60px;
-
-}
-
-
-
-
-/****header *********************************************/
 header{
 	background-color: rgb(41, 137, 245);
 
@@ -109,6 +46,62 @@ li a {
 }
 
 
+/*****PAGE********************************************/
+
+
+body {
+  background-image: url("../img/bg_PT.png");
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin:0px;
+	height:100%;
+	text-align:center;
+	width: 100% ;
+	font-family:"trocchi",serif;
+
+
+}
+
+
+/*    liste etudient dans recherche            */
+div .listeEtu a 
+{
+
+margin-left:10px;
+text-align:left;
+display: block;
+text-decoration: none;
+background-color: rgb(41, 137, 245);
+width:200px;
+color:white;
+padding:10px;
+
+}
+
+/*  Nom de l'etudient dans profil '*/
+
+
+div .NomPersonne{
+    margin: 1px;
+    color:white;
+    font-size: 30px;
+    padding: 10px ;
+    
+}
+
+div .menuProfil li a 
+{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 20px;
+    padding: 10px ;
+    
+    
+}
+
+
+
 /**********MENU DANS PROFIL***************/
 .coter {
     background-color: rgb(41, 137, 245);
@@ -120,16 +113,23 @@ li a {
 
 }
 
-.coter h1 ,.coter h2
+.coter h1 ,.coter h2, .coter ul li 
 {
   font-size: 80%;
   text-align: left;
 }
+
 .coter li{
 
     overflow: none ;
     font-size: 80%;
     text-align: left;
+
+}
+
+.centre h1{
+margin-left:300px;
+text-align:center;
 
 }
 
@@ -150,7 +150,7 @@ li a {
 
 
 /*****IS ACRIVE FOOTER ET HEADER*************************/
-.foot a:hover:not(.active), .header a:hover:not(.active) {
+.foot a:hover:not(.active), .header a:hover:not(.active), .menuProfil a:hover:not(.active){
     background-color: rgb(0, 117, 212);
 }
 
