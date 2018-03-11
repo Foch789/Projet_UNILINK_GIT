@@ -30,11 +30,11 @@
 
 	</form>
 
-
+	<div class="listeEtu">
 	 {foreach from=$etudiants item=$value key=$key}
 	 	<a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a></br>
 	{/foreach}
-
+	</div>
 </div>
 
 {/block}
