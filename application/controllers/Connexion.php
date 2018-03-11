@@ -37,7 +37,7 @@ class Connexion extends CI_Controller
 
             if ($this->form_validation->run()) {
                 $id_user = $this->Etudiant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
-                if (!is_string($id_user)) {
+                if (is_numeric($id_user)) {
                     $this->load->library('session');
                     $etudiant = $this->Etudiant_model->get_etudiant($id_user);
 
