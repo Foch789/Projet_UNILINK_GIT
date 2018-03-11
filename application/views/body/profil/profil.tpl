@@ -29,19 +29,12 @@
             <li ><a href="{site_url('Profil/view_besoin_aidant')}"><b>Personne dont tu a besoin</b></a></li>
         </ul>
     </div>
+    {/if}
 </div>
 
-{/if}
+
 
 <div class="centre">
-{if $user_id_co === $id}
-<form action="" method="post" class="mise">
-	<div class="button">
-		<button type="submit" name="mise"><b>Mise à jour</b></button>
-	</div>
-</form>
-
-{/if}
 
 </div>
 
