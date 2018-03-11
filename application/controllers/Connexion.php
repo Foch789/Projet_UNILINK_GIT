@@ -12,6 +12,8 @@ class Connexion extends CI_Controller
     public function index()
     {
         $data = &$this->data;
+        $this->load->helper('form');
+
 
         if ($this->input->post('form_connexion') !== null) {
             $this->load->library('form_validation');
@@ -35,7 +37,7 @@ class Connexion extends CI_Controller
 
             if ($this->form_validation->run()) {
                 $id_user = $this->Etudiant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
-                if ($id_user !== false) {
+                if (!is_string($id_user)) {
                     $this->load->library('session');
                     $etudiant = $this->Etudiant_model->get_etudiant($id_user);
 
@@ -43,14 +45,12 @@ class Connexion extends CI_Controller
                     $_SESSION['logged_in'] = true;
 
                     redirect("Profil/view/".$id_user."");
+                } else {
+                    $data['error'] = $id_user;
                 }
-            } else {
-                //$data['errors'] = $this->form_validation->error_array();
-                echo "PAS REMPLIE";
             }
         }
-        $this->smarty->assign('data', $data);
-        $this->smarty->display('body/connexion.tpl');
+        $this->parser->parse('body/connexion.tpl', $data);
     }
 
     public function deconnexion()

@@ -14,17 +14,17 @@
 
 		<div>
 			<label for="Nom">Nom:</label>    
-			<input type="text" name="nom_etu" placeholder=" Nom" required>
+			<input type="text" name="nom_etu" placeholder=" Nom" value="{'nom_etu'|set_value}" required>
 		</div>
 
 		<div>
 			<label for="Prenom">Prenom:</label>    
-			<input type="text" name="prenom_etu" placeholder=" Prenom" required>
+			<input type="text" name="prenom_etu" placeholder=" Prenom" value="{'prenom_etu'|set_value}" required>
 		</div>
 
 		<div>
 			<label for="Promos">Promos:</label>
-			<SELECT name="id_promo" placeholder=" Promos" required>
+			<SELECT name="id_promo" placeholder=" Promos" value="{'id_promo'|set_value}" required>
 							<OPTION> None
 							<option value="1"> INFO 1</option>
 							<option value="2"> INFO 2</option>
@@ -35,7 +35,7 @@
 
 		<div>
 			<label for="Email">E-mail :</label>
-			<input type="email" name="email" placeholder=" Email"required>
+			<input type="email" name="email" placeholder=" Email" value="{'email'|set_value}" required>
 		</div>
 
 		<div>
@@ -51,8 +51,16 @@
 		<div class="button">
 			<button type="submit" name="form_inscription"><b>Envoyer</b></button>
 		</div>
-
+		<input type="hidden" name="redirect" value="{'redirect'|set_value}">
 	</form>
+
+	{if not empty($errors)}
+
+        {foreach $errors as $error}
+        {$error}</br>
+        {/foreach}
+
+ {/if}
 
 </div>
 

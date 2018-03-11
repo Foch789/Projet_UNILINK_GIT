@@ -1,7 +1,7 @@
 templates_c
 .vs
 
-application/config/config.php
-
 .ftpconfig
 .ftpignore
+
+application/config/config.php
