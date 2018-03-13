@@ -7,7 +7,7 @@
 
 {block name="body"}
 
-<div class="page">
+
 <div class="coter">
     
 	<div class="NomPersonne">
@@ -25,13 +25,14 @@
 			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
 		</ul>
 	</div>
+	
 </div>
 
 
 
 <div class="centre">
 
-<h1>Personne qui t'aident</h1>
+		<h1>Personne qui t'aident</h1>
 
 </div>
 
@@ -40,6 +41,5 @@
 
 
 
-</div>
 
 {/block}

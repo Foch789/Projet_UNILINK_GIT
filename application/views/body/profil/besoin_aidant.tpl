@@ -7,19 +7,20 @@
 
 {block name="body"}
 
-<div class="page">
+
 <div class="coter">
 
-	<div class="NomPersonne">
+<div class="NomPersonne">
 
-		{if $user_id_co === $id}
-				<h1>Oui c'est toi !!!!!</h1>
-		{/if}
-		
-		<h1>{$nom} </h1>
-		<h2>{$prenom} </h2>
-		
-	</div>
+    {if $user_id_co === $id}
+            <h1>Oui c'est toi !!!!!</h1>
+    {/if}
+    
+    <h1>{$nom} </h1>
+    <h2>{$prenom} </h2>
+    
+</div>
+
 	<div class="menuProfil">
 		<ul>
 			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
@@ -44,6 +45,6 @@
 
 
 
-</div>
+
 
 {/block}

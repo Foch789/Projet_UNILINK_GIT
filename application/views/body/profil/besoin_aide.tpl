@@ -7,7 +7,7 @@
 
 {block name="body"}
 
-<div class="page">
+
 <div class="coter">
 
 	<div class="NomPersonne">
@@ -20,6 +20,7 @@
 		<h2>{$prenom} </h2>
 		
 	</div>
+
 	<div class="menuProfil">
 		<ul>
 			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
@@ -40,6 +41,5 @@
 
 
 
-</div>
 
 {/block}

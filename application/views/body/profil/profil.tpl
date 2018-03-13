@@ -23,18 +23,26 @@
     <div class="menuProfil">
     {if $user_id_co === $id}
         <ul>
-            <li ><a href="{site_url('Profil/view_besoin_aide')}"><b>Personne qui ont besoin de toi </b></a></li>
-            <li ><a href="{site_url('Profil/view_aide')}"><b>Personne que tu aide </b></a></li>
-            <li><a href="{site_url('Profil/view_aidant')}"><b>Personne qui t'aident </b></a></li>
-            <li ><a href="{site_url('Profil/view_besoin_aidant')}"><b>Personne dont tu a besoin</b></a></li>
+            <li ><a href="{site_url('Profil/view_modif_comp/')}{$user_id_co}"><b>Modifier ses compétences</b></a></li>
+            <li ><a href="{site_url('Profil/view_besoin_aide/')}{$user_id_co}"><b>Personne qui ont besoin de toi </b></a></li>
+            <li ><a href="{site_url('Profil/view_aide/')}{$user_id_co}"><b>Personne que tu aide </b></a></li>
+            <li><a href="{site_url('Profil/view_aidant/')}{$user_id_co}"><b>Personne qui t'aident </b></a></li>
+            <li ><a href="{site_url('Profil/view_besoin_aidant/')}{$user_id_co}"><b>Personne dont tu a besoin</b></a></li>
         </ul>
     </div>
-    {/if}
 </div>
 
-
+{/if}
 
 <div class="centre">
+{if $user_id_co === $id}
+<form action="" method="post" class="mise">
+	<div class="button">
+		<button type="submit" name="mise"><b>Mise à jour</b></button>
+	</div>
+</form>
+
+{/if}
 
 </div>
 

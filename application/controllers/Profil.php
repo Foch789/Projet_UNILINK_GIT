@@ -42,7 +42,7 @@ class Profil extends CI_Controller
         $this->parser->parse('body/profil/profil.tpl', $data);
     }
 
-    public function view_aidant()
+    public function view_aidant($id)
     {
 
         //if() test si c'est lui
@@ -58,10 +58,9 @@ class Profil extends CI_Controller
         }
 
         $this->parser->parse('body/profil/aidant.tpl', $data);
-
     }
 
-    public function view_aide()
+    public function view_aide($id)
     {
 
         //if() test si c'est lui
@@ -77,10 +76,9 @@ class Profil extends CI_Controller
         }
 
         $this->parser->parse('body/profil/aide.tpl', $data);
-
     }
 
-    public function view_besoin_aide()
+    public function view_besoin_aide($id)
     {
 
         //if() test si c'est lui
@@ -96,10 +94,9 @@ class Profil extends CI_Controller
         }
 
         $this->parser->parse('body/profil/besoin_aide.tpl', $data);
-
     }
 
-    public function view_besoin_aidant()
+    public function view_besoin_aidant($id)
     {
 
         //if() test si c'est lui
@@ -121,9 +118,8 @@ class Profil extends CI_Controller
         //$data["etudiants"] = $resultat;
 
         $this->parser->parse('body/profil/besoin_aidant.tpl', $data);
-
     }
-     public function view_modif_comp()
+    public function view_modif_comp($id)
     {
 
         //if() test si c'est lui
@@ -138,13 +134,10 @@ class Profil extends CI_Controller
             }
         }
 
-        //$this->load->model('Niveau_model');
+        $this->load->model('Competence_model');
 
-        //$resultat = $this->Niveau_model->get_etudiant_niveau($data['user_id_co']);
+        $data['comp'] = $this->Competence_model->getComp($id);
 
-        //$data["etudiants"] = $resultat;
-
-        $this->parser->parse('body/profil/modif_competence.tpl', $data);
-
+        $this->parser->parse('body/modif_competence.tpl', $data);
     }
 }
