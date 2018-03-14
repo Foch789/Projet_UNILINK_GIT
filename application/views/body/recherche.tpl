@@ -24,9 +24,8 @@
 			<input type="checkbox" name="PPP" value="9"> PPP
 			<input type="checkbox" name="Com" value="10"> Communication
 			{* <input name="recherche" alt="Recherche" class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/></br> *}
-			<div class="button">
-				<button type="submit" name="form_recherche"><b>Envoyer</b></button>
-			</div>
+			
+				<button class="buttonR" type="submit" name="form_recherche"><b>Envoyer</b></button>
 
 	</form>
 

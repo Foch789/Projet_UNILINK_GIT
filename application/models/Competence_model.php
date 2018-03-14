@@ -19,7 +19,7 @@ class Competence_model extends BDD_models
       foreach($foo->result_array() as $item){
         $resultat[] = $item;
       }
-      print_r($resultat);
+     
       return $resultat;
     }
 
