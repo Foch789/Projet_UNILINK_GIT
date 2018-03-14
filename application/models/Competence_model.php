@@ -10,7 +10,6 @@ class Competence_model extends BDD_models
         parent::__construct("competence", array("id" => "id_comp", "intitule" => "intitule_comp"));
     }
     // Retourne tous les noms de compétences sous la forme d'un tableau à index
-
     public function getComp($id)
     {
         $resultat = array();
@@ -26,5 +25,26 @@ class Competence_model extends BDD_models
 
 
         return $resultat;
+    }
+
+    public function getCompetencePromo($idpromo){
+      $resultat=array();
+      $this->db->from(get_table());
+      $this->db->join('promo','competence.id_promo = promo.id_promo');
+      $this->db->where('id_promo',$idpromo);
+      $foo = $this->db->get();
+      foreach ($foo->result_array() as $item) {
+        array_push($resultat,$item);
+      }
+      return $resultat;
+    }
+    // Le getCompetencePromo renvoi stocke l'id des competence, tu peux l'utiliser pour setCompetence
+
+    public function setCompetence($idCompetence,$idetudiant,$nouveauNiveau){
+      // Faire les vérifications par rapport au formulaire
+      $this->db->set('niveau',$nouveauNiveau);
+      $this->db->where('id_comp',$idCompetence);
+      $this->db->where('id_etu',$idetudiant);
+      $this->db->update('niveau');
     }
 }
