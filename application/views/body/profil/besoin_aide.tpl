@@ -7,6 +7,7 @@
 
 {block name="body"}
 
+
 <div class="page">
 	<div class="coter">
 
@@ -25,8 +26,7 @@
 				<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
 			</ul>
 		</div>
-	</div>
-
+    </div>
 
 	<div class="centre">
 
@@ -58,7 +58,6 @@
 		</table>
 
 	</div>
-
 
 </div>
 

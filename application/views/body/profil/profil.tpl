@@ -10,31 +10,30 @@
 <div class="page">
 	<div class="coter">
 
-		<div class="NomPersonne">
+        <div class="NomPersonne">
 
-			{if $user_id_co === $id}
-					<h1>Oui c'est toi !!!!!</h1>
-			{/if}
+            {if $user_id_co === $id}
+                    <h1>Oui c'est toi !!!!!</h1>
+            {/if}
 
-			<h1>{$nom} </h1>
-			<h2>{$prenom} </h2>
+            <h1>{$nom} </h1>
+            <h2>{$prenom} </h2>
 
-		</div>
-		
-		{if $user_id_co === $id}
+        </div>
+        
+        {if $user_id_co === $id}
             <div class="menuProfil">
                 <ul>
-                    <li ><a href="{site_url('Profil/view_besoin_aide')}"><b>Personne qui ont besoin de toi </b></a></li>
-                    <li ><a href="{site_url('Profil/view_aide')}"><b>Personne que tu aide </b></a></li>
-                    <li><a href="{site_url('Profil/view_aidant')}"><b>Personne qui t'aident </b></a></li>
-                    <li ><a href="{site_url('Profil/view_besoin_aidant')}"><b>Personne dont tu a besoin</b></a></li>
+                    <li ><a href="{site_url('Profil/view_modif_comp/')}{$user_id_co}"><b>Modifier ses compétences</b></a></li>
+                    <li ><a href="{site_url('Profil/view_besoin_aide/')}{$user_id_co}"><b>Personne qui ont besoin de toi </b></a></li>
+                    <li ><a href="{site_url('Profil/view_aide/')}{$user_id_co}"><b>Personne que tu aide </b></a></li>
+                    <li><a href="{site_url('Profil/view_aidant/')}{$user_id_co}"><b>Personne qui t'aident </b></a></li>
+                    <li ><a href="{site_url('Profil/view_besoin_aidant/')}{$user_id_co}"><b>Personne dont tu a besoin</b></a></li>
                 </ul>
             </div>
-		{/if}
-	</div>
-
-
-
+        {/if}
+    </div>
+    
 	<div class="centre">
         {if $user_id_co === $id}
 		  <h1>Tes Compétences </h1>

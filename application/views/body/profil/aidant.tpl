@@ -9,7 +9,6 @@
 
 <div class="page">
 	<div class="coter">
-		
 		<div class="NomPersonne">
 
 			{if $user_id_co === $id}
@@ -20,14 +19,13 @@
 			<h2>{$prenom} </h2>
 			
 		</div>
-		<div class="menuProfil">
-			<ul>
-				<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
-			</ul>
-		</div>
+	<div class="menuProfil">
+		<ul>
+			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
+		</ul>
 	</div>
-
-
+	
+    </div>
 
 	<div class="centre">
 
@@ -56,7 +54,6 @@
 
 
 	</div>
-
 
 </div>
 

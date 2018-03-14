@@ -9,7 +9,6 @@
 
 <div class="page">
 	<div class="coter">
-
 		<div class="NomPersonne">
 
 			{if $user_id_co === $id}
@@ -20,18 +19,17 @@
 			<h2>{$prenom} </h2>
 			
 		</div>
-		<div class="menuProfil">
-			<ul>
-				<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
-			</ul>
-		</div>
+	<div class="menuProfil">
+		<ul>
+			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
+		</ul>
 	</div>
-
-
+	
+    </div>
 
 	<div class="centre">
 
-		<h1>Personne que tu aide </h1>
+		<h1>Personne qui t'aident</h1>
 
 		<table>
 			<tr>
@@ -54,10 +52,8 @@
 
 		</table>
 
+
 	</div>
 
-
-
 </div>
-
 {/block}

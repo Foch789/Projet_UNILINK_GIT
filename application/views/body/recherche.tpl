@@ -6,12 +6,15 @@
 
 {block name="body"}
 
-<div class="page">
+<div class="containment">
 
-	<h1>Vous êtes un professionnel à la recherche d'un stagiaire ?</h1>
-	<h2>Trouvez le parmi nos étudiants</h2>
+    <div class="rech"> 
+        <h1>Vous êtes un professionnel à la recherche d'un stagiaire ?</h1>
 
+        <h2>Trouvez le parmi nos étudiants</h2>
+    </div>
 	<form action="" method="post" class="formulaire">
+
 			{* <input class="champ" type="text" name="search" value="Recherche..." /> *}
 			<input type="checkbox" name="PHP" value="1"> PHP
 			<input type="checkbox" name="C++" value="2"> C++
@@ -27,13 +30,17 @@
 			
 				<button class="buttonR" type="submit" name="form_recherche"><b>Envoyer</b></button>
 
+
 	</form>
 
-	<div class="listeEtu">
+	<div class= "listeEtu">
 	 {foreach from=$etudiants item=$value key=$key}
+	 
 	 	<a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a></br>
+	
 	{/foreach}
 	</div>
+
 </div>
 
 {/block}

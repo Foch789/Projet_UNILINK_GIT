@@ -22,6 +22,7 @@ class Etudiant_model extends BDD_models
 
     public function get_connexion($login, $mdp)
     {
+        $error = '';
         if ($this->email_exist($login)) {
             $this->load->library('encrypt');
 
@@ -31,16 +32,17 @@ class Etudiant_model extends BDD_models
             $resultat = $this->db->get();
             $row = $resultat->row();
             $Vraimdp =  $this->encrypt->decode($row->mdp_etu);
-            echo $row->id_etu;
             if ($Vraimdp === $mdp) {
                 return $row->id_etu;
             } else {
-                echo 'mauvais mot de passe.';
-                return false;
+                $error = 'Mauvais mot de passe.';
+                return $error;
+                ;
             }
         } else {
-            echo "L'email n'existe pas";
-            return false;
+            $error  =  "Le compte n'existe pas.";
+            return $error;
+            ;
         }
     }
 

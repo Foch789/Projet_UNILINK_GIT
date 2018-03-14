@@ -8,7 +8,7 @@
 
 <div class="containment">
 
-	<h2>Connexion </h2>
+	<h2>Connexion</h2>
 
 	<form action="" method="post">
 		<div>
