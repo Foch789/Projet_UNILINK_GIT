@@ -34,7 +34,6 @@
     <h1>Competence </h1>
 
 
-
 <form>
 
 {*la vous faire un foretch compétence patati *}

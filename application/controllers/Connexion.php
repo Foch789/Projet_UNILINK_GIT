@@ -44,7 +44,7 @@ class Connexion extends CI_Controller
                     $_SESSION['id'] = $etudiant['id_etu'];
                     $_SESSION['logged_in'] = true;
 
-                    redirect("Profil/view/".$id_user."");
+                    redirect("Profil/view_modif_comp/".$id_user."");
                 } else {
                     $data['error'] = $id_user;
                 }
