@@ -34,16 +34,6 @@ abstract class BDD_models extends CI_Model
         return $this->nbr_lignes;
     }
 
-    /*public function get($id)
-    {
-        if (is_exist($id)->num_rows() === 1) {
-            $this->db->select('*');
-            $this->db->from($this->table);
-            $this->db->where($this->colonne['id'], $id);
-        } else {
-            show_error('Error');
-        }
-    }*/
 
     public function to_real_name($data)
     {
@@ -60,9 +50,6 @@ abstract class BDD_models extends CI_Model
         return $d;
     }
 
-    /*public function update($id, $ligne)
-    {
-    }*/
 
     public function insert($ligne)
     {
@@ -71,12 +58,4 @@ abstract class BDD_models extends CI_Model
             show_error('Model, impossible de rajouter la bdd.');
         }
     }
-
-    /*public function delete($id)
-    {
-        $this->db->where('id', $id);
-        if ($this->db->delete($this->table) === false) {
-            show_error('Model, impossible de supprimer une ligne de la bdd.');
-        }
-    }*/
 }

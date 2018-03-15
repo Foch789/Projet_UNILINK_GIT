@@ -33,6 +33,8 @@
 
     <h1>Competence </h1>
 
+Ajouter compétence /
+Modification compétence
 
 <form>
 

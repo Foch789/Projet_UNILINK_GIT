@@ -7,6 +7,7 @@ class Profil extends CI_Controller
     {
         parent::__construct('profil');
         $this->load->model('Etudiant_model');
+        $this->load->model('Aide_model');
         $this->load->library('session');
     }
 
@@ -44,8 +45,6 @@ class Profil extends CI_Controller
 
     public function view_aidant($id)
     {
-
-        //if() test si c'est lui
         $data = &$this->data;
 
         $user = $this->session->get_userdata();
@@ -62,8 +61,6 @@ class Profil extends CI_Controller
 
     public function view_aide($id)
     {
-
-        //if() test si c'est lui
         $data = &$this->data;
 
         $user = $this->session->get_userdata();
@@ -80,8 +77,6 @@ class Profil extends CI_Controller
 
     public function view_besoin_aide($id)
     {
-
-        //if() test si c'est lui
         $data = &$this->data;
 
         $user = $this->session->get_userdata();
@@ -98,10 +93,7 @@ class Profil extends CI_Controller
 
     public function view_besoin_aidant($id)
     {
-
-        //if() test si c'est lui
         $data = &$this->data;
-
         $user = $this->session->get_userdata();
 
         if (isset($user['id'])) {
@@ -111,12 +103,16 @@ class Profil extends CI_Controller
             }
         }
 
-        //$this->load->model('Niveau_model');
-
-        //$resultat = $this->Niveau_model->get_etudiant_niveau($data['user_id_co']);
-
-        //$data["etudiants"] = $resultat;
-
+        $resultat = $this->Aide_model->get_besoin_aide($id);//Il me faut extraire les id des etudiants et la comp
+        $etudiants = array();
+        $comp = array();
+        //foreach ($resultat as $key => $value) {
+        //  array_push($etudiants, $this->get_etudiant($value['id_aidant']));
+        //get la comp de l'etudiant
+        //  }
+        //assemblé
+        //$data['etudiants'] =
+        //$data['competence'] =
         $this->parser->parse('body/profil/besoin_aidant.tpl', $data);
     }
     public function view_modif_comp($id)

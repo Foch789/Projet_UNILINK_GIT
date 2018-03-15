@@ -13,7 +13,7 @@
 	<form action="" method="post">
 		<div>
 			<label for="email">E-mail :</label>
-			<input type="email" name="user_email" placeholder=" Email" required>
+			<input type="email" name="user_email" placeholder=" Email" value="{'user_email'|set_value}"  required>
 		</div>
 		<div>
 			<label for="mdp">Mot de passe :</label>    
@@ -25,12 +25,12 @@
 		<div class="button">
 			<button type="submit" name="form_connexion"><b>Envoyer</b></button>
 		</div>
+		<input type="hidden" name="redirect" value="{'redirect'|set_value}">
 	</form>
-	{if not empty($errors)}
-		{foreach $errors as $error}
-					<li>{$error}</li> </br>
-		{/foreach}
-	{/if}
+
+	{if not empty($error)}
+					{$error}
+ 	{/if}
 
 
 </div>

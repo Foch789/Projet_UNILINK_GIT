@@ -51,17 +51,6 @@ class Etudiant_model extends BDD_models
         $this->insert($etudiant);
     }
 
-    public function edit_etudiant($id, $etudiant)
-    {
-        //$this->insert($etudiant);
-    }
-
-    /*public function recherche($search)
-    {
-        $recherche = explode(" ", $search);
-        print_r($recherche);
-    }*/
-
     public function suppr_etudiant($id)
     {
         //$this->insert($etudiant);

@@ -96,7 +96,7 @@ class Recherche extends CI_Controller
                 }
             }
 
-            $resultat = $this->Niveau_model->get_niveau_etudiant($table);
+            $resultat = $this->Niveau_model->get_niveau_etudiant_sup($table);
 
             $etudiants = array();
 
@@ -106,10 +106,6 @@ class Recherche extends CI_Controller
 
 
             $data["etudiants"] = $etudiants;
-
-            //  } else {
-            //    echo "PAS REMPLIE";
-          //  }
         }
 
         $this->parser->parse('body/recherche.tpl', $data);
