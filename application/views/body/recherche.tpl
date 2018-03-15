@@ -14,42 +14,22 @@
         <h2>Trouvez le parmi nos étudiants</h2>
     </div>
 	<form action="" method="post" class="formulaire">
-	
-		<p> 
-			<input type="checkbox" id="test1" name="PHP" value="1"> 
-			<label for= "test1"> PHP </label>
-		
-			<input type="checkbox" id="test2"  name="C++" value="2"> 
-			<label for= "test2">C++</label>
-		
-			<input type="checkbox" id="test3"  name="Math" value="3">
-			<label for= "test3">Mathematiques</label>			
-		
-			<input type="checkbox" id="test4" name="Moteur" value="4">
-			<label for= "test4">Moteurs 3D</label>
-		
-			<input type="checkbox" id="test5" name="Algo" value="5"> 
-			<label for= "test5">Algorithmique</label>
-		
-			<input type="checkbox" id="test6"  name="Web" value="6">
-			<label for= "test6"> Web</label>
-		
-			<input type="checkbox" id="test7" name="Systeme" value="7"> 
-			<label for= "test7">Système</label>
-		
-			<input type="checkbox"id="test8"  name="Anglais" value="8">
-			<label for= "test8"> Anglais</label>
-		
-			<input type="checkbox" id="test9" name="PPP" value="9">
-			<label for= "test9"> PPP</label>
-		
-			<input type="checkbox" id="test10" name="Com" value="10"> 
-			<label for= "test10">Communication</label>
-		</p>
+
+			{* <input class="champ" type="text" name="search" value="Recherche..." /> *}
+			<input type="checkbox" name="PHP" value="1"> PHP
+			<input type="checkbox" name="C++" value="2"> C++
+			<input type="checkbox" name="Math" value="3"> Mathematiques
+			<input type="checkbox" name="Moteur" value="4"> Moteurs 3D
+			<input type="checkbox" name="Algo" value="5"> Algorithmique
+			<input type="checkbox" name="Web" value="6"> Web
+			<input type="checkbox" name="Systeme" value="7"> Système
+			<input type="checkbox" name="Anglais" value="8"> Anglais
+			<input type="checkbox" name="PPP" value="9"> PPP
+			<input type="checkbox" name="Com" value="10"> Communication
+			{* <input name="recherche" alt="Recherche" class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/></br> *}
 			
-			<div class="button">
-				<button type="submit" name="form_recherche"><b>Envoyer</b></button>
-			</div>
+				<button class="buttonR" type="submit" name="form_recherche"><b>Envoyer</b></button>
+
 
 	</form>
 
