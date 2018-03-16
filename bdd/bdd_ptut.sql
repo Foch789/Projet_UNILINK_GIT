@@ -20,7 +20,9 @@ Create table etudiant
 Create table competence
 (
 	id_comp serial primary key,
-	intitule_comp varchar(100)
+	id_promo serial,
+	intitule_comp varchar(100),
+	constraint FK_COMP_PROMO foreign key (id_promo) references promo (id_promo)
 );
 
 Create table niveau
@@ -48,24 +50,26 @@ Create table aide
 
 
 
-insert into competence(intitule_comp)
-values ('PHP'),
-('C++'),
-('Mathematiques'),
-('Moteurs_3D'),
-('Algorithmique'),
-('Web'),
-('Systeme'),
-('Anglais'),
-('PPP'),
-('Communication');
 
-
-insert into promo(intitule_promo)
-values ('INFO1'),
+INSERT INTO promo(intitule_promo)
+VALUES ('INFO1'),
 ('INFO2'),
 ('MMI1'),
 ('MMI2');
+
+
+INSERT INTO competence(id_promo, intitule_comp)
+VALUES (3, 'PHP'),
+(1, 'C++'),
+(2, 'Mathematiques'),
+(2, 'Moteurs_3D'),
+(1, 'Algorithmique'),
+(4, 'Web'),
+(1, 'Systeme'),
+(4, 'Anglais'),
+(2, 'PPP'),
+(3, 'Communication');
+
 
 
 INSERT INTO etudiant(nom_etu,prenom_etu,aidant_etu,email_etu,mdp_etu,desc_etu,id_promo)
@@ -89,3 +93,7 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (2,1,9),(3,6,2),(4,2,5),(5,8,2),(4,3,4),(4,9,1),(1,2,3),(1,3,10),
 (4,7,2),(1,2,7),(2,10,2),(1,1,7),(1,4,3),(4,1,2),(2,7,10),(3,2,1),
 (4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5);
+
+
+
+#faire jeux de tests pour la table aide et faire une save avant de test l'ajout dans aide
