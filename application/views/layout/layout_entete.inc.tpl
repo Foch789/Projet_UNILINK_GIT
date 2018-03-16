@@ -1,8 +1,11 @@
 <ul  class= "co">
-		{if $is_connected eq true }
-			<li><a href="?page=logout"><b>Deconnexion</b></a></li>
+		{if $logged_in === true}
+			<li><a href="{site_url('Connexion/deconnexion')}"><b>Deconnexion</b></a></li>
+			{if $user_id_co != $id}
+				<li><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Mon profil</b></a></li>
+			{/if}
 		{else}
-			<li><a href="{site_url('Connection')}"><b>Connexion</b></a></li>
+			<li><a href="{site_url('Connexion')}"><b>Connexion</b></a></li>
 			<li><a href="{site_url('Inscription')}"><b>Inscription</b></a></li>
 		{/if}
 

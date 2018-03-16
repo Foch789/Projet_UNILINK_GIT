@@ -21,9 +21,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
-|
+|https://dos-santos.alwaysdata.net/Projet_UNILINK_GIT/
 */
-$config['base_url'] = 'http://laurent.alwaysdata.net/Perso/';
+$config['base_url']='http://laurent.alwaysdata.net/Perso/';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['cache_query_string'] = false;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'Y';
 
 /*
 |--------------------------------------------------------------------------

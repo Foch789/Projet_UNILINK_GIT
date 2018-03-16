@@ -12,14 +12,16 @@ class Inscription extends CI_Controller
     public function index()
     {
         $data = &$this->data;
+        $this->load->helper('form');
 
-        if (isset($_POST['form_inscription'])) {
+        if ($this->input->post('form_inscription') !== null) {
             $this->load->library('form_validation');
+            $this->load->library('encrypt');
             $this->load->helper('url');
 
             $rules = array(
                 array(
-                        'field' => 'nom_etu',
+                        'field' => '',
                         'label' => 'Nom',
                         'rules' => 'required'
                 ),
@@ -53,23 +55,26 @@ class Inscription extends CI_Controller
             $this->form_validation->set_rules($rules);
 
             if ($this->form_validation->run()) {
-                if ($this->Etudiant_model->email_exist($this->input->post('email'))) {
-                    if ($this->input->post('mdp') === $this->input->post('mdpc')) {
-                        $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email_etu' => $this->input->post('email'),'mdp_etu' => $this->input->post('mdp'),'id_promo' => $this->input->post('id_promo'));
-                        $this->Etudiant_model->ajout_etudiant($etudiant);
-                        redirect('Connection');
+                if ($this->input->post('id_promo') !== 'None') {
+                    if (!$this->Etudiant_model->email_exist($this->input->post('email'))) {
+                        if ($this->input->post('mdp') === $this->input->post('mdpc')) {
+                            $etudiant = array('nom_etu' => $this->input->post('nom_etu'), 'prenom_etu' => $this->input->post('prenom_etu'),'email_etu' => $this->input->post('email'),'mdp_etu' => $this->encrypt->encode($this->input->post('mdp')),'id_promo' => $this->input->post('id_promo'));
+                            $this->Etudiant_model->ajout_etudiant($etudiant);
+                            redirect('Connexion');
+                        } else {
+                            $data['errors'] =  array( "Erreur de mot de passe.");
+                        }
                     } else {
-                        echo "Erreur de mot de passe !";
+                        $data['errors'] =   array("Compte déjà existant.");
                     }
                 } else {
-                    echo "Il y a quelqu'un !";
+                    $data['errors'] =   array("Mettez votre promo");
                 }
             } else {
-                //$data['errors'] = $this->form_validation->error_array();
-                echo "PAS REMPLIE";
+                $data['errors'] = $this->form_validation->error_array();
             }
         }
 
-        $this->parser->parse('body/inscription.tpl');
+        $this->parser->display('body/inscription.tpl', $data);
     }
 }

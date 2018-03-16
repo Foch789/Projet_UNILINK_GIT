@@ -10,34 +10,45 @@ class Etudiant_model extends BDD_models
         parent::__construct("etudiant", array("id" => "id_etu", "nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant_etu", "email" => "email_etu","mdp" => "mdp_etu", "description" => "desc_etu", "id_promo" => "id_promo"));
     }
 
-    public function get_connexion($login, $mdp)
+    public function get_etudiant($id)
     {
         $this->db->select('*');
         $this->db->from($this->get_table());
-        $this->db->where($this->get_colonne()['email'], $login);
+        $this->db->where($this->get_colonne()['id'], $id);
         $resultat = $this->db->get();
 
-        if ($resultat === 1) {
-            if ($resultat['mdp'] === $mdp) {
-                return true;
+        return $resultat->row_array();
+    }
+
+    public function get_connexion($login, $mdp)
+    {
+        $error = '';
+        if ($this->email_exist($login)) {
+            $this->load->library('encrypt');
+
+            $this->db->select('*');
+            $this->db->from($this->get_table());
+            $this->db->where($this->get_colonne()['email'], $login);
+            $resultat = $this->db->get();
+            $row = $resultat->row();
+            $Vraimdp =  $this->encrypt->decode($row->mdp_etu);
+            if ($Vraimdp === $mdp) {
+                return $row->id_etu;
             } else {
-                echo 'mauvais mot de passe.';
-                return false;
+                $error = 'Mauvais mot de passe.';
+                return $error;
+                ;
             }
         } else {
-            echo "Error connexion";
-            return false;
+            $error  =  "Le compte n'existe pas.";
+            return $error;
+            ;
         }
     }
 
     public function ajout_etudiant($etudiant)
     {
         $this->insert($etudiant);
-    }
-
-    public function edit_etudiant($id, $etudiant)
-    {
-        //$this->insert($etudiant);
     }
 
     public function suppr_etudiant($id)
@@ -52,6 +63,10 @@ class Etudiant_model extends BDD_models
         $this->db->where($this->get_colonne()['email'], $email);
         $resultat = $this->db->get();
 
-        return $resultat->num_rows() === 0;
+        if ($resultat->num_rows() >1) {
+            show_error('PLUSIEURS EMAILS ERROR');
+        }
+
+        return $resultat->num_rows() === 1;
     }
 }
