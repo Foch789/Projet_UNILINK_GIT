@@ -37,9 +37,6 @@ class Profil extends CI_Controller
             //Mettre les compétences
         }
 
-
-
-
         $this->parser->parse('body/profil/profil.tpl', $data);
     }
 
