@@ -7,6 +7,7 @@ Create table promo
 Create table etudiant
 (
 	id_etu serial primary key,
+	admin boolean DEFAULT false
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
 	aidant_etu boolean default false,
@@ -94,6 +95,20 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (4,7,2),(1,2,7),(2,10,2),(1,1,7),(1,4,3),(4,1,2),(2,7,10),(3,2,1),
 (4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5);
 
+/*
+INSERT INTO aide
+VALUES (1, 0, 1, 4, 8),
+ (1, 1, 0),
+ (1, 1, 0),
+ (1, 1, 1),
+ (1, 0, 1),
+ (1, 1, 1),
+ (1, 0, 1),
+ (1, 0, 1),
+ (1, 1, 1),
+ (1, 1, 0);
+*/
 
+insert into aide
+values (true, true, false, 5, 1, 2);
 
-#faire jeux de tests pour la table aide et faire une save avant de test l'ajout dans aide
