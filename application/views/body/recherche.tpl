@@ -8,7 +8,7 @@
 
 <div class="containment">
 
-    <div class="rech"> 
+    <div class="rech">
         <h1>Vous êtes un professionnel à la recherche d'un stagiaire ?</h1>
 
         <h2>Trouvez le parmi nos étudiants</h2>
@@ -27,7 +27,7 @@
 			<input type="checkbox" name="PPP" value="9"> PPP
 			<input type="checkbox" name="Com" value="10"> Communication
 			{* <input name="recherche" alt="Recherche" class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/></br> *}
-			
+
 				<button class="buttonR" type="submit" name="form_recherche"><b>Envoyer</b></button>
 
 
@@ -35,9 +35,7 @@
 
 	<div class= "listeEtu">
 	 {foreach from=$etudiants item=$value key=$key}
-	 
 	 	<a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a></br>
-	
 	{/foreach}
 	</div>
 

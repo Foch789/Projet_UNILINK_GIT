@@ -39,27 +39,55 @@ Modification compétence
 <form>
 
 {*la vous faire un foretch compétence patati *}
-  <p>C++:</p>
-  <div>
-    <input type="radio" id="note1"
-     name="contact" value="1">
-    <label for="note1">1</label>
+  <table>
+			<tr>
+				<th> Matière </th>
+				<th> Niveau</th>
+			<tr>
+			{*metre le for ech *}
+			<tr>
+				<td> C++ </td>
+				<td> 
+					<form>
+					  <fieldset>
+						<span class="star-cb-group">
+						  <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+						  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+						  <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+						  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+						  <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+						  <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+						</span>
+					  </fieldset>
+					</form>
+				</td>
+			<tr>
+			<tr>
+				<td> HTML</td>
+				<td> 
+					<form>
+					  <fieldset>
+						<span class="star-cb-group">
+						  <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+						  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+						  <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+						  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+						  <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+						  <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+						</span>
+					  </fieldset>
+					</form>
+				</td>
+			<tr>
+			<tr>
+				<td>JAVA </td>
+				<td> 
+					
+				</td>
+			<tr>
 
-    <input type="radio" id="note2"
-     name="contact" value="2">
-    <label for="note2">2</label>
-
-    <input type="radio" id="note3"
-     name="contact" value="3">
-    <label for="note3">3</label>
-
-	<input type="radio" id="note4"
-     name="contact" value="4">
-    <label for="note4">4</label>
-
-	<input type="radio" id="note5"
-     name="contact" value="5">
-    <label for="note5">5</label>
+		</table>
+    
 
 
   </div>

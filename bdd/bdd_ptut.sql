@@ -7,7 +7,10 @@ Create table promo
 Create table etudiant
 (
 	id_etu serial primary key,
+<<<<<<< HEAD
 	admin boolean DEFAULT false,
+=======
+>>>>>>> 37f19d447af1ddfb949e409ae0cc7627e125da01
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
 	aidant_etu boolean default false,
@@ -49,6 +52,15 @@ Create table aide
 	constraint FK_COMP_AIDE foreign key (id_comp) references competence(id_comp)
 );
 
+
+Create table enseignant
+(
+	id_ens serial primary key,
+	nom_ens varchar(20),
+	prenom_ens varchar(20),
+	email_ens varchar(50),
+	mdp_ens varchar(150)
+);
 
 
 
@@ -95,6 +107,9 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (4,7,2),(1,2,7),(2,10,2),(1,1,7),(1,4,3),(4,1,2),(2,7,10),(3,2,1),
 (4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5);
 
+INSERT INTO enseignant
+VALUES (DEFAULT, 'Carmignac', 'Laurent', 'laurent.carmignac@mail.com', 'password');
+
 /*
 INSERT INTO aide
 VALUES (1, 0, 1, 4, 8),
@@ -111,3 +126,28 @@ VALUES (1, 0, 1, 4, 8),
 
 insert into aide
 values (true, true, false, 5, 1, 2);
+<<<<<<< HEAD
+=======
+
+
+
+
+create or replace function trigger_verif_aide() returns trigger as
+$$
+begin
+    if new.aidant = true then
+        if new.demande_aide = true and new.accepter_aide = true then
+            raise exception 'Erreur: combinaison de booleens erronee';
+        end if;
+    else
+        raise exception 'Erreur: combinaison de booleens erronee';
+    end if;
+
+    return new;
+end;
+$$
+language plpgsql;
+
+
+create trigger trigg_v_aide before insert or update on aide for each row execute procedure trigger_verif_aide();
+>>>>>>> 37f19d447af1ddfb949e409ae0cc7627e125da01
