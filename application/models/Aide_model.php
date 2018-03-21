@@ -15,9 +15,9 @@ class Aide_model extends BDD_models
         $this->db->select($this->get_colonne()['id_aide'], $this->get_colonne()['id_comp']);
         $this->db->from($this->get_table());
         $this->db->where($this->get_colonne()['id_aidant'], $id_etu);
-        //$this->db->where($this->get_colonne()['demande_aide'], false);
-        //$this->db->where($this->get_colonne()['aidant'], false);
-        //$this->db->where($this->get_colonne()['accepter_aide'], false);
+        $this->db->where($this->get_colonne()['demande_aide'], true);
+        $this->db->where($this->get_colonne()['aidant'], false);
+        $this->db->where($this->get_colonne()['accepter_aide'], true);
         $resultat = $this->db->get();
 
         return $resultat->row_array();
@@ -28,9 +28,9 @@ class Aide_model extends BDD_models
         $this->db->select($this->get_colonne()['id_aidant'], $this->get_colonne()['id_comp']);
         $this->db->from($this->get_table());
         $this->db->where($this->get_colonne()['id_aide'], $id);
-        //$this->db->where($this->get_colonne()['demande_aide'], false);
-        //$this->db->where($this->get_colonne()['aidant'], false);
-        //$this->db->where($this->get_colonne()['accepter_aide'], false);
+        $this->db->where($this->get_colonne()['demande_aide'], true);
+        $this->db->where($this->get_colonne()['aidant'], false);
+        $this->db->where($this->get_colonne()['accepter_aide'], true);
         $resultat = $this->db->get();
 
         return $resultat->row_array();
@@ -42,7 +42,7 @@ class Aide_model extends BDD_models
         $this->db->from($this->get_table());
         $this->db->where($this->get_colonne()['id_aidant'], $id_etu);
         $this->db->where($this->get_colonne()['demande_aide'], true);
-        $this->db->where($this->get_colonne()['aidant'], false);
+        $this->db->where($this->get_colonne()['aidant'], true);
         $this->db->where($this->get_colonne()['accepter_aide'], false);
         $resultat = $this->db->get();
 
@@ -54,7 +54,7 @@ class Aide_model extends BDD_models
         $this->db->select($this->get_colonne()['id_aidant'], $this->get_colonne()['id_comp']);
         $this->db->from($this->get_table());
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
-        $this->db->where($this->get_colonne()['demande_aide'], false);
+        $this->db->where($this->get_colonne()['demande_aide'], true);
         $this->db->where($this->get_colonne()['aidant'], false);
         $this->db->where($this->get_colonne()['accepter_aide'], false);
         $resultat = $this->db->get();
@@ -122,7 +122,9 @@ class Aide_model extends BDD_models
 
     public function demande_aide($id_etu, $id_qui_aide, $id_comp)
     {
-        //$this->db->set($this->get_colonne()['demande_aide'], true);
+        $this->db->set($this->get_colonne()['aidant'], true);
+        $this->db->set($this->get_colonne()['demande_aide'], true);
+        $this->db->set($this->get_colonne()['accepter_aide'], false);
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
         $this->db->where($this->get_colonne()['id_aidant'], $id_qui_aide);
         $this->db->where($this->get_colonne()['id_comp'], $id_comp);
@@ -131,7 +133,9 @@ class Aide_model extends BDD_models
 
     public function refuse($id_etu, $id_etu2, $id_comp)
     {
-        //$this->db->set($this->get_colonne()['demande_aide'], false);
+        $this->db->set($this->get_colonne()['aidant'], true);
+        $this->db->set($this->get_colonne()['demande_aide'], false);
+        $this->db->set($this->get_colonne()['accepter_aide'], false);
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
         $this->db->where($this->get_colonne()['id_aidant'], $id_qui_aide);
         $this->db->where($this->get_colonne()['id_comp'], $id_comp);
@@ -140,7 +144,9 @@ class Aide_model extends BDD_models
 
     public function accepte($id_etu, $id_etu2, $id_comp)
     {
-        //$this->db->set($this->get_colonne()['demande_aide'], true);
+        $this->db->set($this->get_colonne()['aidant'], true);
+        $this->db->set($this->get_colonne()['demande_aide'], false);
+        $this->db->set($this->get_colonne()['accepter_aide'], true);
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
         $this->db->where($this->get_colonne()['id_aidant'], $id_qui_aide);
         $this->db->where($this->get_colonne()['id_comp'], $id_comp);
@@ -149,7 +155,7 @@ class Aide_model extends BDD_models
 
     public function reset($id_etu, $id_etu2, $id_comp)
     {
-        $this->db->set($this->get_colonne()['aidant'], false);
+        $this->db->set($this->get_colonne()['aidant'], true);
         $this->db->set($this->get_colonne()['demande_aide'], false);
         $this->db->set($this->get_colonne()['accepter_aide'], false);
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
