@@ -5,3 +5,5 @@ templates_c
 .ftpignore
 
 application/config/config.php
+
+application/config/cache

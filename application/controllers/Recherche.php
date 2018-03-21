@@ -89,14 +89,17 @@ class Recherche extends CI_Controller
                 "PPP" => $this->input->post('PPP'),
                 "Com" => $this->input->post('Com')
               );
-
+            $real = array();
             foreach ($table as $key => $value) {
                 if ($value === null) {
                     unset($table[$key]);
                 }
             }
+            foreach ($table as $key => $value) {
+                array_push($real, $value);
+            }
 
-            $resultat = $this->Niveau_model->get_niveau_etudiant_sup($table);
+            $resultat = $this->Niveau_model->get_niveau_etudiant_sup_et($real);
 
             $etudiants = array();
 
