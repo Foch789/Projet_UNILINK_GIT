@@ -9,6 +9,6 @@
 			<li><a href="{site_url('Inscription')}"><b>Inscription</b></a></li>
 		{/if}
 
-		<li style="float:left" ><a href="{site_url('Home')}"><img src="{base_url('asset/img/logoU.png')}"/></a></li></div>
+		<li style="float:left" ><a href="{site_url('Home')}"><img src="{base_url('asset/img/home.png')}"/></a></li></div>
 
 </ul>
