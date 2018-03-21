@@ -24,7 +24,7 @@
         <div class="menuProfil">
             <ul>
                 <li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
-                <li ><a href="{site_url('Profil/view_admin_comp/')}{$user_id_co}"><b>Les compétences</b></a></li>
+                <li ><a href="{site_url('Profil/view_admin/')}{$user_id_co}"><b>Les étudiants</b></a></li>
             </ul>
         </div>
 
@@ -36,25 +36,25 @@
 
 		<table>
 			<tr>
-				<th> Nom étudient </th>
-				<th> Admin/Supprimer</th>
+				<th> Compétences</th>
+				<th> Supprimer</th>
 			<tr>
 			{*metre le for ech *}
 			<tr>
 				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-          <button class="button">Supprimer</button></td>
+				<td><button class="button">Supprimer</button></td>
 			<tr>
 			<tr>
 				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-        <button class="button">Supprimer</button></td>
+				<td><button class="button">Supprimer</button></td>
 			<tr>
 			<tr>
 				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-          <button class="button">Supprimer</button></td>
+				<td><button class="button">Supprimer</button></td>
 			<tr>
+      <tr>
+  			     <td><button class="button">Ajouter compétence</button></td>
+  		<tr>
 
 		</table>
 

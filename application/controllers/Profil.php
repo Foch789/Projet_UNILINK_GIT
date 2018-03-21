@@ -152,4 +152,20 @@ class Profil extends CI_Controller
 
         $this->parser->parse('body/admin.tpl', $data);
     }
+
+    public function view_admin_comp($id)
+    {
+        $data = &$this->data;
+
+        $user = $this->session->get_userdata();
+
+        if (isset($user['id'])) {
+            if ($user['logged_in'] === true) {
+                $data['user_id_co'] = $user['id'];
+                $data['logged_in'] = true;
+            }
+        }
+
+        $this->parser->parse('body/admin_comp.tpl', $data);
+    }
 }

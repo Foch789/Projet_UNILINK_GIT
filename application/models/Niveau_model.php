@@ -37,7 +37,6 @@ class Niveau_model extends BDD_models
 
         unset($id[0]);
 
-
         foreach ($id as $value) {
             $compare = array();
             $this->db->select('id_etu');
@@ -66,16 +65,16 @@ class Niveau_model extends BDD_models
     public function get_niveau_etudiant_sup($id = array()) //sup
     {
         $resultat = array();
-        foreach ($id as $key => $value) {
+        foreach ($id as $value) {
             $this->db->select('id_etu');
             $this->db->from($this->get_table());
             $this->db->where($this->get_colonne()['id_comp'], $value);
             $this->db->where($this->get_colonne()['niveau'].'>', 3);
             $st = $this->db->get();
             $so = $st->result_array();
-            foreach ($so as $key => $value) {
-                foreach ($value as $key1 => $value1) {
-                    array_push($resultat, $value1);
+            foreach ($so as $key1 => $value1) {
+                foreach ($value as $key2 => $value2) {
+                    array_push($resultat, $value2);
                 }
             }
         }
