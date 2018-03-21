@@ -7,7 +7,17 @@ class Etudiant_model extends BDD_models
 {
     public function __construct()
     {
-        parent::__construct("etudiant", array("id" => "id_etu", "nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant_etu", "email" => "email_etu","mdp" => "mdp_etu", "description" => "desc_etu", "id_promo" => "id_promo"));
+        parent::__construct("etudiant", array("id" => "id_etu","admin" => "admin" ,"nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant_etu", "email" => "email_etu","mdp" => "mdp_etu", "description" => "desc_etu", "id_promo" => "id_promo"));
+    }
+
+    public function get_all_etudiant()
+    {
+        $result = array();
+        $this->db->select('*');
+        $this->db->from($this->get_table());
+        $resultat = $this->db->get();
+
+        return $resultat->result_array();
     }
 
     public function get_etudiant($id)

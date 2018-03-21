@@ -37,25 +37,12 @@
 		<table>
 			<tr>
 				<th> Nom étudient </th>
-				<th> Admin/Supprimer</th>
 			<tr>
-			{*metre le for ech *}
+			{foreach $resultat as $value}
 			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-          <button class="button">Supprimer</button></td>
+				<td> <a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a> <button class="button">Supprimer</button> </td>
 			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-        <button class="button">Supprimer</button></td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Admin</button>
-          <button class="button">Supprimer</button></td>
-			<tr>
-
+        {/foreach}
 		</table>
 
 	</div>

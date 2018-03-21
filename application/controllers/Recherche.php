@@ -16,6 +16,7 @@ class Recherche extends CI_Controller
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
                 $data['user_id_co'] = $user['id'];
+                $data['user_admin'] = $user['admin'];
                 $data['logged_in'] = true;
             }
         }

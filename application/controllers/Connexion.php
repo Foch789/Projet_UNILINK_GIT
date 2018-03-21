@@ -42,6 +42,7 @@ class Connexion extends CI_Controller
                     $etudiant = $this->Etudiant_model->get_etudiant($id_user);
 
                     $_SESSION['id'] = $etudiant['id_etu'];
+                    $_SESSION['admin'] = $etudiant['admin'];
                     $_SESSION['logged_in'] = true;
 
                     redirect("Profil/view_modif_comp/".$id_user."");

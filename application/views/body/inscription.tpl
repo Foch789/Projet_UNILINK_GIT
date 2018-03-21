@@ -42,6 +42,11 @@
 			<label for="Passwordc">Confirmation:</label>
 			<input type="password" name="mdpc" placeholder=" Mot de passe de confirmation" required>
 		</div>
+		{if not empty($errors)}
+		{foreach $errors as $error}
+			{$error}</br>
+		{/foreach}
+		{/if}
 
 		<div class="button">
 			<button type="submit" name="form_inscription"><b>Envoyer</b></button>
@@ -49,11 +54,7 @@
 
 		<input type="hidden" name="redirect" value="{'redirect'|set_value}">
 	</form>
-	{if not empty($errors)}
-	{foreach $errors as $error}
-		{$error}</br>
-	{/foreach}
-	{/if}
+
 </div>
 
 {/block}

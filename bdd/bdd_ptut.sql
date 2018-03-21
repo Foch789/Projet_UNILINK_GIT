@@ -7,7 +7,7 @@ Create table promo
 Create table etudiant
 (
 	id_etu serial primary key,
-	admin boolean DEFAULT false
+	admin boolean DEFAULT false,
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
 	aidant_etu boolean default false,
@@ -111,4 +111,3 @@ VALUES (1, 0, 1, 4, 8),
 
 insert into aide
 values (true, true, false, 5, 1, 2);
-

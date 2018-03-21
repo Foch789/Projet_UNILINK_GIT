@@ -1,6 +1,9 @@
 <ul  class= "co">
 		{if $logged_in === true}
 			<li><a href="{site_url('Connexion/deconnexion')}"><b>Deconnexion</b></a></li>
+			{if $user_admin != $admin}
+				<li><a href="{site_url('Profil/view_admin/')}{$user_id_co}"><b>Page Admin</b></a></li>
+			{/if}
 			{if $user_id_co != $id}
 				<li><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Mon profil</b></a></li>
 			{/if}

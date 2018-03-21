@@ -22,15 +22,16 @@
 		<div>
 			<a href="{site_url('Inscription')}">Pas inscrit ?</a>
 		</div>
+		{if not empty($error)}
+						{$error}
+	 	{/if}
 		<div class="button">
 			<button type="submit" name="form_connexion"><b>Envoyer</b></button>
 		</div>
 		<input type="hidden" name="redirect" value="{'redirect'|set_value}">
 	</form>
 
-	{if not empty($error)}
-					{$error}
- 	{/if}
+
 
 
 </div>
