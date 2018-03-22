@@ -65,7 +65,7 @@ body {
 
 
 /*    liste etudient dans recherche            */
-div .listeEtu a 
+div .listeEtu a
 {
 
 margin-left:10px;
@@ -87,17 +87,17 @@ div .NomPersonne{
     color:white;
     font-size: 30px;
     padding: 10px ;
-    
+
 }
 
-div .menuProfil li a 
+div .menuProfil li a
 {
     margin-top: 20px;
     text-align: left;
     font-size: 20px;
     padding: 10px ;
-    
-    
+
+
 }
 
 
@@ -123,6 +123,19 @@ div .menuProfil li a
     background-color: rgb(0, 117, 212);
 }
 
+/***************recherche*****/
+form {
+  /* Pour le centrer dans la page */
+  margin: 0 auto;
+  width: 400px;
+
+  /* Pour voir les limites du formulaire */
+  padding: 1em;
+  background-color: rgb(255,255,255);
+  border: 1px solid #CCC;
+
+
+}
 
 /*************ETOILE *****************/
 
@@ -140,7 +153,7 @@ div .menuProfil li a
 
 }
 
-.coter h1 ,.coter h2, .coter ul li 
+.coter h1 ,.coter h2, .coter ul li
 {
   font-size: 80%;
   text-align: left;
@@ -179,13 +192,13 @@ tr:nth-child(even){background-color: rgb(41, 137, 245)}
 
 .centre table th {
 	background-color: rgb(41, 137, 245);
-	color: white; 
+	color: white;
 
 }
 
 
 .centre table td , .centre table th {
-	
+
 	border: thin solid  rgb(41, 137, 245);
 	width : 50%;
 	padding : 8px;
