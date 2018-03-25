@@ -2,6 +2,7 @@
 
 {block name= "css"}
 <link rel="stylesheet" href="{base_url('asset/css/style2.css')}"/>
+
 {/block}
 
 
@@ -20,7 +21,7 @@
             <h2>{$prenom} </h2>
 
         </div>
-        
+
         {if $user_id_co === $id}
             <div class="menuProfil">
                 <ul>
@@ -33,7 +34,7 @@
             </div>
         {/if}
     </div>
-    
+
 	<div class="centre">
         {if $user_id_co === $id}
 		  <h1>Tes Compétences </h1>
@@ -48,15 +49,15 @@
 			{*metre le for ech *}
 			<tr>
 				<td> C++ </td>
-				<td> 5</td>
+				<td></td>
 			<tr>
 			<tr>
 				<td> HTML</td>
-				<td> 2</td>
+				<td></td>
 			<tr>
 			<tr>
 				<td> C++ </td>
-				<td> 3</td>
+				<td></td>
 			<tr>
 
 		</table>

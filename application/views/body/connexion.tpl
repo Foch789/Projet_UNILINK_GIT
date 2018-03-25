@@ -22,11 +22,12 @@
 		<div>
 			<a href="{site_url('Inscription')}">Pas inscrit ?</a>
 		</div>
-		<div classe= "erreur">
-				{if not empty($error)}
-								{$error}
-			 	{/if}
-		</div>
+			{if not empty($error)}
+			<div class= "erreur">
+							{$error}
+			</div>
+		 	{/if}
+
 		<div class="button">
 			<button type="submit" name="form_connexion"><b>Envoyer</b></button>
 		</div>
