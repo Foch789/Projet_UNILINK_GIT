@@ -12,10 +12,6 @@
 
         <div class="NomPersonne">
 
-            {if $user_id_co === $id}
-                    <h1>Oui c'est toi !!!!!</h1>
-            {/if}
-
             <h1>{$nom} </h1>
             <h2>{$prenom} </h2>
 
@@ -23,8 +19,7 @@
 
         <div class="menuProfil">
             <ul>
-                <li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
-                <li ><a href="{site_url('Profil/view_admin/')}{$user_id_co}"><b>Les étudiants</b></a></li>
+                <li ><a href="{site_url('Admin/view_admin/')}{$user_id_co}"><b>Les étudiants</b></a></li>
             </ul>
         </div>
 
@@ -37,24 +32,21 @@
 		<table>
 			<tr>
 				<th> Compétences</th>
+        <th> Promo</th>
 				<th> Supprimer</th>
 			<tr>
-			{*metre le for ech *}
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Supprimer</button></td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Supprimer</button></td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td><button class="button">Supprimer</button></td>
-			<tr>
+			{foreach $comp as $value}
+      {foreach $value[0] as $key}
       <tr>
-  			     <td><button class="button">Ajouter compétence</button></td>
-  		<tr>
+				<td> {$key['intitule_comp']}</td>
+        <td> {$value[1]}</td>
+				<td><button class="button">Supprimer</button></td>
+			<tr>
+      {/foreach}
+      {/foreach}
+      <tr>
+        <td> Ajouter competence</td>
+        <tr>
 
 		</table>
 

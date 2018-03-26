@@ -7,6 +7,7 @@ class Profil extends CI_Controller
     {
         parent::__construct('profil');
         $this->load->model('Etudiant_model');
+        $this->load->model('Enseignant_model');
         $this->load->model('Aide_model');
         $this->load->library('session');
     }
@@ -18,21 +19,26 @@ class Profil extends CI_Controller
         $etudiant = $this->Etudiant_model->get_etudiant($id);
 
         $data['id'] = $etudiant['id_etu'];
-        $data['adminP'] = $etudiant['admin'];
         $data['nom']  = $etudiant['nom_etu'];
         $data['prenom'] = $etudiant['prenom_etu'];
         $data['email'] = $etudiant['email_etu'];
         $data['description'] = $etudiant['desc_etu'];
         $data['logged_in'] = false;
+        $data['etu'] = true;
 
 
         $user = $this->session->get_userdata();
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -47,9 +53,14 @@ class Profil extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -65,9 +76,14 @@ class Profil extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -82,9 +98,14 @@ class Profil extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -98,9 +119,14 @@ class Profil extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -126,9 +152,14 @@ class Profil extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
 
@@ -137,44 +168,5 @@ class Profil extends CI_Controller
         $data['comp'] = $this->Competence_model->getComp($id);
 
         $this->parser->parse('body/modif_competence.tpl', $data);
-    }
-
-    public function view_admin($id)
-    {
-        $data = &$this->data;
-
-        $etudiant = $this->Etudiant_model->get_etudiant($id);
-        $data['admin'] = $etudiant['admin'];
-
-        $data['resultat'] = $this->Etudiant_model->get_all_etudiant();
-
-        $user = $this->session->get_userdata();
-
-        if (isset($user['id'])) {
-            if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
-            }
-        }
-
-        $this->parser->parse('body/admin.tpl', $data);
-    }
-
-    public function view_admin_comp($id)
-    {
-        $data = &$this->data;
-
-        $user = $this->session->get_userdata();
-
-        if (isset($user['id'])) {
-            if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
-            }
-        }
-
-        $this->parser->parse('body/admin_comp.tpl', $data);
     }
 }

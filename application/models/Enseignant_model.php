@@ -3,23 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 require_once('BDD_models.php');
 
-class Etudiant_model extends BDD_models
+class Enseignant_model extends BDD_models
 {
     public function __construct()
     {
-        parent::__construct("etudiant", array("id" => "id_etu" ,"nom" => "nom_etu", "prenom" => "prenom_etu", "aidant" => "aidant_etu", "email" => "email_etu","mdp" => "mdp_etu", "description" => "desc_etu", "id_promo" => "id_promo"));
+        parent::__construct("enseignant", array("id" => "id_ens","nom" => "nom_ens", "prenom" => "prenom_ens",  "email" => "email_ens","mdp" => "mdp_ens"));
     }
 
-    public function get_all_etudiant()
-    {
-        $this->db->select('*');
-        $this->db->from($this->get_table());
-        $resultat = $this->db->get();
-
-        return $resultat->result_array();
-    }
-
-    public function get_etudiant($id)
+    public function get_enseignant($id)
     {
         $this->db->select('*');
         $this->db->from($this->get_table());
@@ -34,15 +25,14 @@ class Etudiant_model extends BDD_models
         $error = '';
         if ($this->email_exist($login)) {
             $this->load->library('encrypt');
-
             $this->db->select('*');
             $this->db->from($this->get_table());
             $this->db->where($this->get_colonne()['email'], $login);
             $resultat = $this->db->get();
             $row = $resultat->row();
-            $Vraimdp =  $this->encrypt->decode($row->mdp_etu);
+            $Vraimdp = $row->mdp_ens;//=  $this->encrypt->decode($row->mdp_ens);
             if ($Vraimdp === $mdp) {
-                return $row->id_etu;
+                return $row->id_ens;
             } else {
                 $error = 'Mauvais mot de passe.';
                 return $error;
@@ -55,12 +45,12 @@ class Etudiant_model extends BDD_models
         }
     }
 
-    public function ajout_etudiant($etudiant)
+    public function ajout_enseignant($enseignant)
     {
-        $this->insert($etudiant);
+        $this->insert($enseignant);
     }
 
-    public function suppr_etudiant($id)
+    public function suppr_enseignant($id)
     {
         //$this->insert($etudiant);
     }

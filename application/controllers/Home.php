@@ -15,9 +15,14 @@ class Home extends CI_Controller
 
         if (isset($user['id'])) {
             if ($user['logged_in'] === true) {
-                $data['user_id_co'] = $user['id'];
-                $data['user_admin'] = $user['admin'];
-                $data['logged_in'] = true;
+                if (isset($user['admin']) === true) {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                    $data['admin'] = true;
+                } else {
+                    $data['user_id_co'] = $user['id'];
+                    $data['logged_in'] = true;
+                }
             }
         }
     }

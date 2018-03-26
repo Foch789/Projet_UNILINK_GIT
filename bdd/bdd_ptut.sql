@@ -7,10 +7,6 @@ Create table promo
 Create table etudiant
 (
 	id_etu serial primary key,
-<<<<<<< HEAD
-	admin boolean DEFAULT false,
-=======
->>>>>>> 37f19d447af1ddfb949e409ae0cc7627e125da01
 	nom_etu varchar(20),
 	prenom_etu varchar(20),
 	aidant_etu boolean default false,
@@ -126,10 +122,6 @@ VALUES (1, 0, 1, 4, 8),
 
 insert into aide
 values (true, true, false, 5, 1, 2);
-<<<<<<< HEAD
-=======
-
-
 
 
 create or replace function trigger_verif_aide() returns trigger as
@@ -150,4 +142,3 @@ language plpgsql;
 
 
 create trigger trigg_v_aide before insert or update on aide for each row execute procedure trigger_verif_aide();
->>>>>>> 37f19d447af1ddfb949e409ae0cc7627e125da01

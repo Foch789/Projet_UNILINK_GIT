@@ -7,6 +7,7 @@ class Connexion extends CI_Controller
     {
         parent::__construct('connexion');
         $this->load->model('Etudiant_model');
+        $this->load->model('Enseignant_model');
     }
 
     public function index()
@@ -36,18 +37,29 @@ class Connexion extends CI_Controller
             $this->form_validation->set_rules($rules);
 
             if ($this->form_validation->run()) {
-                $id_user = $this->Etudiant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
+                $id_user = $this->Enseignant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
                 if (is_numeric($id_user)) {
                     $this->load->library('session');
-                    $etudiant = $this->Etudiant_model->get_etudiant($id_user);
+                    $enseignant = $this->Enseignant_model->get_enseignant($id_user);
 
-                    $_SESSION['id'] = $etudiant['id_etu'];
-                    $_SESSION['admin'] = $etudiant['admin'];
+                    $_SESSION['id'] = $enseignant['id_ens'];
                     $_SESSION['logged_in'] = true;
+                    $_SESSION['admin'] = true;
 
-                    redirect("Profil/view_modif_comp/".$id_user."");
+                    redirect("Admin/view_admin/".$id_user."");
                 } else {
-                    $data['error'] = $id_user;
+                    $id_user = $this->Etudiant_model->get_connexion($this->input->post('user_email'), $this->input->post('user_mdp'));
+                    if (is_numeric($id_user)) {
+                        $this->load->library('session');
+                        $etudiant = $this->Etudiant_model->get_etudiant($id_user);
+
+                        $_SESSION['id'] = $etudiant['id_etu'];
+                        $_SESSION['logged_in'] = true;
+
+                        redirect("Profil/view_modif_comp/".$id_user."");
+                    } else {
+                        $data['error'] = $id_user;
+                    }
                 }
             }
         }

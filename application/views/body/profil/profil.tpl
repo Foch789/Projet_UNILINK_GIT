@@ -12,16 +12,12 @@
 
         <div class="NomPersonne">
 
-            {if $user_id_co === $id}
-                    <h1>Oui c'est toi !!!!!</h1>
-            {/if}
-
             <h1>{$nom} </h1>
             <h2>{$prenom} </h2>
 
         </div>
-        
-        {if $user_id_co === $id}
+
+        {if $user_id_co === $id && !isset($admin) }
             <div class="menuProfil">
                 <ul>
                     <li ><a href="{site_url('Profil/view_modif_comp/')}{$user_id_co}"><b>Modifier ses compétences</b></a></li>
@@ -33,9 +29,9 @@
             </div>
         {/if}
     </div>
-    
+
 	<div class="centre">
-        {if $user_id_co === $id}
+        {if $user_id_co === $id && !isset($admin) }
 		  <h1>Tes Compétences </h1>
         {else}
             <h1>Compétances </h1>

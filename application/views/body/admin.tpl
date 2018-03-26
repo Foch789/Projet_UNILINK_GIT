@@ -23,8 +23,7 @@
 
         <div class="menuProfil">
             <ul>
-                <li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
-                <li ><a href="{site_url('Profil/view_admin_comp/')}{$user_id_co}"><b>Les compétences</b></a></li>
+                <li ><a href="{site_url('Admin/view_comp/')}{$user_id_co}"><b>Les compétences</b></a></li>
             </ul>
         </div>
 
@@ -40,7 +39,8 @@
 			<tr>
 			{foreach $resultat as $value}
 			<tr>
-				<td> <a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a> <button class="button">Supprimer</button> </td>
+				<td> <a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a>
+          <button class="button">Mettre en Admin</button> <button class="button">Supprimer</button> </td>
 			<tr>
         {/foreach}
 		</table>
