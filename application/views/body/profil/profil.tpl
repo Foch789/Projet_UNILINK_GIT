@@ -2,6 +2,7 @@
 
 {block name= "css"}
 <link rel="stylesheet" href="{base_url('asset/css/style2.css')}"/>
+
 {/block}
 
 
@@ -17,7 +18,11 @@
 
         </div>
 
+<<<<<<< HEAD
         {if $user_id_co === $id && !isset($admin) }
+=======
+        {if $user_id_co === $id}
+>>>>>>> 89768b42a2f564375792f7574017bc2e00081a3b
             <div class="menuProfil">
                 <ul>
                     <li ><a href="{site_url('Profil/view_modif_comp/')}{$user_id_co}"><b>Modifier ses compétences</b></a></li>
@@ -44,15 +49,15 @@
 			{*metre le for ech *}
 			<tr>
 				<td> C++ </td>
-				<td> 5</td>
+				<td></td>
 			<tr>
 			<tr>
 				<td> HTML</td>
-				<td> 2</td>
+				<td></td>
 			<tr>
 			<tr>
 				<td> C++ </td>
-				<td> 3</td>
+				<td></td>
 			<tr>
 
 		</table>

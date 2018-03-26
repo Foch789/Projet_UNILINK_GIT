@@ -14,23 +14,33 @@
         <h2>Trouvez le parmi nos étudiants</h2>
     </div>
 	<form action="" method="post" class="formulaire">
-
+		<fieldset>
 			{* <input class="champ" type="text" name="search" value="Recherche..." /> *}
-			<input type="checkbox" name="PHP" value="1"> PHP
-			<input type="checkbox" name="C++" value="2"> C++
-			<input type="checkbox" name="Math" value="3"> Mathematiques
-			<input type="checkbox" name="Moteur" value="4"> Moteurs 3D
-			<input type="checkbox" name="Algo" value="5"> Algorithmique
-			<input type="checkbox" name="Web" value="6"> Web
-			<input type="checkbox" name="Systeme" value="7"> Système
-			<input type="checkbox" name="Anglais" value="8"> Anglais
-			<input type="checkbox" name="PPP" value="9"> PPP
-			<input type="checkbox" name="Com" value="10"> Communication
+			<div class="groupe">
+				<label> PHP</label>  	<input type="checkbox" name="PHP" value="1">  
+				<label>C++</label><input type="checkbox" name="C++" value="2">
+				<label> Mathematiques</label> <input type="checkbox" name="Math" value="3">
+			<label>Moteurs 3D</label><input type="checkbox" name="Moteur" value="4">
+			<label>Algorithmique</label><input type="checkbox" name="Algo" value="5">
+			<label>Web</label><input type="checkbox" name="Web" value="6">
+
+			<label>Système</label><input type="checkbox" name="Systeme" value="7">
+			 <label>Anglais</label><input type="checkbox" name="Anglais" value="8">
+			 <label>PPP</label><input type="checkbox" name="PPP" value="9">
+			<label>Communication</label> <input type="checkbox" name="Com" value="10">
+		</div>
+		<div class="groupe">
+				<label>ET</label> <input type="checkbox" name="Com" value="">
+				<label>OU</label> <input type="checkbox" name="Com" value="">
+
+
+			<button class="button" type="submit" name="form_recherche"><b>Envoyer</b></button>
+			</div>
 			{* <input name="recherche" alt="Recherche" class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/></br> *}
 
-				<button class="buttonR" type="submit" name="form_recherche"><b>Envoyer</b></button>
 
 
+		</fieldset>
 	</form>
 
 	<div class= "listeEtu">

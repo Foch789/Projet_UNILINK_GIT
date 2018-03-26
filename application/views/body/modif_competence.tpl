@@ -31,69 +31,51 @@
 
 <div class="centre">
 
-    <h1>Competence </h1>
+    <h1> Modification de tes competence </h1>
 
-Ajouter compétence /
-Modification compétence
-
-<form>
+<form >
 
 {*la vous faire un foretch compétence patati *}
   <table>
 			<tr>
 				<th> Matière </th>
+        <th> Niveau Actuelle</th>
 				<th> Niveau</th>
 			<tr>
 			{*metre le for ech *}
-			<tr>
+			<tr class="grey">
 				<td> C++ </td>
-				<td> 
-					<form>
-					  <fieldset>
-						<span class="star-cb-group">
-						  <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-						  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
-						  <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-						  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-						  <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-						  <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
-						</span>
-					  </fieldset>
-					</form>
+        <td> 3</td>
+				<td>
+          <input type="text" value="Ton niveau dans cette matière "><br>
 				</td>
 			<tr>
 			<tr>
 				<td> HTML</td>
-				<td> 
-					<form>
-					  <fieldset>
-						<span class="star-cb-group">
-						  <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-						  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
-						  <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-						  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-						  <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-						  <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
-						</span>
-					  </fieldset>
-					</form>
+        <td> 5 </td>
+				<td>
+          <input type="text" value="Ton niveau dans cette matière "><br>
 				</td>
 			<tr>
 			<tr>
 				<td>JAVA </td>
-				<td> 
-					
+        <td> 5 </td>
+				<td>
+            <input type="text" value="Ton niveau dans cette matière "><br>
 				</td>
 			<tr>
-
+        <tr>
+          <td colspan="2">  </td>
+  				<td  >
+              <button class="button" type="submit">Envoyer</button>
+  				</td>
+  			<tr>
 		</table>
-    
-
-
+    <p>
+      La zone grise signifie que tu n'as pas rempli cette compétence
+    </p>
   </div>
-  <div>
-    <button type="submit">Envoyer</button>
-  </div>
+
 </form>
 
 

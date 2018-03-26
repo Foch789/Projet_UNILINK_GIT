@@ -42,11 +42,14 @@
 			<label for="Passwordc">Confirmation:</label>
 			<input type="password" name="mdpc" placeholder=" Mot de passe de confirmation" required>
 		</div>
-		{if not empty($errors)}
-		{foreach $errors as $error}
-			{$error}</br>
-		{/foreach}
-		{/if}
+
+				{if not empty($errors)}
+				<div class="erreur">
+				{foreach $errors as $error}
+					{$error}</br>
+				{/foreach}
+				</div>
+				{/if}
 
 		<div class="button">
 			<button type="submit" name="form_inscription"><b>Envoyer</b></button>
