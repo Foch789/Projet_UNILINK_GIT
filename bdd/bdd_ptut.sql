@@ -64,20 +64,55 @@ INSERT INTO promo(intitule_promo)
 VALUES ('INFO1'),
 ('INFO2'),
 ('MMI1'),
-('MMI2');
+('MMI2'),
+('Enseignant');
 
 
 INSERT INTO competence(id_promo, intitule_comp)
-VALUES (3, 'PHP'),
-(1, 'C++'),
-(2, 'Mathematiques'),
-(2, 'Moteurs_3D'),
-(1, 'Algorithmique'),
-(4, 'Web'),
-(1, 'Systeme'),
-(4, 'Anglais'),
-(2, 'PPP'),
-(3, 'Communication');
+VALUES
+(1, 'Introduction aux systèmes informatiques'),
+(1, 'Introduction à l\'algorithmique et a la programmation'),
+(1, 'Structures de données et algorithmes fondamentaux'),
+(1, 'Introduction aux bases de données'),
+(1, 'Conception de documents et d\'interfaces numériques'),
+(1, 'Mathématiques discrètes'),
+(1, 'Algèbre linéaire'),
+(1, 'Environnement économique'),
+(1, 'Fonctionnement des organisations'),
+(1, 'Expression - Communication - Fondamentaux de la communication'),
+(1, 'Anglais et informatique'),
+(1, 'PPP'),
+
+(2, 'Probabilité et statistiques'),
+(2, 'Principes des systèmes d\'exploitation'),
+(2, 'Services Réseaux'),
+(2, 'Algorithmique avancée'),
+(2, 'Programmation web côté serveur'),
+(2, 'Conception et programmation objet avancée'),
+(2, 'Mathématiques pour la synthèse d\'images'),
+(2, 'Droits des TIC'),
+(2, 'Expression - Communication - Communication professionnelle'),
+(2, 'Collaborer en anglais'),
+(2, 'Méthodologie de la production d\'applications'),
+(2, 'Ƥrojet tutoré - Mise en situation professionnelle'),
+(2, 'PPP - Préciser son projet'),
+
+(3, 'Mise a niveau HTML/CSS'),
+(3, 'Intégration web'),
+(3, 'Les différents types de communication'),
+(3, 'Infographie'),
+(3, 'Environnement Economique, Juridique et Mercatique des Organisation'),
+(3, 'PPP'),
+(3, 'Bases de données'),
+
+
+(4, 'Programmation orientée objet'),
+(4, 'Ecriture de Médias Numériques'),
+(4, 'Modélisation 3D'),
+(4, 'Réalisation de Contenus Audiovisuels'),
+(4, 'Projet');
+
+
 
 
 
@@ -122,6 +157,8 @@ VALUES (1, 0, 1, 4, 8),
 
 insert into aide
 values (true, true, false, 5, 1, 2);
+
+
 
 
 create or replace function trigger_verif_aide() returns trigger as
