@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Unilink (prototype 1)" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2017-11-20" view-index="0" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Unilink (prototype 1)" company="" webLink="http://laurent.alwaysdata.net/PTUT/" view-date="2018-02-26" view-index="1" gantt-divider-location="286" resource-divider-location="420" version="2.8.5" locale="fr">
     <description><![CDATA[Réseau social pour aider les étudiants a progresser par le biais de tutorat]]></description>
     <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="159" order="0"/>
         <field id="tpd4" name="Date de début" width="62" order="1"/>
         <field id="tpd5" name="Date de fin" width="61" order="2"/>
         <option id="taskLabelLeft" value="resources"/>
-        <timeline><![CDATA[52,0,53,1,5,33]]></timeline>
-        <option id="color.recent"><![CDATA[#0000ff #ff0000 #ffff00 #ff99cc #ff3333 #33ff33 #00ccff #cc00cc #ff33ff]]></option>
+        <timeline><![CDATA[90,53,65,122,94,56,120,0,5,33,93,69,74,121,52,1]]></timeline>
+        <option id="color.recent"><![CDATA[#cc0000 #cc00cc #00ff00 #0000cc #ff0000 #0000ff #ffff00 #ff99cc #ff3333 #33ff33]]></option>
     </view>
     <view id="resource-table">
-        <field id="tpc0" name="Prénom" width="60" order="0"/>
-        <field id="0" name="Nom" width="93" order="1"/>
-        <field id="1" name="Rôle par défaut" width="64" order="2"/>
-        <field id="tpc1" name="heures prototype" width="58" order="3"/>
-        <field id="tpc2" name="heure conception" width="61" order="4"/>
-        <field id="tpc3" name="heures cumuler" width="80" order="5"/>
+        <field id="tpc0" name="Prénom" width="76" order="0"/>
+        <field id="0" name="Nom" width="15" order="1"/>
+        <field id="1" name="Rôle par défaut" width="49" order="2"/>
+        <field id="tpc1" name="heures prototype 1" width="32" order="3"/>
+        <field id="tpc2" name="heure conception" width="50" order="4"/>
+        <field id="tpc4" name="heures prototype 2" width="63" order="5"/>
+        <field id="tpc5" name="heures prototype 3" width="79" order="6"/>
+        <field id="tpc3" name="heures cumuler" width="52" order="7"/>
     </view>
     <!-- -->
     <calendars base-id="Aucun">
@@ -42,77 +44,117 @@
         </taskproperties>
         <task id="33" name="Conception" color="#33ff33" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2017-09-10" duration="68" complete="100" expand="true">
             <notes><![CDATA[Conception du sites]]></notes>
-            <depend id="0" type="2" difference="0" hardness="Rubber"/>
+            <depend id="0" type="2" difference="0" hardness="Strong"/>
             <depend id="1" type="2" difference="0" hardness="Rubber"/>
-            <depend id="46" type="2" difference="0" hardness="Rubber"/>
+            <depend id="46" type="2" difference="0" hardness="Strong"/>
             <depend id="53" type="2" difference="0" hardness="Rubber"/>
+            <depend id="54" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-12-14" duration="1" complete="100" expand="true">
-            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+        <task id="54" name="prototype 1" color="#0000ff" meeting="false" start="2017-11-17" duration="36" complete="96" expand="false">
+            <task id="46" name="diagramme Gantt" color="#ff99cc" meeting="false" start="2017-11-17" duration="34" complete="96" expand="false">
+                <depend id="12" type="2" difference="0" hardness="Rubber"/>
+                <task id="0" name="css" color="#ffff00" meeting="false" start="2017-11-17" duration="3" complete="100" expand="true">
+                    <notes><![CDATA[création des pages du sites]]></notes>
+                    <depend id="5" type="2" difference="0" hardness="Rubber"/>
+                    <depend id="12" type="2" difference="0" hardness="Rubber"/>
+                </task>
+                <task id="53" name="template" color="#ffff00" meeting="false" start="2017-12-13" duration="3" complete="100" expand="true">
+                    <notes><![CDATA[création de patron de page html]]></notes>
+                    <depend id="5" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="1" name="BDD" color="#cc00cc" meeting="false" start="2017-12-07" duration="9" complete="96" expand="true">
+                    <notes><![CDATA[création de la base de données et des fonctions associées]]></notes>
+                    <depend id="5" type="2" difference="0" hardness="Rubber"/>
+                    <depend id="12" type="2" difference="0" hardness="Rubber"/>
+                </task>
+                <task id="5" name="PHP" color="#ff3333" meeting="false" start="2017-12-16" duration="3" complete="87" priority="2" expand="true">
+                    <notes><![CDATA[les fonctionnalitées du site]]></notes>
+                    <depend id="12" type="2" difference="0" hardness="Rubber"/>
+                    <depend id="52" type="2" difference="0" hardness="Rubber"/>
+                </task>
+                <task id="52" name="Code Igniter" color="#ff0000" meeting="false" start="2017-12-20" duration="1" complete="100" expand="true">
+                    <notes><![CDATA[integration des requêtes sql]]></notes>
+                </task>
+            </task>
+            <task id="12" name="Fiche présentation" color="#00ccff" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2017-12-21" duration="2" complete="100" expand="true">
+                <notes><![CDATA[création du ficher de présentation du prototype 1]]></notes>
+            </task>
         </task>
-        <task id="0" name="css" color="#ffff00" meeting="false" start="2017-11-24" duration="1" complete="100" expand="true">
-            <notes><![CDATA[création des pages du sites]]></notes>
-            <depend id="5" type="2" difference="0" hardness="Rubber"/>
-            <depend id="12" type="2" difference="0" hardness="Rubber"/>
+        <task id="56" name="Prototype 2" color="#0000ff" meeting="false" project="true" start="2018-01-19" duration="15" complete="62" expand="false">
+            <task id="73" name="Gantt" color="#0000ff" meeting="false" start="2018-01-19" duration="1" complete="100" expand="true"/>
+            <task id="87" name="diaporama" color="#0000ff" meeting="false" start="2018-02-02" duration="1" complete="0" expand="true"/>
+            <task id="65" name="Fonction recherche" color="#ff0000" meeting="false" start="2018-01-20" duration="1" complete="45" expand="true"/>
+            <task id="69" name="Choix Compétence" color="#ff0000" meeting="false" start="2018-01-20" duration="1" complete="0" expand="true"/>
+            <task id="74" name="codeigniter" color="#ff0000" meeting="false" start="2018-01-30" duration="3" complete="100" expand="true"/>
+            <task id="82" name="css" color="#00ff00" meeting="false" start="2018-01-30" duration="2" complete="60" expand="true"/>
         </task>
-        <task id="53" name="template" color="#ffff00" meeting="false" start="2017-12-13" duration="3" complete="100" expand="true">
-            <notes><![CDATA[création de patron de page html]]></notes>
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="1" name="BDD" color="#cc00cc" meeting="false" start="2017-12-07" duration="9" complete="96" expand="true">
-            <notes><![CDATA[création de la base de données et des fonctions associées]]></notes>
-            <depend id="5" type="2" difference="0" hardness="Rubber"/>
-            <depend id="12" type="2" difference="0" hardness="Rubber"/>
-        </task>
-        <task id="5" name="PHP" color="#ff3333" meeting="false" start="2017-12-16" duration="3" complete="87" priority="2" expand="true">
-            <notes><![CDATA[les fonctionnalitées du site]]></notes>
-            <depend id="12" type="2" difference="0" hardness="Rubber"/>
-            <depend id="52" type="2" difference="0" hardness="Rubber"/>
-        </task>
-        <task id="52" name="Code Igniter" color="#ff0000" meeting="false" start="2017-12-20" duration="1" complete="100" expand="true">
-            <notes><![CDATA[integration des requêtes sql]]></notes>
-        </task>
-        <task id="12" name="Fiche présentation" color="#00ccff" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2017-12-19" duration="2" complete="100" expand="true">
-            <notes><![CDATA[création du ficher de présentation du prototype 1]]></notes>
+        <task id="90" name="Prototype 3" color="#0000cc" meeting="false" start="2018-03-10" duration="19" complete="57" thirdDate="2018-02-03" thirdDate-constraint="0" expand="true">
+            <task id="119" name="diaporama" color="#0000ff" meeting="false" start="2018-03-15" duration="14" complete="46" expand="true"/>
+            <task id="94" name="php" color="#cc0000" meeting="false" start="2018-03-15" duration="3" complete="52" expand="true">
+                <task id="112" name="gestion d'aide" color="#cc0000" meeting="false" start="2018-03-15" duration="3" complete="26" expand="true"/>
+                <task id="129" name="recherche" color="#cc0000" meeting="false" start="2018-03-15" duration="2" complete="91" expand="true"/>
+            </task>
+            <task id="120" name="base de donnée" color="#cc00cc" meeting="false" start="2018-03-14" duration="4" complete="69" expand="true">
+                <task id="121" name="base de donnée local" color="#cc00cc" meeting="false" start="2018-03-14" duration="1" complete="100" expand="true"/>
+                <task id="122" name="jeu de test" color="#cc00cc" meeting="false" start="2018-03-14" duration="1" complete="81" expand="true"/>
+                <task id="128" name="compétence" color="#cc00cc" meeting="false" start="2018-03-14" duration="4" complete="59" expand="true"/>
+            </task>
+            <task id="109" name="css/html" color="#00ff00" meeting="false" start="2018-03-10" duration="3" complete="100" expand="true">
+                <task id="93" name="page compétence" color="#00ff00" meeting="false" start="2018-03-10" duration="3" complete="100" expand="true"/>
+            </task>
         </task>
     </tasks>
     <resources>
         <custom-property-definition id="tpc0" name="Prénom" type="text"/>
-        <custom-property-definition id="tpc1" name="heures prototype" type="double"/>
+        <custom-property-definition id="tpc1" name="heures prototype 1" type="double"/>
         <custom-property-definition id="tpc2" name="heure conception" type="double"/>
         <custom-property-definition id="tpc3" name="heures cumuler" type="double"/>
+        <custom-property-definition id="tpc4" name="heures prototype 2" type="double"/>
+        <custom-property-definition id="tpc5" name="heures prototype 3" type="double"/>
         <resource id="0" name="Dos Santos" function="3" contacts="" phone="">
-            <custom-property definition-id="tpc3" value="55.0"/>
+            <custom-property definition-id="tpc5" value="30.0"/>
+            <custom-property definition-id="tpc3" value="93.0"/>
+            <custom-property definition-id="tpc4" value="8.0"/>
             <custom-property definition-id="tpc1" value="30.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Alexendra"/>
         </resource>
         <resource id="1" name="Roux" function="2" contacts="" phone="">
-            <custom-property definition-id="tpc3" value="50.0"/>
+            <custom-property definition-id="tpc5" value="20.0"/>
+            <custom-property definition-id="tpc3" value="76.0"/>
+            <custom-property definition-id="tpc4" value="6.0"/>
             <custom-property definition-id="tpc1" value="25.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Alexandre "/>
         </resource>
         <resource id="2" name="Doiteau" function="Default:1" contacts="" phone="">
-            <custom-property definition-id="tpc3" value="51.0"/>
+            <custom-property definition-id="tpc5" value="41.0"/>
+            <custom-property definition-id="tpc3" value="102.0"/>
+            <custom-property definition-id="tpc4" value="10.0"/>
             <custom-property definition-id="tpc1" value="26.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Laurent"/>
         </resource>
         <resource id="3" name="Richard" function="3" contacts="" phone="">
-            <custom-property definition-id="tpc3" value="50.0"/>
+            <custom-property definition-id="tpc5" value="28.0"/>
+            <custom-property definition-id="tpc3" value="86.0"/>
+            <custom-property definition-id="tpc4" value="8.0"/>
             <custom-property definition-id="tpc1" value="25.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Thomas"/>
         </resource>
-        <resource id="4" name="Vienne" function="2" contacts="" phone="">
-            <custom-property definition-id="tpc3" value="49.0"/>
+        <resource id="4" name="Vienne" function="5" contacts="" phone="">
+            <custom-property definition-id="tpc5" value="25.0"/>
+            <custom-property definition-id="tpc3" value="80.0"/>
+            <custom-property definition-id="tpc4" value="6.0"/>
             <custom-property definition-id="tpc1" value="24.0"/>
             <custom-property definition-id="tpc2" value="25.0"/>
             <custom-property definition-id="tpc0" value="Geoffrey"/>
         </resource>
         <resource id="5" name="Barbe" function="5" contacts="" phone="">
+            <custom-property definition-id="tpc5" value="0.0"/>
             <custom-property definition-id="tpc3" value="10.0"/>
+            <custom-property definition-id="tpc4" value="0.0"/>
             <custom-property definition-id="tpc1" value="5.0"/>
             <custom-property definition-id="tpc2" value="5.0"/>
             <custom-property definition-id="tpc0" value="Baptiste"/>
@@ -124,23 +166,64 @@
         <allocation task-id="12" resource-id="0" function="5" responsible="false" load="100.0"/>
         <allocation task-id="33" resource-id="0" function="5" responsible="false" load="20.0"/>
         <allocation task-id="53" resource-id="0" function="3" responsible="true" load="60.0"/>
+        <allocation task-id="54" resource-id="0" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="0" function="3" responsible="false" load="25.0"/>
+        <allocation task-id="82" resource-id="0" function="4" responsible="false" load="25.0"/>
+        <allocation task-id="94" resource-id="0" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="109" resource-id="0" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="90" resource-id="0" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="129" resource-id="0" function="3" responsible="false" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="2" responsible="true" load="50.0"/>
         <allocation task-id="12" resource-id="1" function="5" responsible="false" load="100.0"/>
         <allocation task-id="33" resource-id="1" function="5" responsible="false" load="20.0"/>
+        <allocation task-id="54" resource-id="1" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="120" resource-id="1" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="121" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="122" resource-id="1" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="128" resource-id="1" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="1" function="2" responsible="false" load="100.0"/>
         <allocation task-id="5" resource-id="2" function="3" responsible="true" load="30.0"/>
         <allocation task-id="33" resource-id="2" function="5" responsible="true" load="20.0"/>
         <allocation task-id="12" resource-id="2" function="5" responsible="true" load="100.0"/>
         <allocation task-id="53" resource-id="2" function="3" responsible="false" load="40.0"/>
+        <allocation task-id="54" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="69" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="56" resource-id="2" function="Default:1" responsible="true" load="25.0"/>
+        <allocation task-id="74" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="82" resource-id="2" function="4" responsible="true" load="75.0"/>
+        <allocation task-id="65" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="94" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="109" resource-id="2" function="4" responsible="false" load="100.0"/>
+        <allocation task-id="120" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="112" resource-id="2" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="128" resource-id="2" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="90" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="129" resource-id="2" function="3" responsible="true" load="100.0"/>
         <allocation task-id="5" resource-id="3" function="3" responsible="false" load="30.0"/>
         <allocation task-id="12" resource-id="3" function="5" responsible="false" load="100.0"/>
         <allocation task-id="33" resource-id="3" function="5" responsible="false" load="20.0"/>
         <allocation task-id="52" resource-id="3" function="3" responsible="true" load="0.0"/>
+        <allocation task-id="54" resource-id="3" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="69" resource-id="3" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="3" function="3" responsible="false" load="25.0"/>
+        <allocation task-id="65" resource-id="3" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="3" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="112" resource-id="3" function="3" responsible="false" load="100.0"/>
+        <allocation task-id="119" resource-id="3" function="5" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="3" function="3" responsible="false" load="100.0"/>
         <allocation task-id="1" resource-id="4" function="2" responsible="false" load="50.0"/>
         <allocation task-id="12" resource-id="4" function="5" responsible="false" load="100.0"/>
         <allocation task-id="33" resource-id="4" function="5" responsible="false" load="20.0"/>
         <allocation task-id="46" resource-id="4" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="54" resource-id="4" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="4" function="5" responsible="false" load="25.0"/>
+        <allocation task-id="73" resource-id="4" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="87" resource-id="4" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="119" resource-id="4" function="5" responsible="true" load="100.0"/>
+        <allocation task-id="90" resource-id="4" function="5" responsible="false" load="100.0"/>
         <allocation task-id="12" resource-id="5" function="5" responsible="false" load="100.0"/>
         <allocation task-id="5" resource-id="5" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="54" resource-id="5" function="5" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
