@@ -26,18 +26,26 @@ class Competence_model extends BDD_models
         return $resultat;
     }
 
-    public function getCompetencePromo($idpromo)
-    {
-        $resultat=array();
-        $this->db->select('*');
-        $this->db->from($this->get_table());
-        $this->db->join('promo', 'competence.id_promo = promo.id_promo');
-        $this->db->where('id_promo', $idpromo);
-        $foo = $this->db->get();
-        foreach ($foo->result_array() as $item) {
-            array_push($resultat, $item);
-        }
-        return $resultat;
+    public function getCompetencePromo($idetu){
+      $resultat=array();
+      $this->db->from('etudiant');
+      $this->db->join('promo','etudiant.id_promo = promo.id_promo');
+      $this->db->join('competence','promo.id_promo=competence.id_promo');
+      $this->db->where('etudiant.id_etu',$idetu);
+      $foo = $this->db->get();
+      foreach ($foo->result_array() as $item) {
+        array_push($resultat,$item);
+      }
+      return $resultat;
+    }
+    // Le getCompetencePromo renvoi stocke l'id des competence, tu peux l'utiliser pour setCompetence
+    public function getIdCompetenceParIntitule($intitule){
+      $this->db->from('competence');
+      $this->db->where('intitule_comp',$intitule);
+      $foo = $this->db->get();
+      $resultat = $foo->row_array();
+      //print_r($resultat);
+      return $resultat;
     }
     // Le getCompetencePromo renvoi stocke l'id des competence, tu peux l'utiliser pour setCompetence
 
