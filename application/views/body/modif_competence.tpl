@@ -35,41 +35,50 @@
 
 <form >
 
+{*la vous faire un foretch compétence patati *}
   <table>
 			<tr>
 				<th> Matière </th>
         <th> Niveau Actuelle</th>
 				<th> Niveau</th>
 			<tr>
-
+			{*metre le for ech *}
+			<tr class="grey">
+				<td> C++ </td>
+        <td> 3</td>
+				<td>
+          <input type="number" name="niveau" min="1" max="5">
+				</td>
+			<tr>
+			<tr>
+				<td> HTML</td>
+        <td> 5 </td>
+				<td >
+          <input type="number" name="niveau" min="1" max="5">
+				</td>
+			<tr>
+        <tr>
+          <td colspan="2">  </td>
+  				<td>
+              <button class="button" type="submit">Envoyer</button>
+  				</td>
+  			<tr>
 		</table>
-
-    <button class="button" type="submit" name="form_recherche"><b>Envoyer</b></button>
-
-  </form>
-
-  <p>
-    La zone grise signifie que tu n'as pas rempli cette compétence
-  </p>
-
+    <p>
+      La zone grise signifie que tu n'as pas rempli cette compétence
+    </p>
   </div>
 
+</form>
+
+
 </div>
+
+
+
+
+
 
 </div>
 
 {/block}
-
-{* <tr class="grey">
-  <td> C++ </td>
-  <td> 3</td>
-  <td>
-    <div class="groupe">
-    <label>1</label> <input type="radio" name="niveau" value="1" checked>
-    <label>2</label> <input type="radio" name="niveau" value="2">
-    <label>3</label> <input type="radio" name="niveau" value="3">
-    <label>4</label> <input type="radio" name="niveau" value="4">
-    <label>5</label> <input type="radio" name="niveau" value="5">
-  </div>
-  </td>
-<tr> *}
