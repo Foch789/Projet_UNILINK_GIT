@@ -40,7 +40,8 @@
 			{foreach $resultat as $value}
 			<tr>
 				<td> <a href="{site_url('Profil/view/')}{$value['id_etu']}">{$value['nom_etu']} {$value['prenom_etu']}</a>
-          <button class="button">Mettre en Admin</button> <button class="button">Supprimer</button> </td>
+          <button class="button" onclick="myFunction2('{$value['prenom_etu']}','{$value['nom_etu']}',{$value['id_etu']})">Mettre en Admin</button>
+          <button class="button" onclick="myFunction('{$value['prenom_etu']}','{$value['nom_etu']}',{$value['id_etu']})">Supprimer</button> </td>
 			<tr>
         {/foreach}
 		</table>
@@ -49,5 +50,23 @@
 
 
 </div>
+
+<script>
+function myFunction(prenom,nom , id) {
+  var r = confirm('Etes-vous sûr de supprimer '+ prenom + " " + nom);
+  if (r == true)
+  {
+    window.open("{site_url('Admin/supprimer/')}"+id,"_self")
+  }
+}
+
+function myFunction2(prenom,nom,id) {
+  var r = confirm('Etes-vous sûr de mettre '+ prenom + " " + nom + " en admin.");
+  if (r == true)
+  {
+    window.open("{site_url('Admin/mettreAdmin/')}"+id,"_self")
+  }
+}
+</script>
 
 {/block}

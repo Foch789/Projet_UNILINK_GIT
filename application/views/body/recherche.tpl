@@ -30,15 +30,13 @@
 			<label>Communication</label> <input type="checkbox" name="Com" value="10">
 		</div>
 		<div class="groupe">
-				<label>ET</label> <input type="checkbox" name="Com" value="">
-				<label>OU</label> <input type="checkbox" name="Com" value="">
 
+			<label>ET</label> <input type="radio" name="operation" value="ET" checked>
+			<label>OU</label> <input type="radio" name="operation" value="OU">
 
 			<button class="button" type="submit" name="form_recherche"><b>Envoyer</b></button>
-			</div>
+		</div>
 			{* <input name="recherche" alt="Recherche" class="form_recherche" type="image" src="{base_url('asset/img/magnifier.png')}"/></br> *}
-
-
 
 		</fieldset>
 	</form>

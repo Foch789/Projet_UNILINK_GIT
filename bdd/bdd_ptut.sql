@@ -14,7 +14,7 @@ Create table etudiant
 	mdp_etu varchar(150),
 	desc_etu text,
 	id_promo int,
-	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo)
+	constraint FK_ETU_PROMO foreign key (id_promo) references promo (id_promo) ON DELETE CASCADE
 );
 
 Create table competence
@@ -22,7 +22,7 @@ Create table competence
 	id_comp serial primary key,
 	id_promo serial,
 	intitule_comp varchar(100),
-	constraint FK_COMP_PROMO foreign key (id_promo) references promo (id_promo)
+	constraint FK_COMP_PROMO foreign key (id_promo) references promo (id_promo) ON DELETE CASCADE
 );
 
 Create table niveau
@@ -30,8 +30,8 @@ Create table niveau
 	niveau int,
 	id_etu serial,
 	id_comp serial,
-	constraint FK_ETU_NIV foreign key (id_etu) references etudiant(id_etu),
-	constraint FK_COMP_NIV foreign key (id_comp) references competence(id_comp)
+	constraint FK_ETU_NIV foreign key (id_etu) references etudiant(id_etu) ON DELETE CASCADE,
+	constraint FK_COMP_NIV foreign key (id_comp) references competence(id_comp) ON DELETE CASCADE
 );
 
 
@@ -43,9 +43,9 @@ Create table aide
 	id_aide serial,
 	id_aidant serial,
 	id_comp serial,
-	constraint FK_ETU_AIDE foreign  key (id_aide) references etudiant(id_etu),
-	constraint FK_ETU_AIDANT foreign  key (id_aidant) references etudiant(id_etu),
-	constraint FK_COMP_AIDE foreign key (id_comp) references competence(id_comp)
+	constraint FK_ETU_AIDE foreign  key (id_aide) references etudiant(id_etu) ON DELETE CASCADE,
+	constraint FK_ETU_AIDANT foreign  key (id_aidant) references etudiant(id_etu) ON DELETE CASCADE,
+	constraint FK_COMP_AIDE foreign key (id_comp) references competence(id_comp) ON DELETE CASCADE
 );
 
 

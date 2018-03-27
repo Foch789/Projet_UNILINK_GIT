@@ -30,7 +30,7 @@ class Enseignant_model extends BDD_models
             $this->db->where($this->get_colonne()['email'], $login);
             $resultat = $this->db->get();
             $row = $resultat->row();
-            $Vraimdp = $row->mdp_ens;//=  $this->encrypt->decode($row->mdp_ens);
+            $Vraimdp = $this->encrypt->decode($row->mdp_ens);
             if ($Vraimdp === $mdp) {
                 return $row->id_ens;
             } else {

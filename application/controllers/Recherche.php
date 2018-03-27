@@ -75,6 +75,10 @@ class Recherche extends CI_Controller
                 array(
                         'field' => 'Com',
                         'label' => 'Communication',
+                ),
+                array(
+                        'field' => 'operation',
+                        'label' => 'operation',
                 )
 
         );
@@ -105,7 +109,12 @@ class Recherche extends CI_Controller
                 array_push($real, $value);
             }
 
-            $resultat = $this->Niveau_model->get_niveau_etudiant_sup_et($real);
+            if ($this->input->post('operation') === "ET") {
+                $resultat = $this->Niveau_model->get_niveau_etudiant_sup_et($real);
+            } else {
+                $resultat = $this->Niveau_model->get_niveau_etudiant_sup($real);
+            }
+
 
             $etudiants = array();
 

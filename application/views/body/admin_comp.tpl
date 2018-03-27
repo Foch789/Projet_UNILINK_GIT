@@ -33,19 +33,36 @@
 			<tr>
 				<th> Compétences</th>
         <th> Promo</th>
-				<th> Supprimer</th>
+				<th> </th>
 			<tr>
 			{foreach $comp as $value}
       {foreach $value[0] as $key}
       <tr>
 				<td> {$key['intitule_comp']}</td>
         <td> {$value[1]}</td>
-				<td><button class="button">Supprimer</button></td>
+				<td><button class="button" onclick="myFunction('{$key['intitule_comp']}',{$key['id_comp']})">Supprimer</button> </td>
 			<tr>
       {/foreach}
       {/foreach}
       <tr>
-        <td> Ajouter competence</td>
+
+        <form action="" method="post">
+
+      			<td> <label for="Nom">Ajouter competence</label></td>
+      			<td> <input type="text" name="comp" placeholder="Nouvelle compétence" required>
+          <label for="Promos">Promos:</label>
+      			<select name="id_promo" placeholder=" Promos" required>
+      							<option> None
+      							<option value="1"> INFO 1</option>
+      							<option value="2"> INFO 2</option>
+      							<option value="3"> MMI 1</option>
+      							<option value="4"> MMI 2</option>
+      					</select></td>
+            <td>
+        			<button class="button" type="submit" name="form_comp"><b>Envoyer</b></button>
+        	</td>
+        </form
+
         <tr>
 
 		</table>
@@ -54,5 +71,15 @@
 
 
 </div>
+
+<script>
+function myFunction(comp, id) {
+  var r = confirm('Etes-vous sûr de supprimer '+ comp);
+  if (r == true)
+  {
+    window.open("{site_url('Admin/supprimerComp/')}"+id,"_self")
+  }
+}
+</script>
 
 {/block}

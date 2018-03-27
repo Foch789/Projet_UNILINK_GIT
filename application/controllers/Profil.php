@@ -165,7 +165,7 @@ class Profil extends CI_Controller
 
         $this->load->model('Competence_model');
 
-        $data['comp'] = $this->Competence_model->getComp($id);
+        //  $data['comp'] = $this->Competence_model->getComp($id);
 
         $this->parser->parse('body/modif_competence.tpl', $data);
     }

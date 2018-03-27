@@ -49,4 +49,15 @@ class Competence_model extends BDD_models
         $this->db->where('id_etu', $idetudiant);
         $this->db->update('niveau');
     }
+
+    public function supprimeComp($idComp)
+    {
+        $this->db->where($this->get_colonne()['id'], $idComp);
+        $this->db->delete($this->get_table());
+    }
+
+    public function ajoutComp($idPromo, $nom)
+    {
+        $this->insert(array("id_promo" => $idPromo,"intitule_comp" => $nom));
+    }
 }
