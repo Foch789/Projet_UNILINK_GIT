@@ -71,10 +71,10 @@ VALUES ('INFO1'),
 INSERT INTO competence(id_promo, intitule_comp)
 VALUES
 (1, 'Introduction aux systèmes informatiques'),
-(1, 'Introduction à l\'algorithmique et a la programmation'),
+(1, 'Introduction à l algorithmique et a la programmation'),
 (1, 'Structures de données et algorithmes fondamentaux'),
 (1, 'Introduction aux bases de données'),
-(1, 'Conception de documents et d\'interfaces numériques'),
+(1, 'Conception de documents et d interfaces numériques'),
 (1, 'Mathématiques discrètes'),
 (1, 'Algèbre linéaire'),
 (1, 'Environnement économique'),
@@ -84,16 +84,16 @@ VALUES
 (1, 'PPP'),
 
 (2, 'Probabilité et statistiques'),
-(2, 'Principes des systèmes d\'exploitation'),
+(2, 'Principes des systèmes d exploitation'),
 (2, 'Services Réseaux'),
 (2, 'Algorithmique avancée'),
 (2, 'Programmation web côté serveur'),
 (2, 'Conception et programmation objet avancée'),
-(2, 'Mathématiques pour la synthèse d\'images'),
+(2, 'Mathématiques pour la synthèse d images'),
 (2, 'Droits des TIC'),
 (2, 'Expression - Communication - Communication professionnelle'),
 (2, 'Collaborer en anglais'),
-(2, 'Méthodologie de la production d\'applications'),
+(2, 'Méthodologie de la production d applications'),
 (2, 'Ƥrojet tutoré - Mise en situation professionnelle'),
 (2, 'PPP - Préciser son projet'),
 
@@ -141,22 +141,15 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 INSERT INTO enseignant
 VALUES (DEFAULT, 'Carmignac', 'Laurent', 'laurent.carmignac@mail.com', 'password');
 
-/*
-INSERT INTO aide
-VALUES (1, 0, 1, 4, 8),
- (1, 1, 0),
- (1, 1, 0),
- (1, 1, 1),
- (1, 0, 1),
- (1, 1, 1),
- (1, 0, 1),
- (1, 0, 1),
- (1, 1, 1),
- (1, 1, 0);
-*/
+
 
 insert into aide
 values (true, true, false, 5, 1, 2);
+values (true, false, true, );
+
+
+
+
 
 
 
@@ -179,3 +172,26 @@ language plpgsql;
 
 
 create trigger trigg_v_aide before insert or update on aide for each row execute procedure trigger_verif_aide();
+
+
+create or replace function trigger_verif_aide() returns trigger as
+$$
+begin
+    if new.aidant = true then
+        if new.demande_aide = true and new.accepter_aide = true then
+            raise exception 'Erreur: combinaison de booleens erronee';
+        end if;
+    else
+        raise exception 'Erreur: combinaison de booleens erronee';
+    end if;
+
+    return new;
+end;
+$$
+language plpgsql;
+
+
+create trigger trigg_v_aide before insert or update on aide for each row execute procedure trigger_verif_aide();
+
+
+
