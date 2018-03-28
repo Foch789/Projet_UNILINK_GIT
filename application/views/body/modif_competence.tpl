@@ -35,6 +35,7 @@
 
  <form action="" method="post">
 
+{*la vous faire un foretch compétence patati *}
   <table>
 			<tr>
 				<th> Matière </th>
@@ -64,16 +65,20 @@
   			<tr>
 
 		</table>
+    <p>
+      La zone grise signifie que tu n'as pas rempli cette compétence
+    </p>
+  </div>
+
+</form>
+
+
+</div>
 
   </form>
 
-  <p>
-    La zone grise signifie que tu n'as pas rempli cette compétence
-  </p>
 
-  </div>
 
-</div>
 
 </div>
 

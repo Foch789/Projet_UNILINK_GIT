@@ -5,6 +5,7 @@
 {/block}
 
 {block name="body"}
+<div class= "page">
 
 <div class="containment">
 
@@ -48,5 +49,5 @@
 	</div>
 
 </div>
-
+</div>
 {/block}
