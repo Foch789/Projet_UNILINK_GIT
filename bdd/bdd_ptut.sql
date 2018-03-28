@@ -52,6 +52,7 @@ Create table aide
 Create table enseignant
 (
 	id_ens serial primary key,
+	id_promo serial,
 	nom_ens varchar(20),
 	prenom_ens varchar(20),
 	email_ens varchar(50),
@@ -144,7 +145,7 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (5, 11, 3), (5, 11, 9), (5, 11, 6);
 
 INSERT INTO enseignant
-VALUES (DEFAULT, 'Carmignac', 'Laurent', 'laurent.carmignac@mail.com', 'password');
+VALUES (DEFAULT, 5, 'Carmignac', 'Laurent', 'laurent.carmignac@mail.com', 'password');
 
 
 
