@@ -126,7 +126,11 @@ VALUES ('Mccormick','Hiram',DEFAULT,'pretium.aliquet@feugiat.com','X5J5D79hkZ8sL
 ('Morrow','Montana',true,'ullamcorper.eu@sollicitudin.co.uk','P0n2V15IyQ9hT240G','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',2),
 ('Moon','Lavinia',true,'per.inceptos.hymenaeos@sollicitudin.org','h5T7s50XNG7mq867n','Lorem ipsum dolor sit amet, consectetuer adipiscing',2),
 ('Reese','Matthew',true,'malesuada.fringilla.est@lacusvarius.net','E2J6l60UnV5ph891E','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',1),
-('Carter','Kimberly',true,'erat.eget.tincidunt@in.edu','I2m0I45Gla4xy598x','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer',2);
+('Carter','Kimberly',true,'erat.eget.tincidunt@in.edu','I2m0I45Gla4xy598x','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer',2),
+('Plop','Plop',true,'mail@mail.mail','Ireftsghfjg','Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 2);
+
+
+
 
 
 INSERT INTO niveau(niveau,id_etu,id_comp)
@@ -136,17 +140,26 @@ VALUES (1,5,2),(2,6,4),(5,2,10),(1,1,3),(5,3,8),(1,3,3),(4,8,7),
 (3,5,1),(5,8,5),(5,9,8),(5,4,1),(3,4,10),(1,8,10),(1,7,4),(4,4,4),
 (2,1,9),(3,6,2),(4,2,5),(5,8,2),(4,3,4),(4,9,1),(1,2,3),(1,3,10),
 (4,7,2),(1,2,7),(2,10,2),(1,1,7),(1,4,3),(4,1,2),(2,7,10),(3,2,1),
-(4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5);
+(4,9,6),(4,10,3),(3,5,5),(5,7,8),(3,10,1),(3,8,1),(4,3,7),(2,4,5),
+(5, 11, 3), (5, 11, 9), (5, 11, 6);
 
 INSERT INTO enseignant
 VALUES (DEFAULT, 'Carmignac', 'Laurent', 'laurent.carmignac@mail.com', 'password');
 
 
 
-insert into aide
-values (true, true, false, 5, 1, 2);
-values (true, false, true, );
 
+INSERT INTO aide
+VALUES (true, false, true, 1, 2, 3),
+(true, false, false, 2, 11, 3),
+(true, false, true, 3, 11, 3),
+(true, false, false, 4, 11, 9),
+(true, false, true, 5, 8, 2),
+(true, false, true, 6, 4, 4),
+(true, false, true, 7, 4, 4),
+(true, false, true, 8, 9, 6),
+(true, false, true, 9, 11, 9),
+(true, false, true, 10, 11, 6);
 
 
 
