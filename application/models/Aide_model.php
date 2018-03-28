@@ -12,54 +12,66 @@ class Aide_model extends BDD_models
 
     public function get_aide($id_etu)//que tu aides
     {
-        $this->db->select($this->get_colonne()['id_aide'], $this->get_colonne()['id_comp']);
+        $this->db->select('etudiant.nom_etu,etudiant.prenom_etu,competence.intitule_comp');
         $this->db->from($this->get_table());
+        $this->db->join('competence', 'aide.id_comp = competence.id_comp');
+        $this->db->join('etudiant', 'aide.id_aide = etudiant.id_etu');
         $this->db->where($this->get_colonne()['id_aidant'], $id_etu);
         $this->db->where($this->get_colonne()['demande_aide'], true);
         $this->db->where($this->get_colonne()['aidant'], false);
         $this->db->where($this->get_colonne()['accepter_aide'], true);
         $resultat = $this->db->get();
 
-        return $resultat->row_array();
+        return $resultat->result_array();
     }
 
     public function get_aidant($id_etu)//qui t'aide
     {
-        $this->db->select($this->get_colonne()['id_aidant'], $this->get_colonne()['id_comp']);
+        $this->load->model('Etudiant_model');
+        $this->load->model('Competence_model');
+
+        $this->db->select('etudiant.nom_etu,etudiant.prenom_etu,competence.intitule_comp');
         $this->db->from($this->get_table());
-        $this->db->where($this->get_colonne()['id_aide'], $id);
+        $this->db->join('competence', 'aide.id_comp = competence.id_comp');
+        $this->db->join('etudiant', 'aide.id_aidant = etudiant.id_etu');
+        $this->db->where($this->get_colonne()['id_aide'], $id_etu);
         $this->db->where($this->get_colonne()['demande_aide'], true);
         $this->db->where($this->get_colonne()['aidant'], false);
         $this->db->where($this->get_colonne()['accepter_aide'], true);
         $resultat = $this->db->get();
 
-        return $resultat->row_array();
+        return $resultat->result_array();
     }
 
     public function get_demande_aide($id_etu)//qui demande de l'aide
     {
-        $this->db->select($this->get_colonne()['id_aide'], $this->get_colonne()['id_comp']);
+        $this->db->select('etudiant.nom_etu,etudiant.prenom_etu,competence.intitule_comp');
         $this->db->from($this->get_table());
+        $this->db->join('competence', 'aide.id_comp = competence.id_comp');
+        $this->db->join('etudiant', 'aide.id_aide = etudiant.id_etu');
         $this->db->where($this->get_colonne()['id_aidant'], $id_etu);
         $this->db->where($this->get_colonne()['demande_aide'], true);
         $this->db->where($this->get_colonne()['aidant'], true);
         $this->db->where($this->get_colonne()['accepter_aide'], false);
         $resultat = $this->db->get();
 
-        return $resultat->row_array();
+        return $resultat->result_array();
     }
 
     public function get_besoin_aide($id_etu)//qui pourait t'aider
     {
-        $this->db->select($this->get_colonne()['id_aidant'], $this->get_colonne()['id_comp']);
+        $this->db->select('etudiant.nom_etu,etudiant.prenom_etu,competence.intitule_comp');
         $this->db->from($this->get_table());
+        $this->db->join('competence', 'aide.id_comp = competence.id_comp');
+        $this->db->join('etudiant', 'aide.id_aidant = etudiant.id_etu');
         $this->db->where($this->get_colonne()['id_aide'], $id_etu);
-        $this->db->where($this->get_colonne()['demande_aide'], true);
-        $this->db->where($this->get_colonne()['aidant'], false);
+        $this->db->where($this->get_colonne()['demande_aide'], false);
+        $this->db->where($this->get_colonne()['aidant'], true);
         $this->db->where($this->get_colonne()['accepter_aide'], false);
         $resultat = $this->db->get();
+        $l = $resultat->result_array();
 
-        return $resultat->row_array();
+        return $l;
     }
 
     //global
@@ -67,14 +79,14 @@ class Aide_model extends BDD_models
     public function mise_a_jour($id_etu, $id_comp, $niv)
     {
         if ($niv < 3) {
-            supprimer_aide($id_etu, $id_comp);
-            ajouter_aidant($id_etu, $id_comp);
+            $this->supprimer_aide($id_etu, $id_comp);
+            $this->ajouter_aidant($id_etu, $id_comp);
         } elseif ($niv > 3) {
-            supprimer_aidant($id_etu, $id_comp);
-            ajouter_aide($id_etu, $id_comp);
+            $this->supprimer_aidant($id_etu, $id_comp);
+            $this->ajouter_aide($id_etu, $id_comp);
         } elseif ($niv == 3) {
-            supprimer_aide($id_etu, $id_comp);
-            supprimer_aidant($id_etu, $id_comp);
+            $this->supprimer_aide($id_etu, $id_comp);
+            $this->supprimer_aidant($id_etu, $id_comp);
         }
     }
 
@@ -93,7 +105,7 @@ class Aide_model extends BDD_models
         $id = $this->Niveau_model->get_niveau_etudiant_sup(array('comp' => $id_comp));
 
         foreach ($id as $key => $value) {
-            $ligne = array('aidant' => false, 'demande_aide' => false,'accepter_aide' => false,'id_aide' => $id_etu,'id_aidant' => $value,'id_comp' => $id_comp);
+            $ligne = array('aidant' => true, 'demande_aide' => false,'accepter_aide' => false,'id_aide' => $id_etu,'id_aidant' => $value,'id_comp' => $id_comp);
             $this->insert($ligne);
         }
     }
@@ -113,7 +125,7 @@ class Aide_model extends BDD_models
         $id = $this->Niveau_model->get_niveau_etudiant_inf(array('comp' => $id_comp));
 
         foreach ($id as $key => $value) {
-            $ligne = array('aidant' => false, 'demande_aide' => false,'accepter_aide' => false,'id_aide' => $id_etu,'id_aidant' => $value,'id_comp' => $id_comp);
+            $ligne = array('aidant' => true, 'demande_aide' => false,'accepter_aide' => false,'id_aide' => $value,'id_aidant' => $id_etu,'id_comp' => $id_comp);
             $this->insert($ligne);
         }
     }

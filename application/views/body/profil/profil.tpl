@@ -32,31 +32,33 @@
     </div>
 
 	<div class="centre">
-        {if $user_id_co === $id && !isset($admin) }
-		  <h1>Tes Compétences </h1>
-        {else}
-            <h1>Compétances </h1>
-        {/if}
-		<table>
-			<tr>
-				<th> Matière </th>
-				<th> Niveau</th>
-			<tr>
-			{*metre le for ech *}
-			<tr>
-				<td> C++ </td>
-				<td></td>
-			<tr>
-			<tr>
-				<td> HTML</td>
-				<td></td>
-			<tr>
-			<tr>
-				<td> C++ </td>
-				<td></td>
-			<tr>
 
-		</table>
+		{if $comps}
+
+		{if $user_id_co === $id && !isset($admin) }
+	<h1>Tes Compétences </h1>
+		{else}
+				<h1>Compétances </h1>
+		{/if}
+<table>
+	<tr>
+		<th> Matière </th>
+		<th> Niveau</th>
+	<tr>
+		{foreach $comp_active as $key}
+		<tr>
+			<td> {$key['intitule_comp']}</td>
+			<td> {$key['niveau']}</td>
+		<tr>
+	{/foreach}
+
+</table>
+
+		{else}
+
+		<h1>Aucune compétences </h1>
+
+		{/if}
 
 
 	</div>

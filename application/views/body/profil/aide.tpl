@@ -14,41 +14,34 @@
 			{if $user_id_co === $id}
 					<h1>Oui c'est toi !!!!!</h1>
 			{/if}
-			
+
 			<h1>{$nom} </h1>
 			<h2>{$prenom} </h2>
-			
+
 		</div>
 	<div class="menuProfil">
 		<ul>
 			<li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
 		</ul>
 	</div>
-	
+
     </div>
 
 	<div class="centre">
 
-		<h1>Personne qui t'aident</h1>
+		<h1>Personne que tu aides</h1>
 
 		<table>
 			<tr>
 				<th> Nom étudient </th>
 				<th> Matière </th>
-			<tr>
-			{*metre le for ech *}
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> C++ </td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> html</td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> C++ </td>
-			<tr>
+				<tr>
+				{foreach $aide as $key => $value}
+			 <tr>
+				 <td>{$value['nom_etu']} {$value['prenom_etu']}</td>
+				 <td>{$value['intitule_comp']}</td>
+			 <tr>
+			 {/foreach}
 
 		</table>
 

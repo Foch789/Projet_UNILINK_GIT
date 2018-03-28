@@ -106,4 +106,92 @@ class Niveau_model extends BDD_models
 
         return $fin;
     }
+
+
+    public function get_compt_etu($id)
+    {
+        $this->load->model('Competence_model');
+
+        $tab1 = array();
+        $this->db->select('niveau.id_comp,intitule_comp,niveau');
+        $this->db->from($this->get_table());
+        $this->db->join('competence', 'niveau.id_comp = competence.id_comp');
+        $this->db->where($this->get_colonne()['id_etu'], $id);
+        $idComp = $this->db->get();
+        $active = $idComp->result_array();
+
+        foreach ($active as $key => $value) {
+            array_push($tab1, $value);
+        }
+
+        return $tab1;
+    }
+
+    public function get_comp_etu_non($id, $id_promo)
+    {
+        $this->load->model('Competence_model');
+        $resultat = array();
+
+        $tab1 = array();
+        $tab2 = array();
+
+        $this->db->select('id_comp');
+        $this->db->from($this->get_table());
+        $this->db->where($this->get_colonne()['id_etu'], $id);
+        $idComp = $this->db->get();
+        $active = $idComp->result_array();
+
+        foreach ($active as $key => $value) {
+            foreach ($value as $key1) {
+                array_push($tab1, $key1);
+            }
+        }
+
+        $this->db->select('id_comp');
+        $this->db->from($this->Competence_model->get_table());
+        $this->db->where('id_promo', $id_promo);
+        $a = $this->db->get();
+        $all = $a->result_array();
+
+        foreach ($all as $key => $value) {
+            foreach ($value as $key1) {
+                array_push($tab2, $key1);
+            }
+        }
+
+
+        $non_active = array_diff($tab2, $tab1);
+
+        return $non_active;
+    }
+
+    public function mise_a_jour_niveau($idE, $idcomp, $niv)
+    {
+        $this->db->set('niveau', $niv);
+        $this->db->where('id_etu', $idE);
+        $this->db->where('id_comp', $idcomp);
+        $this->db->update($this->get_table());
+    }
+
+    public function ajout_niveau($comp =array())
+    {
+        $this->insert($comp);
+    }
+
+    public function delete_niv($idE, $idcomp)
+    {
+        $this->db->where('id_etu', $idE);
+        $this->db->where('id_comp', $idcomp);
+        $this->db->delete($this->get_table());
+    }
+
+    public function exist_niv($idE)
+    {
+        $this->db->select('*');
+        $this->db->from($this->get_table());
+        $this->db->where('id_etu', $idE);
+        $resultat = $this->db->get();
+
+        return $resultat->num_rows() === 0;
+    }
 }

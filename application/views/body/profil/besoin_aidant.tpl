@@ -20,13 +20,13 @@
             <h2>{$prenom} </h2>
 
         </div>
-   
+
         <div class="menuProfil">
             <ul>
                 <li ><a href="{site_url('Profil/view/')}{$user_id_co}"><b>Retour profil</b></a></li>
             </ul>
         </div>
-    
+
     </div>
 
 	<div class="centre">
@@ -39,23 +39,13 @@
 				<th> Matière </th>
 				<th> Demmende d'aide</th>
 			<tr>
-			{*metre le for ech *}
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> C++ </td>
-				<td><button class="button">Demende d'aide</button></td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> HTML</td>
-				<td><button class="button">Demende d'aide</button></td>
-			<tr>
-			<tr>
-				<td> {*variable smarty *} TOTO</td>
-				<td> C++ </td>
-				<td><button class="button">Demende d'aide</button></td>
-			<tr>
-
+        {foreach $aide as $key => $value}
+       <tr>
+         <td>{$value['nom_etu']} {$value['prenom_etu']}</td>
+         <td>{$value['intitule_comp']}</td>
+         <td><button class="button">Demende d'aide</button></td>
+       <tr>
+       {/foreach}
 		</table>
 
 	</div>

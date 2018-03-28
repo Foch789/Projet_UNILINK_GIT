@@ -7,9 +7,20 @@ class Competence_model extends BDD_models
 {
     public function __construct()
     {
-        parent::__construct("competence", array("id" => "id_comp", "intitule" => "intitule_comp"));
+        parent::__construct("competence", array("id" => "id_comp", "idp" => "id_promo","intitule" => "intitule_comp"));
     }
     // Retourne tous les noms de compétences sous la forme d'un tableau à index
+    public function getLaComp($idcomp)
+    {
+        $resultat = array();
+        $this->db->select('*');
+        $this->db->from('competence');
+        $this->db->where($this->get_colonne()['id'], $idcomp);
+        $resultat = $this->db->get();
+
+        return $resultat->row_array();
+    }
+
     public function getComp($id)
     {
         $resultat = array();
@@ -26,26 +37,28 @@ class Competence_model extends BDD_models
         return $resultat;
     }
 
-    public function getCompetencePromo($idetu){
-      $resultat=array();
-      $this->db->from('etudiant');
-      $this->db->join('promo','etudiant.id_promo = promo.id_promo');
-      $this->db->join('competence','promo.id_promo=competence.id_promo');
-      $this->db->where('etudiant.id_etu',$idetu);
-      $foo = $this->db->get();
-      foreach ($foo->result_array() as $item) {
-        array_push($resultat,$item);
-      }
-      return $resultat;
+    public function getCompetencePromo($idetu)
+    {
+        $resultat=array();
+        $this->db->from('etudiant');
+        $this->db->join('promo', 'etudiant.id_promo = promo.id_promo');
+        $this->db->join('competence', 'promo.id_promo=competence.id_promo');
+        $this->db->where('etudiant.id_etu', $idetu);
+        $foo = $this->db->get();
+        foreach ($foo->result_array() as $item) {
+            array_push($resultat, $item);
+        }
+        return $resultat;
     }
     // Le getCompetencePromo renvoi stocke l'id des competence, tu peux l'utiliser pour setCompetence
-    public function getIdCompetenceParIntitule($intitule){
-      $this->db->from('competence');
-      $this->db->where('intitule_comp',$intitule);
-      $foo = $this->db->get();
-      $resultat = $foo->row_array();
-      //print_r($resultat);
-      return $resultat;
+    public function getIdCompetenceParIntitule($intitule)
+    {
+        $this->db->from('competence');
+        $this->db->where('intitule_comp', $intitule);
+        $foo = $this->db->get();
+        $resultat = $foo->row_array();
+        //print_r($resultat);
+        return $resultat;
     }
     // Le getCompetencePromo renvoi stocke l'id des competence, tu peux l'utiliser pour setCompetence
 

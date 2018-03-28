@@ -33,18 +33,37 @@
 
     <h1> Modification de tes competence </h1>
 
-<form >
+ <form action="" method="post">
 
   <table>
 			<tr>
 				<th> Matière </th>
         <th> Niveau Actuelle</th>
 				<th> Niveau</th>
-			<tr>
+      <tr>
+          {foreach $comp_active as $key}
+          <tr>
+            <td> {$key['intitule_comp']}</td>
+            <td> {$key['niveau']}</td>
+            <td><input type="number" name="{$key['intitule_comp']}" min="0" max="5" value={$key['niveau']}></td>
+          <tr>
+        {/foreach}
+
+         {foreach $comp_non_active as $key => $value}
+          <tr class="grey">
+            <td> {$value['intitule_comp']}</td>
+            <td> Aucun</td>
+            <td><input type="number" name="{$value['intitule_comp']}" value=0 min="0" max="5"></td>
+          <tr>
+        {/foreach}
+        <tr>
+          <td colspan="2">  </td>
+  				<td>
+              <button class="button" type="submit" name="form_comp" >Envoyer</button>
+  				</td>
+  			<tr>
 
 		</table>
-
-    <button class="button" type="submit" name="form_recherche"><b>Envoyer</b></button>
 
   </form>
 
@@ -59,17 +78,3 @@
 </div>
 
 {/block}
-
-{* <tr class="grey">
-  <td> C++ </td>
-  <td> 3</td>
-  <td>
-    <div class="groupe">
-    <label>1</label> <input type="radio" name="niveau" value="1" checked>
-    <label>2</label> <input type="radio" name="niveau" value="2">
-    <label>3</label> <input type="radio" name="niveau" value="3">
-    <label>4</label> <input type="radio" name="niveau" value="4">
-    <label>5</label> <input type="radio" name="niveau" value="5">
-  </div>
-  </td>
-<tr> *}
